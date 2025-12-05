@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="BlueBuzzah Privacy Policy - Learn how we protect your data with our privacy-first approach.">
+	<meta name="theme-color" content="#0a0a0a">
+	<title>Privacy Policy - BlueBuzzah</title>
+
+	<!-- Tailwind CSS -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						background: '#0a0a0a',
+						foreground: '#fafafa',
+						primary: '#35B6F2',
+						'primary-foreground': '#0a0a0a',
+						secondary: '#05212D',
+						'secondary-light': '#0d3a4d',
+						muted: '#a3a3a3',
+						border: 'hsl(199, 74%, 15%)',
+					},
+					fontFamily: {
+						sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+					},
+				},
+			},
+		}
+	</script>
+
+	<style>
+		/* CSS Variables matching BlueBuzzah-Updater */
+		:root {
+			--background: 0 0% 4%;
+			--foreground: 0 0% 98%;
+			--card: 199 74% 10%;
+			--card-foreground: 0 0% 98%;
+			--primary: 198 86% 58%;
+			--primary-foreground: 0 0% 4%;
+			--secondary: 199 74% 10%;
+			--secondary-foreground: 0 0% 98%;
+			--muted: 199 74% 15%;
+			--muted-foreground: 0 0% 64%;
+			--border: 199 74% 15%;
+			--ring: 198 86% 58%;
+			--radius: 0.5rem;
+		}
+
+		/* Custom scrollbar */
+		::-webkit-scrollbar {
+			width: 8px;
+			height: 8px;
+		}
+
+		::-webkit-scrollbar-track {
+			background: #0a0a0a;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background: hsl(199, 74%, 15%);
+			border-radius: 4px;
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background: #35B6F2;
+		}
+
+		/* Card gradient background */
+		.card-gradient {
+			background: linear-gradient(135deg, #05212D 0%, hsl(199, 74%, 12%) 100%);
+		}
+
+		/* Blue glow effects */
+		.glow-blue {
+			box-shadow: 0 0 15px rgba(53, 182, 242, 0.2);
+		}
+
+		/* Glass morphism for nav */
+		.glass-nav {
+			background: rgba(10, 10, 10, 0.8);
+			backdrop-filter: blur(12px);
+			-webkit-backdrop-filter: blur(12px);
+		}
+
+		/* Focus states */
+		a:focus-visible,
+		button:focus-visible {
+			outline: 2px solid #35B6F2;
+			outline-offset: 2px;
+		}
+
+		/* Smooth link transitions */
+		a,
+		button {
+			transition: all 0.2s ease-in-out;
+		}
+	</style>
+</head>
+
+<body class="bg-background text-foreground font-sans antialiased">
+
+	<!-- Fixed Navigation -->
+	<header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-border">
+		<nav class="max-w-6xl mx-auto px-6 py-4">
+			<div class="flex items-center justify-between">
+				<!-- Logo -->
+				<a href="index.html" class="flex items-center gap-2 group">
+					<img src="assets/favicon.svg" alt="BlueBuzzah logo" class="w-8 h-8 rounded-lg">
+					<span class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">BlueBuzzah</span>
+				</a>
+
+				<!-- Desktop Nav Links -->
+				<div class="hidden md:flex items-center gap-8">
+					<a href="index.html#about" class="text-muted hover:text-foreground">About</a>
+					<a href="index.html#research" class="text-muted hover:text-foreground">Research</a>
+					<a href="index.html#products" class="text-muted hover:text-foreground">Products</a>
+					<a href="index.html#downloads"
+						class="text-foreground font-medium px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 hover:bg-primary/20">
+						Downloads
+					</a>
+				</div>
+
+				<!-- Mobile Menu Button -->
+				<button class="md:hidden p-2 text-muted hover:text-foreground" id="mobile-menu-btn" aria-label="Toggle menu">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+					</svg>
+				</button>
+			</div>
+
+			<!-- Mobile Menu -->
+			<div class="md:hidden hidden pt-4 pb-2 border-t border-border mt-4" id="mobile-menu">
+				<div class="flex flex-col gap-4">
+					<a href="index.html#about" class="text-muted hover:text-foreground py-2">About</a>
+					<a href="index.html#research" class="text-muted hover:text-foreground py-2">Research</a>
+					<a href="index.html#products" class="text-muted hover:text-foreground py-2">Products</a>
+					<a href="index.html#downloads" class="text-foreground font-medium py-2">Downloads</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main class="pt-24 pb-16">
+		<div class="max-w-3xl mx-auto px-6">
+			<!-- Header -->
+			<div class="mb-12">
+				<a href="index.html" class="inline-flex items-center gap-2 text-muted hover:text-primary mb-6">
+					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+					</svg>
+					Back to Home
+				</a>
+				<h1 class="text-4xl md:text-5xl font-bold mb-4">
+					Privacy <span class="text-primary">Policy</span>
+				</h1>
+				<p class="text-muted">
+					<strong class="text-foreground">Effective Date:</strong> November 1, 2025
+				</p>
+			</div>
+
+			<!-- Content -->
+			<div class="space-y-10">
+				<!-- Data Collection and Storage -->
+				<section>
+					<h2 class="text-2xl font-semibold text-foreground mb-4">Data Collection and Storage</h2>
+					<p class="text-muted leading-relaxed mb-4">
+						BlueBuzzah retains the following information exclusively on your device:
+					</p>
+					<ul class="list-disc list-inside space-y-2 text-muted ml-4 mb-4">
+						<li>Therapy session records</li>
+						<li>Vibration patterns and configurations</li>
+						<li>BlueBuzzah glove device settings</li>
+						<li>Application preferences</li>
+					</ul>
+					<p class="text-foreground font-medium">
+						No data leaves your device. No cloud storage. No external servers.
+					</p>
+				</section>
+
+				<!-- Data Transmission -->
+				<section>
+					<h2 class="text-2xl font-semibold text-foreground mb-4">Data Transmission</h2>
+					<p class="text-muted leading-relaxed">
+						The application communicates solely via Bluetooth with paired BlueBuzzah therapeutic gloves.
+						Internet connectivity is neither required nor used for any app functionality.
+					</p>
+				</section>
+
+				<!-- Personal Information -->
+				<section>
+					<h2 class="text-2xl font-semibold text-foreground mb-4">Personal Information</h2>
+					<p class="text-muted leading-relaxed mb-4">
+						BlueBuzzah does not collect:
+					</p>
+					<ul class="list-disc list-inside space-y-2 text-muted ml-4 mb-4">
+						<li>Names or email addresses</li>
+						<li>Contact information</li>
+						<li>Location data</li>
+						<li>Device identifiers</li>
+						<li>Analytics or usage metrics</li>
+						<li>Health records beyond locally stored session information</li>
+					</ul>
+					<p class="text-foreground font-medium">
+						No account creation required. No sign-up process.
+					</p>
+				</section>
+
+				<!-- Third-Party Access -->
+				<section>
+					<h2 class="text-2xl font-semibold text-foreground mb-4">Third-Party Access</h2>
+					<p class="text-muted leading-relaxed mb-4">
+						No third parties receive information from BlueBuzzah. The application avoids integration with:
+					</p>
+					<ul class="list-disc list-inside space-y-2 text-muted ml-4">
+						<li>Analytics services</li>
+						<li>Advertising networks</li>
+						<li>Social media platforms</li>
+						<li>Cloud storage providers</li>
+						<li>External APIs</li>
+					</ul>
+				</section>
+
+				<!-- Data Control -->
+				<section>
+					<h2 class="text-2xl font-semibold text-foreground mb-4">Data Control</h2>
+					<p class="text-muted leading-relaxed mb-4">
+						Users have complete control over their data:
+					</p>
+					<ul class="list-disc list-inside space-y-2 text-muted ml-4">
+						<li>View all stored information within the app</li>
+						<li>Delete individual sessions or all data</li>
+						<li>Maintain exported data locally</li>
+						<li>All associated data is removed upon uninstallation</li>
+					</ul>
+				</section>
+
+				<!-- Children's Privacy -->
+				<section>
+					<h2 class="text-2xl font-semibold text-foreground mb-4">Children's Privacy</h2>
+					<p class="text-muted leading-relaxed">
+						BlueBuzzah does not knowingly collect information from children under 13.
+						The application's local-only architecture ensures no personal data is transmitted regardless of user age.
+					</p>
+				</section>
+
+				<!-- Security -->
+				<section>
+					<h2 class="text-2xl font-semibold text-foreground mb-4">Security</h2>
+					<p class="text-muted leading-relaxed">
+						Data protection relies on your device's native security mechanisms. We recommend enabling
+						device-level protections such as passcodes or biometric authentication to safeguard your therapy data.
+					</p>
+				</section>
+
+				<!-- Changes to Privacy Policy -->
+				<section>
+					<h2 class="text-2xl font-semibold text-foreground mb-4">Changes to Privacy Policy</h2>
+					<p class="text-muted leading-relaxed">
+						Policy updates will be posted on this page with revised effective dates.
+						Continued use of BlueBuzzah applications signals acceptance of any changes.
+					</p>
+				</section>
+
+				<!-- Compliance -->
+				<section>
+					<h2 class="text-2xl font-semibold text-foreground mb-4">Compliance</h2>
+					<p class="text-muted leading-relaxed">
+						This policy addresses GDPR, CCPA, and applicable data protection regulations
+						through our privacy-by-design architecture.
+					</p>
+				</section>
+
+				<!-- Contact -->
+				<section>
+					<h2 class="text-2xl font-semibold text-foreground mb-4">Contact</h2>
+					<p class="text-muted leading-relaxed">
+						For privacy inquiries, please contact us at:
+						<a href="mailto:privacy@bluebuzzah.com" class="text-primary hover:underline">privacy@bluebuzzah.com</a>
+					</p>
+				</section>
+			</div>
+		</div>
+	</main>
+
+	<!-- Footer -->
+	<footer class="py-12 bg-background border-t border-border">
+		<div class="max-w-6xl mx-auto px-6">
+			<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+				<div class="flex items-center gap-2">
+					<img src="assets/favicon.svg" alt="BlueBuzzah logo" class="w-8 h-8 rounded-lg">
+					<span class="text-lg font-bold text-foreground">BlueBuzzah</span>
+				</div>
+				<p class="text-sm text-muted">
+					&copy; 2024 BlueBuzzah Partners. Open-source under MIT license.
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Mobile Menu Script -->
+	<script>
+		const menuBtn = document.getElementById('mobile-menu-btn');
+		const mobileMenu = document.getElementById('mobile-menu');
+
+		menuBtn.addEventListener('click', () => {
+			mobileMenu.classList.toggle('hidden');
+		});
+
+		mobileMenu.querySelectorAll('a').forEach(link => {
+			link.addEventListener('click', () => {
+				mobileMenu.classList.add('hidden');
+			});
+		});
+	</script>
+</body>
+
+</html>
