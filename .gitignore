@@ -1,0 +1,5 @@
+# Temporary directory
+temp/
+
+# Claude Code
+.claude/settings.local.json
