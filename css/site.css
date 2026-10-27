@@ -115,3 +115,7 @@ a.bb-btn { box-sizing: border-box; }
 .title-link .bb-icon { display: inline-block; vertical-align: middle; }
 .download-badge { display: inline-block; border-radius: var(--radius-md); line-height: 0; }
 .link-list { display: grid; gap: var(--target-gap); }
+
+/* Long-form pages (privacy) ------------------------------------------- */
+.stack-lg > * + * { margin-top: var(--space-10); }
+.prose ul { padding-left: var(--space-6); }
