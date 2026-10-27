@@ -128,6 +128,10 @@ a.bb-btn { box-sizing: border-box; }
 /* rows stack at narrow widths and 200% zoom: the nowrap badge drops below the title (README Type: layouts reflow) */
 .bb-card__head { flex-wrap: wrap; margin-bottom: 0; }
 .card-action { margin-top: auto; align-self: flex-start; }
+/* icon centred on the title's first line, even when the title wraps (space-2 = icon-to-label gap at title size);
+   the svg box is one line tall and its viewBox keeps the 24px glyph centred in it */
+.title-with-icon { display: flex; align-items: flex-start; gap: var(--space-2); }
+.title-with-icon > svg { height: 1lh; }
 .title-link .bb-icon { display: inline-block; vertical-align: middle; }
 /* outlined like the secondary Button beside them, with the same hover/pressed border states (bundle.css .bb-btn--secondary) */
 .download-badge {
