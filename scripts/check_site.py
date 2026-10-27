@@ -245,7 +245,11 @@ def check_local_links():
 
 def main():
     failed = 0
+    skip = {a for i, a in enumerate(sys.argv) if i and sys.argv[i - 1] == '--skip'}  # --skip check_x: a planned red
     for name, fn in [(n, f) for n, f in globals().items() if n.startswith('check_') and callable(f)]:
+        if name in skip:
+            print(f'skip {name}')
+            continue
         try:
             err = fn()
         except Exception as e:  # a crashing check is a failing check
