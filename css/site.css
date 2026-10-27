@@ -24,7 +24,7 @@ a.bb-btn { box-sizing: border-box; }
 .prose { max-width: var(--prose-max); }
 .stack > * + * { margin-top: var(--space-4); }
 .list-reset { list-style: none; padding: 0; margin: 0; }
-.grid-2, .grid-3, .grid-4 { display: grid; gap: var(--space-6); grid-template-columns: 1fr; }
+.grid-2, .grid-3 { display: grid; gap: var(--space-6); grid-template-columns: minmax(0, 1fr); }
 .button-row { display: flex; flex-wrap: wrap; gap: var(--target-gap); }
 .text-muted { color: var(--ink-muted); }
 .icon-brand { color: var(--brand); }
@@ -32,12 +32,11 @@ a.bb-btn { box-sizing: border-box; }
 @media (min-width: 600px) {
   .container { padding-inline: var(--space-6); }
   .section { padding-block: var(--space-20); }
-  .grid-2, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (min-width: 900px) {
   .section { padding-block: var(--space-24); }
-  .grid-3 { grid-template-columns: repeat(3, 1fr); }
-  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 /* Hero on abyss (web.md Home page 1) ----------------------------------- */
@@ -53,7 +52,7 @@ a.bb-btn { box-sizing: border-box; }
   .hero__mark { width: calc(var(--space-20) * 2.5); }
 }
 @media (min-width: 900px) {
-  .hero__inner { grid-template-columns: 1fr auto; }
+  .hero__inner { grid-template-columns: minmax(0, 1fr) auto; }
 }
 
 /* The one restated type style: display-xl steps down to display-l under 600px (tokens.json). Must equal
@@ -111,6 +110,8 @@ a.bb-btn { box-sizing: border-box; }
 /* Home sections (web.md Home page 3-5) ---------------------------------- */
 .section-block { margin-top: var(--space-8); }
 .bb-card { display: flex; flex-direction: column; gap: var(--space-3); }
+/* rows stack at narrow widths and 200% zoom: the nowrap badge drops below the title (README Type: layouts reflow) */
+.bb-card__head { flex-wrap: wrap; }
 .card-action { margin-top: auto; align-self: flex-start; }
 .title-link .bb-icon { display: inline-block; vertical-align: middle; }
 .download-badge { display: inline-block; border-radius: var(--radius-md); line-height: 0; }

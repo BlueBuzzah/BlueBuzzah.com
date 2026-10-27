@@ -188,6 +188,13 @@ def check_link_buttons_border_box():
     return not re.search(r'a\.bb-btn\s*\{[^}]*box-sizing:\s*border-box', site_css()) and 'a.bb-btn needs border-box'
 
 
+def check_grid_tracks_shrink():
+    """Bare 1fr tracks can't shrink below min-content; the cards overflowed 320px screens with them."""
+    bare = [d for d in re.findall(r'grid-template-columns:([^;}]*)', site_css())
+            if re.search(r'\b1fr', d.replace('minmax(0, 1fr)', ''))]
+    return bare and f'use minmax(0, 1fr): {bare}'
+
+
 def check_disclaimer():
     errs = []
     for p, t in pages().items():
