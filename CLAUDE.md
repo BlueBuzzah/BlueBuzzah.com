@@ -14,7 +14,9 @@ There are no scripts or tests. Preview with `python3 -m http.server 8000` and ch
   cp $DS/favicons/favicon.ico $SITE/
   ```
   `css/fonts/` must sit next to `css/tokens.css`, since its `@font-face` URLs are relative.
-- **Icons are inline Lucide SVGs** (v1.55.0, ISC; see `assets/LICENSE-lucide.txt`). Copy the glyph's markup from lucide.dev into the page as `<svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">…</svg>`. Use sizes 20, 24 or 32, and always pair an icon with a word.
+- **Icons are Lucide SVG files in `assets/icons/`** (v1.55.0, ISC; see `assets/icons/LICENSE.txt`), one file per glyph, used everywhere by reference:
+  `<svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/NAME.svg#icon"/></svg>`
+  To add or replace an icon, download it from `https://unpkg.com/lucide-static@1.55.0/icons/NAME.svg` and add `id="icon"` to its root `<svg>`. That's the only edit, and every use updates. The files draw in `currentColor`, so icons take their text's colour. Use sizes 20, 24 or 32, and always pair an icon with a word.
 - Static markup that mirrors a `bundle.js` component carries a `<!-- mirrors bundle.js <Comp> (DS import …) -->` comment. Re-check it after a design-system re-import.
 
 ## Design System — required for every UI/UX change

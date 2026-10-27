@@ -16,9 +16,8 @@ document.querySelectorAll('.nav-mobile a').forEach(function (a) {
   var root = document.documentElement;
 
   function check(size) {
-    return '<svg class="bb-icon" width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" ' +
-      'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ' +
-      'focusable="false"><path d="M20 6 9 17l-5-5"></path></svg>'; // Lucide check
+    return '<svg class="bb-icon" width="' + size + '" height="' + size + '" viewBox="0 0 24 24" aria-hidden="true" ' +
+      'focusable="false"><use href="assets/icons/check.svg#icon"/></svg>';
   }
 
   function render() {
