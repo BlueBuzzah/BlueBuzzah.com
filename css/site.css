@@ -107,3 +107,11 @@ a.bb-btn { box-sizing: border-box; }
 @media (forced-colors: active) {
   .site-header, .site-footer, .nav-mobile__panel { border-color: CanvasText; }
 }
+
+/* Home sections (web.md Home page 3-5) ---------------------------------- */
+.section-block { margin-top: var(--space-8); }
+.bb-card { display: flex; flex-direction: column; gap: var(--space-3); }
+.card-action { margin-top: auto; align-self: flex-start; }
+.title-link .bb-icon { display: inline-block; vertical-align: middle; }
+.download-badge { display: inline-block; border-radius: var(--radius-md); line-height: 0; }
+.link-list { display: grid; gap: var(--target-gap); }

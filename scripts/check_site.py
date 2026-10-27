@@ -7,7 +7,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES = ['index.html', 'privacy.html']
 DISCLAIMER = ('BlueBuzzah is an experimental, open-source project. It is not FDA-approved and is not a substitute '
               'for medical care. Talk with your neurologist before using it.')
-PENDING_IDS = {'how-it-works', 'download', 'community'}  # sections Tasks 4-5 build
+PENDING_IDS = set()  # fragments a later task will create
 
 
 class Node:
@@ -297,6 +297,41 @@ def check_small_text():
     m = override_block(site_css())
     css = site_css().replace(m[0], '') if m else site_css()
     return '; '.join(errs + (['site.css sets font-size'] if 'font-size' in css else []))
+
+
+def check_download():
+    t = pages()['index.html']
+    errs = [f'no {u}' for u in ('releases/latest/download/BlueBuzzah_Updater_universal.dmg',
+                                'releases/latest/download/BlueBuzzah_Updater_x64_en-US.exe') if u not in t]
+    alts = {n.attrs.get('src'): n.attrs.get('alt') for n in dom(t).iter() if n.tag == 'img'}
+    for src, alt in (('assets/download-macos.png', 'Download app for macOS'),
+                     ('assets/download-windows.png', 'Download for Windows')):
+        if alts.get(src) != alt:
+            errs.append(f'{src} alt {alts.get(src)!r}')
+    if 'scale' in site_css():
+        errs.append('site.css scales something')
+    return '; '.join(errs)
+
+
+def check_banners():
+    root = dom(pages()['index.html'])
+    sec = {n.attrs.get('id'): n for n in root.iter() if n.tag == 'section'}
+    errs = []
+    banners = [n for n in root.iter() if 'bb-banner' in n.classes()]
+    sci = [b for b in banners if sec.get('science') in b.ancestors()]
+    parts = [b for b in banners if sec.get('parts') in b.ancestors() and 'bb-banner--warning' in b.classes()]
+    if len(sci) != 1 or DISCLAIMER not in sci[0].text():
+        errs.append('#science needs one info Banner with the canonical disclaimer')
+    if len(parts) != 1:
+        errs.append('#parts needs one warning Banner')
+    if len(banners) != 2:
+        errs.append(f'{len(banners)} banners on index')
+    return '; '.join(errs)
+
+
+def check_no_whole_card_links():
+    return '; '.join(f'{p}: <a> wraps a card' for p, t in pages().items() for n in dom(t).iter()
+                     if n.tag == 'a' and any(c.startswith('bb-card') for x in n.iter() for c in x.classes()))
 
 
 def main():
