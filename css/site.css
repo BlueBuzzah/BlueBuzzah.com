@@ -131,7 +131,6 @@ a.bb-btn { box-sizing: border-box; }
 .card-action { margin-top: auto; align-self: flex-start; }
 .title-link .bb-icon { display: inline-block; vertical-align: middle; }
 .download-badge { display: inline-block; border-radius: var(--radius-md); line-height: 0; }
-.link-list { display: grid; gap: var(--target-gap); }
 
 /* Long-form pages (privacy) ------------------------------------------- */
 .stack-lg > * + * { margin-top: var(--space-10); }

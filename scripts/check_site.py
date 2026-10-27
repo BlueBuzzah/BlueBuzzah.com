@@ -329,6 +329,10 @@ def check_download():
             errs.append(f'{src} alt {alts.get(src)!r}')
     if 'scale' in site_css():
         errs.append('site.css scales something')
+    guide = [n for n in dom(t).iter() if n.tag == 'a' and n.attrs.get('href', '').endswith('/wiki/Getting-Started')
+             and 'bb-btn' in n.classes()]
+    if len(guide) != 1 or 'assets/icons.svg#book' not in str([x.attrs for x in guide[0].iter()]):
+        errs.append('getting started guide must be one bb-btn with the book icon')
     return '; '.join(errs)
 
 

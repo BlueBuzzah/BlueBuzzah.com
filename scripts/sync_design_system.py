@@ -12,7 +12,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DS = (ROOT / '../../.claude/skills/bluebuzzah-design-system').resolve()
 LUCIDE_EXTRA = ROOT / 'scripts/lucide'  # lucide-static@1.55.0 glyphs the design system doesn't ship
 
-ICONS = ['hand', 'usb', 'smartphone', 'info', 'triangle-alert', 'external-link', 'arrow-left', 'menu', 'download', 'check', 'settings']
+ICONS = ['hand', 'usb', 'smartphone', 'info', 'triangle-alert', 'external-link', 'arrow-left', 'menu', 'download', 'check', 'settings', 'book']
 
 COPIES = {  # repo path: design-system path
     'css/tokens.css': 'tokens.css',
