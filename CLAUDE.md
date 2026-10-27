@@ -31,8 +31,10 @@ Before making a UI/UX change:
 
 Rules:
 
-- **The design system wins any conflict, with one exception: the medical disclaimer.** The site uses this text verbatim, chosen for legal reasons. Never replace it with the design system's canonical disclaimer or reword it:
+- **The design system wins any conflict, except the legal notices.** The medical disclaimer and the implanted-device notice use this text verbatim, chosen for legal reasons. Never replace them with design-system wording or reword them. The disclaimer:
   > BlueBuzzah devices are not FDA approved medical devices and not intended to diagnose, treat, cure, or prevent any disease. The information provided through BlueBuzzah is for general wellness purposes only and not a substitute for professional medical advice, diagnosis, or treatment.
+  The implanted-device notice (a warning Banner, with "Important:" in bold):
+  > Important: People with implanted electrodes from deep brain stimulation (DBS), heart pacemakers, or other internal electronic devices should take special precautions around all electronic devices, including BlueBuzzah. Consult your physician before use.
 - **Take every value from the design system's tokens.** Use `var(--token)` from `tokens.css` (custom properties, all four themes). Never hand-type a hex color, size, radius, duration or font, and never add a CSS framework.
 - **Copy, don't link.** Copy `tokens.css`, the fonts, icons, logo and the `assets/Web` favicon set into this repo. Never reference the workspace path from a page, because the site deploys on its own.
 - **Don't invent rules.** If the design system doesn't cover something, ask rather than inventing a rule.
