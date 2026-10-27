@@ -16,4 +16,4 @@ No build process required. The site is fully static and can be deployed anywhere
 
 ## Disclaimer
 
-BlueBuzzah is an experimental, open-source project. It is not FDA-approved and is not a substitute for medical care. Talk with your neurologist before using it.
+BlueBuzzah devices are not FDA approved medical devices and not intended to diagnose, treat, cure, or prevent any disease. The information provided through BlueBuzzah is for general wellness purposes only and not a substitute for professional medical advice, diagnosis, or treatment.
