@@ -143,6 +143,13 @@ a.bb-btn { box-sizing: border-box; }
 /* "What is BlueBuzzah?" features: icon beside a bold line and a muted line, centred on the bold line */
 .feature { display: flex; align-items: flex-start; gap: var(--space-3); }
 .feature > svg { height: 1lh; }
+/* text then features below (features 1 column <600px, 2 columns from 600px via .grid-2);
+   from 900px the features move beside the text as one column, centred against it */
+.about-grid { display: grid; gap: var(--space-8); }
+@media (min-width: 900px) {
+  .about-grid { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); column-gap: var(--space-12); align-items: center; }
+  .about-features { grid-template-columns: minmax(0, 1fr); }
+}
 .title-link .bb-icon { display: inline-block; vertical-align: middle; }
 /* outlined like the secondary Button beside them, with the same hover/pressed border states (bundle.css .bb-btn--secondary) */
 .download-badge {
