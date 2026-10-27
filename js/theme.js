@@ -1,6 +1,6 @@
 /* Sets data-theme on <html> before first paint: the OS setting, unless the person chose an override
-   in the footer. Load as a blocking script before the stylesheets. */
-(function (root) {
+   in Display settings. Load as a blocking script before the stylesheets. */
+(function () {
   var KEY = 'bb-theme';
   var DEFAULT = { mode: 'system', hc: null };
   var memo = null; // the last choice, for when storage is blocked
@@ -29,18 +29,11 @@
     try { localStorage.setItem(KEY, JSON.stringify(pref)); } catch (e) { /* the choice lasts this page view only */ }
   }
 
-  function query(q) {
-    return typeof matchMedia === 'function' && matchMedia(q).matches;
-  }
-
   function apply() {
-    var theme = resolve(read(), query('(prefers-color-scheme: dark)'), query('(prefers-contrast: more)'));
-    if (typeof document !== 'undefined') document.documentElement.dataset.theme = theme;
-    return theme;
+    document.documentElement.dataset.theme = resolve(read(),
+      matchMedia('(prefers-color-scheme: dark)').matches, matchMedia('(prefers-contrast: more)').matches);
   }
 
-  var api = { resolve: resolve, read: read, save: save, apply: apply };
-  if (typeof module !== 'undefined' && module.exports) module.exports = api;
-  else root.bbTheme = api;
-  if (typeof document !== 'undefined') apply();
-})(this);
+  window.bbTheme = { read: read, save: save, apply: apply };
+  apply();
+})();

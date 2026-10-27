@@ -2,17 +2,19 @@
 
 Static landing page for the BlueBuzzah open-source vibrotactile therapy project: what it is, the research behind it, and BlueBuzzah Updater downloads. `index.html` and `privacy.html`, styled with the design system's `css/tokens.css` and `css/bundle.css` (its `bb-` component classes on plain HTML, no React) plus `css/site.css` for layout. `js/theme.js` sets `data-theme` before first paint; `js/site.js` adds the mobile-menu close and the footer's Display settings dialog (theme override). There is no build step. It deploys as-is to GitHub Pages (`CNAME`). Pages must stay readable with JavaScript off.
 
-## Commands
+## Working on it
 
-```bash
-node scripts/test_theme.mjs                  # theme resolution
-python3 scripts/sync_design_system.py        # re-copy tokens, fonts, logo, favicons, icon sprite after a design-system re-import
-python3 scripts/sync_design_system.py --check  # report drift from the design system
-python3 -m http.server 8000                  # local preview; the icon sprite (assets/icons.svg) needs http, not file://
-```
+There are no scripts or tests. Preview with `python3 -m http.server 8000` and check changes in a browser: narrow and wide widths, light and dark themes, keyboard.
 
-- Never edit `css/tokens.css`, `css/bundle.css`, `css/fonts/`, `assets/icons.svg` or the favicon files by hand. They are copies; change the design system and re-sync.
-- Icons come from the sprite: `<svg class="bb-icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#name"/></svg>`. To add one, add its name to `ICONS` in `scripts/sync_design_system.py`. Glyphs the design system doesn't ship go in `scripts/lucide/` from `lucide-static@1.55.0`.
+- **Copied from the design system, never edited by hand:** `css/tokens.css`, `css/bundle.css`, `css/fonts/`, `assets/bluebuzzah-mark-512.png`, the favicon/app icons in `assets/` and `favicon.ico`. After a design-system re-import, re-copy them from the workspace root:
+  ```bash
+  DS=.claude/skills/bluebuzzah-design-system; SITE=projects/BlueBuzzah.com
+  cp $DS/tokens.css $DS/components/bundle.css $SITE/css/ && cp $DS/fonts/* $SITE/css/fonts/
+  cp $DS/assets/Logos/bluebuzzah-mark-512.png $DS/assets/Web/{favicon-16,favicon-32,apple-touch-icon-180,icon-192,icon-512,icon-maskable-512}.png $SITE/assets/
+  cp $DS/favicons/favicon.ico $SITE/
+  ```
+  `css/fonts/` must sit next to `css/tokens.css`, since its `@font-face` URLs are relative.
+- **Icons are inline Lucide SVGs** (v1.55.0, ISC; see `assets/LICENSE-lucide.txt`). Copy the glyph's markup from lucide.dev into the page as `<svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">…</svg>`. Use sizes 20, 24 or 32, and always pair an icon with a word.
 - Static markup that mirrors a `bundle.js` component carries a `<!-- mirrors bundle.js <Comp> (DS import …) -->` comment. Re-check it after a design-system re-import.
 
 ## Design System — required for every UI/UX change
