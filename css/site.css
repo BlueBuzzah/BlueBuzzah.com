@@ -24,7 +24,7 @@ a.bb-btn { box-sizing: border-box; }
 .stack > * + * { margin-top: var(--space-4); }
 .list-reset { list-style: none; padding: 0; margin: 0; }
 .grid-2, .grid-3 { display: grid; gap: var(--space-6); grid-template-columns: minmax(0, 1fr); }
-.button-row { display: flex; flex-wrap: wrap; gap: var(--target-gap); }
+.button-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--target-gap); }
 .text-muted { color: var(--ink-muted); }
 .icon-brand { color: var(--brand); }
 
