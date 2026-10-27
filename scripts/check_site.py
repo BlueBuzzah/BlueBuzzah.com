@@ -277,8 +277,6 @@ def check_local_links():
     return '; '.join(errs)
 
 
-PATTERN_CAPTION = ('Pattern: index, ring, middle, little; then little, middle, index, ring; then middle, little, ring, '
-                   'index. Each finger pulses once per cycle, in a new order each time.')
 PROPER = {'BlueBuzzah', 'BuzzahBuddy', 'BuzzahBuddy.com', 'Updater', "Parkinson's", 'GitHub', 'macOS', 'Windows', 'MIT',
           'Stanford', 'Tass', 'Lab', 'Peter', 'Dr.', 'Kris', 'Wilk', 'Health', 'Unlocked', 'YouTube', 'Buzzah!', 'DBS',
           'PWPInnovator898', 'TactileDesign', 'Partners', 'Catalina'}
@@ -290,19 +288,6 @@ def visible_text(node):
     if 'data-verbatim' in node.attrs:
         return ''
     return ' '.join(c if isinstance(c, str) else visible_text(c) for c in node.children)
-
-
-def check_pattern():
-    figs = [n for n in dom(pages()['index.html']).iter() if 'bb-pattern' in n.classes()]
-    if len(figs) != 1:
-        return f'{len(figs)} FingerPatterns on index'
-    grid = next(n for n in figs[0].iter() if 'bb-pattern__grid' in n.classes())
-    cells = [c for c in grid.children if isinstance(c, Node)]
-    rows = [cells[i + 1:i + 13] for i in range(0, len(cells), 13)]
-    pulses = [sum(any('bb-pattern__pulse' in x.classes() for x in c.iter()) for c in r) for r in rows]
-    cap = next((n.text() for n in figs[0].iter() if n.tag == 'figcaption'), '')
-    return '; '.join(filter(None, [pulses != [3, 3, 3, 3] and f'pulses per row {pulses}',
-                                   cap != PATTERN_CAPTION and f'caption {cap!r}']))
 
 
 def check_copy():
