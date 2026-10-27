@@ -59,156 +59,98 @@
 	</header>
 
 	<main>
-		<!-- Hero Section -->
-		<section class="hero-bg min-h-screen flex items-center pt-20">
-			<div class="max-w-6xl mx-auto px-6 py-20">
-				<div class="max-w-3xl">
-
-					<!-- Headline -->
-					<h1
-						class="opacity-0 animate-fade-in-up stagger-2 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-						<span><a href="https://github.com/BlueBuzzah" class="text-primary">Open-Source</a></span><br />
-						Vibrotactile Therapy for Parkinson's Disease
-					</h1>
-
-					<!-- Subheadline -->
-					<p
-						class="opacity-0 animate-fade-in-up stagger-3 text-lg md:text-xl text-muted leading-relaxed mb-8 max-w-2xl">
-						BlueBuzzah is an open-source vibrotactile coordinated reset (vCR) therapy device system.
-						Our wireless gloves deliver gentle, patterned vibrations to fingertips based on peer-reviewed research
-						showing potential benefits for motor symptoms.
-					</p>
-
-					<!-- CTA Buttons -->
-					<div class="opacity-0 animate-fade-in-up stagger-4 flex flex-wrap gap-4">
-						<a href="#about"
-							class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold">
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-							</svg>
-							What is BlueBuzzah?
-						</a>
-						<a href="#research"
-							class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-secondary hover:border-primary/30">
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-							</svg>
-							View the Research
-						</a>
+		<section class="hero">
+			<div class="container hero__inner">
+				<div class="stack hero__text">
+					<h1 class="display-xl">Open-source vibrotactile therapy for Parkinson's</h1>
+					<p class="body-l prose">BlueBuzzah gloves send gentle, timed pulses to your fingertips. Research suggests this may help with some movement symptoms. Everything is open, so you can build it, read it and change it.</p>
+					<div class="button-row">
+						<a class="bb-btn bb-btn--primary" href="#how-it-works"><span class="bb-btn__label">How it works</span></a>
+						<a class="bb-btn bb-btn--secondary" href="https://github.com/BlueBuzzah/BlueBuzzah-Hardware/wiki"><span class="bb-btn__label">Build a pair</span></a>
 					</div>
 				</div>
+				<img class="hero__mark" src="assets/bluebuzzah-mark-512.png" alt="" width="200" height="193">
 			</div>
 		</section>
 
-		<!-- About Section -->
-		<section id="about" class="py-24 bg-background">
-			<div class="max-w-6xl mx-auto px-6">
-				<div class="grid lg:grid-cols-2 gap-12 items-center">
-					<!-- Content -->
-					<div>
-						<h2 class="text-3xl md:text-4xl font-bold mb-6">
-							What is <span class="text-primary">BlueBuzzah</span>?
-						</h2>
-						<div class="space-y-4 text-muted leading-relaxed">
-							<p>
-								BlueBuzzah is a community-driven, open-source project creating accessible vibrotactile therapy
-								devices for people living with Parkinson's disease. Our approach is inspired by groundbreaking
-								research on vibrotactile coordinated reset (vCR) stimulation.
-							</p>
-							<p>
-								The system applies gentle vibrations to fingertips, stimulating sensory neurons
-								connected to motor control regions of the brain. Research
-								suggests this may help address tremor, rigidity, and movement challenges.
-							</p>
-							<p>
-								Built on readily available hardware and open-source firmware,
-								BlueBuzzah empowers patients, caregivers, and makers to build their own therapy devices.
-							</p>
-						</div>
-
-						<!-- Features list -->
-						<div class="mt-8 grid sm:grid-cols-2 gap-4">
-							<div class="flex items-start gap-3">
-								<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-									<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
-								</div>
-								<div>
-									<div class="font-medium text-foreground">Bluetooth Low Energy</div>
-									<div class="text-sm text-muted">Wireless device sync</div>
-								</div>
-							</div>
-							<div class="flex items-start gap-3">
-								<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-									<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-									</svg>
-								</div>
-								<div>
-									<div class="font-medium text-foreground">8+ Hours Battery</div>
-									<div class="text-sm text-muted">Extended therapy sessions</div>
-								</div>
-							</div>
-							<div class="flex items-start gap-3">
-								<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-									<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-									</svg>
-								</div>
-								<div>
-									<div class="font-medium text-foreground">Configurable Patterns</div>
-									<div class="text-sm text-muted">Customizable therapy</div>
-								</div>
-							</div>
-							<div class="flex items-start gap-3">
-								<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-									<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-									</svg>
-								</div>
-								<div>
-									<div class="font-medium text-foreground">Open Source</div>
-									<div class="text-sm text-muted">MIT licensed</div>
-								</div>
-							</div>
-						</div>
+		<section id="how-it-works" class="section">
+			<div class="container">
+				<h2 class="display-l section__title">How it works</h2>
+				<ol class="list-reset grid-3">
+				<li class="stack">
+					<svg class="bb-icon icon-brand" width="32" height="32" aria-hidden="true" focusable="false"><use href="assets/icons.svg#hand"/></svg>
+					<h3 class="title-m">Build your gloves</h3>
+					<p class="body">Follow the open build guide to put together a pair of gloves. Each fingertip gets a small vibration motor.</p>
+				</li>
+				<li class="stack">
+					<svg class="bb-icon icon-brand" width="32" height="32" aria-hidden="true" focusable="false"><use href="assets/icons.svg#usb"/></svg>
+					<h3 class="title-m">Load the firmware</h3>
+					<p class="body">Plug each glove into your computer. BlueBuzzah Updater loads the firmware and sets which glove is left and which is right.</p>
+				</li>
+				<li class="stack">
+					<svg class="bb-icon icon-brand" width="32" height="32" aria-hidden="true" focusable="false"><use href="assets/icons.svg#smartphone"/></svg>
+					<h3 class="title-m">Start a session</h3>
+					<p class="body">The gloves pulse each fingertip in a changing order. The BuzzahBuddy phone app, coming soon, will let you start, stop and adjust sessions.</p>
+				</li>
+				</ol>
+				<!-- mirrors bundle.js FingerPattern, DEFAULT_CYCLES, no active slot (DS import 1793120889-b415) -->
+				<figure class="bb-pattern how-pattern">
+					<div class="bb-pattern__grid" aria-hidden="true" style="grid-template-columns: auto repeat(12, minmax(14px, 1fr))">
+					<span class="bb-pattern__finger">Index</span>
+					<span class="bb-pattern__cell"><span class="bb-pattern__pulse"></span></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell bb-pattern__cell--cycle"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"><span class="bb-pattern__pulse"></span></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell bb-pattern__cell--cycle"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"><span class="bb-pattern__pulse"></span></span>
+					<span class="bb-pattern__finger">Middle</span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"><span class="bb-pattern__pulse"></span></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell bb-pattern__cell--cycle"></span>
+					<span class="bb-pattern__cell"><span class="bb-pattern__pulse"></span></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell bb-pattern__cell--cycle"><span class="bb-pattern__pulse"></span></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__finger">Ring</span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"><span class="bb-pattern__pulse"></span></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell bb-pattern__cell--cycle"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"><span class="bb-pattern__pulse"></span></span>
+					<span class="bb-pattern__cell bb-pattern__cell--cycle"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"><span class="bb-pattern__pulse"></span></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__finger">Little</span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"><span class="bb-pattern__pulse"></span></span>
+					<span class="bb-pattern__cell bb-pattern__cell--cycle"><span class="bb-pattern__pulse"></span></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell bb-pattern__cell--cycle"></span>
+					<span class="bb-pattern__cell"><span class="bb-pattern__pulse"></span></span>
+					<span class="bb-pattern__cell"></span>
+					<span class="bb-pattern__cell"></span>
 					</div>
-
-					<!-- Disclaimer Card -->
-					<div class="card-gradient rounded-xl border border-border p-6 glow-blue-hover">
-						<div class="flex items-start gap-4">
-							<div class="w-10 h-10 rounded-lg bg-yellow-500/10 flex items-center justify-center flex-shrink-0">
-								<svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-								</svg>
-							</div>
-							<div>
-								<h3 class="font-semibold text-foreground mb-2">Disclaimer</h3>
-								<p class="text-sm text-muted leading-relaxed">
-									BlueBuzzah devices are <strong class="text-foreground">not FDA approved</strong> medical devices
-									and not intended to diagnose, treat, cure, or prevent any disease. The information provided through
-									BlueBuzzah is for general wellness purposes only and not a substitute for professional medical
-									advice, diagnosis, or treatment.
-									<br /><br />
-									<strong class="text-foreground">Important:</strong> People with implanted electrodes from deep brain
-									stimulation (DBS), heart pacemakers, or other internal electronic devices should take
-									special precautions around all electronic devices, including BlueBuzzah. Consult your
-									physician before use.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
+					<figcaption class="bb-pattern__caption">Pattern: index, ring, middle, little; then little, middle, index, ring; then middle, little, ring, index. Each finger pulses once per cycle, in a new order each time.</figcaption>
+				</figure>
 			</div>
 		</section>
 

@@ -243,6 +243,62 @@ def check_local_links():
     return '; '.join(errs)
 
 
+PATTERN_CAPTION = ('Pattern: index, ring, middle, little; then little, middle, index, ring; then middle, little, ring, '
+                   'index. Each finger pulses once per cycle, in a new order each time.')
+PROPER = {'BlueBuzzah', 'BuzzahBuddy', 'BuzzahBuddy.com', 'Updater', "Parkinson's", 'GitHub', 'macOS', 'Windows', 'MIT',
+          'Stanford', 'Tass', 'Lab', 'Peter', 'Dr.', 'Kris', 'Wilk', 'Health', 'Unlocked', 'YouTube', 'Buzzah!', 'DBS',
+          'PWPInnovator898', 'TactileDesign', 'Partners', 'Catalina'}
+BANNED = re.compile(r'\b(treat\w*|cure[sd]?|clinically proven|groundbreaking|significant\w*)\b', re.I)
+
+
+def visible_text(node):
+    """Text a person reads, minus [data-verbatim] citations."""
+    if 'data-verbatim' in node.attrs:
+        return ''
+    return ' '.join(c if isinstance(c, str) else visible_text(c) for c in node.children)
+
+
+def check_pattern():
+    figs = [n for n in dom(pages()['index.html']).iter() if 'bb-pattern' in n.classes()]
+    if len(figs) != 1:
+        return f'{len(figs)} FingerPatterns on index'
+    grid = next(n for n in figs[0].iter() if 'bb-pattern__grid' in n.classes())
+    cells = [c for c in grid.children if isinstance(c, Node)]
+    rows = [cells[i + 1:i + 13] for i in range(0, len(cells), 13)]
+    pulses = [sum(any('bb-pattern__pulse' in x.classes() for x in c.iter()) for c in r) for r in rows]
+    cap = next((n.text() for n in figs[0].iter() if n.tag == 'figcaption'), '')
+    return '; '.join(filter(None, [pulses != [3, 3, 3, 3] and f'pulses per row {pulses}',
+                                   cap != PATTERN_CAPTION and f'caption {cap!r}']))
+
+
+def check_copy():
+    errs = []
+    for p, t in pages().items():
+        root = dom(t)
+        body = next(n for n in root.iter() if n.tag == 'body')
+        text = visible_text(body)
+        errs += [f'{p}: banned "{m}"' for m in BANNED.findall(text)]
+        errs += [f'{p}: emoji {c!r}' for c in re.findall('[\U0001F300-\U0001FAFF☀-➿]', text)]
+        for n in root.iter():
+            if not (re.fullmatch(r'h[1-6]', n.tag) or n.tag == 'summary' or n.classes() & {'bb-btn', 'nav-link', 'bb-badge'}
+                    or (n.tag == 'a' and any('footer-links' in a.classes() for a in n.ancestors()))):
+                continue
+            if 'data-verbatim' in n.attrs or any('data-verbatim' in a.attrs for a in n.ancestors()):
+                continue
+            words = n.text().split()
+            bad = [w for w in words[1:] if w[:1].isupper() and w not in PROPER and w.strip('.,:;()?') not in PROPER]
+            if bad:
+                errs.append(f'{p}: Title Case in <{n.tag}> "{n.text()}"')
+    return '; '.join(errs)
+
+
+def check_small_text():
+    errs = [f'{p}: {c}' for p, t in pages().items() for c in set(re.findall(r'\btext-(?:xs|sm)\b', t))]
+    m = override_block(site_css())
+    css = site_css().replace(m[0], '') if m else site_css()
+    return '; '.join(errs + (['site.css sets font-size'] if 'font-size' in css else []))
+
+
 def main():
     failed = 0
     skip = {a for i, a in enumerate(sys.argv) if i and sys.argv[i - 1] == '--skip'}  # --skip check_x: a planned red
