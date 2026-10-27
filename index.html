@@ -299,19 +299,31 @@
 	</main>
 
 	<footer class="site-footer">
-		<div class="container footer-stack">
-			<a class="lockup" href="index.html">
-				<img src="assets/bluebuzzah-mark-512.png" alt="" width="42" height="40">
-				<span class="title-l">BlueBuzzah</span>
-			</a>
+		<div class="container footer-grid">
+			<div class="footer-top">
+				<a class="lockup" href="index.html">
+					<img src="assets/bluebuzzah-mark-512.png" alt="" width="42" height="40">
+					<span class="title-l">BlueBuzzah</span>
+				</a>
+				<nav aria-label="Footer">
+					<ul class="list-reset footer-links">
+						<li><a class="nav-link body-s" href="https://github.com/BlueBuzzah">GitHub</a></li>
+						<li><a class="nav-link body-s" href="https://opensource.org/license/mit">MIT license</a></li>
+						<li><a class="nav-link body-s" href="mailto:privacy@bluebuzzah.com">Contact</a></li>
+						<li><a class="nav-link body-s" href="privacy.html">Privacy policy</a></li>
+					</ul>
+				</nav>
+			</div>
 			<p class="body-s prose">BlueBuzzah is an experimental, open-source project. It is not FDA-approved and is not a substitute for medical care. Talk with your neurologist before using it.</p>
-			<ul class="list-reset footer-links">
-				<li><a href="https://github.com/BlueBuzzah">GitHub</a></li>
-				<li><a href="https://opensource.org/license/mit">MIT license</a></li>
-				<li><a href="mailto:privacy@bluebuzzah.com">Contact</a></li>
-				<li><a href="privacy.html">Privacy policy</a></li>
-			</ul>
-			<div class="theme-controls" hidden>
+			<div class="footer-bottom">
+				<p class="caption text-muted">&copy; 2025 BlueBuzzah Partners</p>
+				<button type="button" class="bb-btn bb-btn--quiet js-only" data-open-settings hidden><svg class="bb-icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#settings"/></svg><span class="bb-btn__label">Display settings</span></button>
+			</div>
+		</div>
+		<dialog class="settings-dialog" aria-labelledby="settings-title">
+			<h2 class="title-l" id="settings-title">Display settings</h2>
+			<p class="body-s text-muted">BlueBuzzah follows your device's settings. Changes here apply to this browser only.</p>
+			<div class="theme-controls">
 				<!-- mirrors bundle.js SegmentedControl (DS import 1793120889-b415) -->
 				<div class="bb-seg">
 					<span class="bb-seg__label" id="theme-label">Appearance</span>
@@ -327,8 +339,8 @@
 					<span class="bb-switch__track" aria-hidden="true"><span class="bb-switch__thumb"></span></span>
 				</button>
 			</div>
-			<p class="caption text-muted">&copy; 2025 BlueBuzzah Partners</p>
-		</div>
+			<form method="dialog"><button class="bb-btn bb-btn--primary bb-btn--full"><span class="bb-btn__label">Done</span></button></form>
+		</dialog>
 	</footer>
 </body>
 

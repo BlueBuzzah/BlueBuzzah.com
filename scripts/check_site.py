@@ -214,7 +214,33 @@ def check_no_js_traps():
     errs = ['site.css uses opacity'] if 'opacity' in site_css() else []
     for p, t in pages().items():
         errs += [f'{p}: hidden <{n.tag} class="{n.attrs.get("class")}">' for n in dom(t).iter()
-                 if 'hidden' in n.attrs and 'theme-controls' not in n.classes()]
+                 if 'hidden' in n.attrs and 'js-only' not in n.classes()]
+    return '; '.join(errs)
+
+
+def check_display_settings():
+    """Theme controls live in a modal sheet opened from the footer; the opener only appears with JS."""
+    errs = []
+    for p, t in pages().items():
+        root = dom(t)
+        footer = next((n for n in root.iter() if n.tag == 'footer'), None)
+        opener = [n for n in footer.iter() if 'data-open-settings' in n.attrs] if footer else []
+        if len(opener) != 1 or 'hidden' not in opener[0].attrs or 'js-only' not in opener[0].classes() \
+                or opener[0].text() != 'Display settings':
+            errs.append(f'{p}: needs one hidden .js-only "Display settings" opener in the footer')
+        dialogs = [n for n in root.iter() if n.tag == 'dialog' and 'settings-dialog' in n.classes()]
+        if len(dialogs) != 1:
+            errs.append(f'{p}: {len(dialogs)} settings dialogs')
+            continue
+        d = dialogs[0]
+        title = next((n for n in d.iter() if n.attrs.get('id') == d.attrs.get('aria-labelledby')), None)
+        if not title or title.text() != 'Display settings':
+            errs.append(f'{p}: dialog not labelled by its "Display settings" heading')
+        if not any(n.attrs.get('role') == 'radiogroup' for n in d.iter()) or \
+                not any(n.attrs.get('role') == 'switch' for n in d.iter()):
+            errs.append(f'{p}: dialog lacks the Appearance radiogroup or High contrast switch')
+        if not any(n.tag == 'form' and n.attrs.get('method') == 'dialog' and n.text() == 'Done' for n in d.iter()):
+            errs.append(f'{p}: dialog needs a <form method="dialog"> Done button')
     return '; '.join(errs)
 
 

@@ -5,7 +5,7 @@ document.querySelectorAll('.nav-mobile a').forEach(function (a) {
   a.addEventListener('click', function () { a.closest('details').open = false; });
 });
 
-// Footer theme override: Appearance (System / Light / Dark) + High contrast.
+// Display settings sheet (footer): Appearance (System / Light / Dark) + High contrast.
 // Mirrors bundle.js SegmentedControl and Switch behaviour (DS import 1793120889-b415).
 (function () {
   var t = window.bbTheme;
@@ -63,6 +63,11 @@ document.querySelectorAll('.nav-mobile a').forEach(function (a) {
     if (m.addEventListener) m.addEventListener('change', update); else m.addListener(update);
   });
 
-  box.hidden = false;
+  // The footer opener only appears when the sheet can open; showModal gives focus trap, Escape and focus return.
+  var dialog = box.closest('dialog'), opener = document.querySelector('[data-open-settings]');
+  if (dialog && opener && dialog.showModal) {
+    opener.addEventListener('click', function () { dialog.showModal(); });
+    opener.hidden = false;
+  }
   render();
 })();

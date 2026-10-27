@@ -90,19 +90,37 @@ a.bb-btn { box-sizing: border-box; }
 }
 
 /* Footer (web.md Layout: disclaimer, GitHub, license, contact) --------- */
-.site-footer { background: var(--surface); border-top: var(--border-hairline) solid var(--line); padding-block: var(--space-12); }
-.footer-stack { display: grid; gap: var(--space-6); justify-items: start; }
-.footer-links { display: flex; flex-wrap: wrap; gap: var(--target-gap); }
-.footer-links a { display: inline-flex; align-items: center; min-height: var(--target); }
-.theme-controls { display: grid; gap: var(--space-4); width: 100%; max-width: var(--prose-max); }
-.theme-controls[hidden] { display: none; }
+.site-footer { background: var(--surface); border-top: var(--border-hairline) solid var(--line); padding-block: var(--space-12) var(--space-8); }
+.footer-grid { display: grid; gap: var(--space-6); }
+.footer-top, .footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--target-gap) var(--space-8); }
+/* pull the links' hit-area padding back so their text lines up with the container edges */
+.footer-links { display: flex; flex-wrap: wrap; gap: var(--target-gap); margin-inline: calc(-1 * var(--space-3)); }
+.footer-bottom { padding-top: var(--space-6); border-top: var(--border-hairline) solid var(--line); }
+/* bb-btn's display would otherwise beat the [hidden] attribute */
+.js-only[hidden] { display: none; }
+
+/* Display settings: a sheet over scrim (README Color: surface-overlay, shadow-3; Space: radius-xl, space-8) */
+.settings-dialog {
+  /* small screens: tighter margins and padding so the Appearance control (~247px wide) fits at 320px */
+  width: min(calc(100% - 2 * var(--space-3)), calc(var(--prose-max) * 2 / 3)); max-width: none;
+  max-height: calc(100% - 2 * var(--space-3)); padding: var(--space-4); box-sizing: border-box;
+  border: var(--border-hairline) solid transparent; border-radius: var(--radius-xl);
+  background: var(--surface-overlay); color: var(--ink); box-shadow: var(--shadow-3);
+}
+.settings-dialog[open] { display: grid; gap: var(--space-6); }
+.settings-dialog::backdrop { background: var(--scrim); }
+[data-theme$="-hc"] .settings-dialog { border-color: var(--line); } /* HC themes drop shadows (README Space) */
+.theme-controls { display: grid; gap: var(--space-4); }
+@media (min-width: 600px) {
+  .settings-dialog { padding: var(--space-8); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 @media (forced-colors: active) {
-  .site-header, .site-footer, .nav-mobile__panel { border-color: CanvasText; }
+  .site-header, .site-footer, .footer-bottom, .nav-mobile__panel, .settings-dialog { border-color: CanvasText; }
 }
 
 /* Home sections (web.md Home page 3-5) ---------------------------------- */
