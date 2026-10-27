@@ -91,9 +91,10 @@ a.bb-btn { box-sizing: border-box; }
 .site-footer { background: var(--surface); border-top: var(--border-hairline) solid var(--line); padding-block: var(--space-8) var(--space-6); }
 .footer-grid { display: grid; gap: var(--space-4); }
 .footer-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--target-gap) var(--space-8); }
-/* pull the first link's hit-area padding back so its text lines up with the container's left edge;
-   the row ends with the outlined Display settings button, which needs no pull on the right */
-.footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--target-gap); margin-inline-start: calc(-1 * var(--space-3)); }
+/* footer links drop the nav's side padding so the row (ending with Display settings) fits one line on a
+   375px phone; target-gap still separates neighbours and each link stays at least target wide and tall */
+.footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--target-gap); }
+.footer-links .nav-link { padding-inline: 0; min-width: var(--target); }
 /* a display rule (e.g. bb-btn's) would otherwise beat the [hidden] attribute */
 .js-only[hidden] { display: none; }
 
