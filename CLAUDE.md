@@ -5,8 +5,7 @@ Static landing page for the BlueBuzzah open-source vibrotactile therapy project:
 ## Commands
 
 ```bash
-python3 scripts/check_site.py               # design-system checks; run before every commit
-node scripts/test_theme.mjs                  # theme resolution (also run by check_site.py)
+node scripts/test_theme.mjs                  # theme resolution
 python3 scripts/sync_design_system.py        # re-copy tokens, fonts, logo, favicons, icon sprite after a design-system re-import
 python3 scripts/sync_design_system.py --check  # report drift from the design system
 python3 -m http.server 8000                  # local preview; the icon sprite (assets/icons.svg) needs http, not file://
