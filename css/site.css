@@ -129,7 +129,14 @@ a.bb-btn { box-sizing: border-box; }
 .bb-card__head { flex-wrap: wrap; margin-bottom: 0; }
 .card-action { margin-top: auto; align-self: flex-start; }
 .title-link .bb-icon { display: inline-block; vertical-align: middle; }
-.download-badge { display: inline-block; border-radius: var(--radius-md); line-height: 0; }
+/* outlined like the secondary Button beside them, with the same hover/pressed border states (bundle.css .bb-btn--secondary) */
+.download-badge {
+  display: inline-block; border-radius: var(--radius-md); line-height: 0; overflow: hidden;
+  border: var(--border-control) solid var(--brand);
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+.download-badge:hover { border-color: var(--brand-hover); }
+.download-badge:active { border-color: var(--brand-pressed); }
 
 /* Long-form pages (privacy) ------------------------------------------- */
 .stack-lg > * + * { margin-top: var(--space-10); }
