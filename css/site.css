@@ -25,6 +25,10 @@ a.bb-btn { box-sizing: border-box; }
 .list-reset { list-style: none; padding: 0; margin: 0; }
 .grid-2, .grid-3 { display: grid; gap: var(--space-6); grid-template-columns: minmax(0, 1fr); }
 .button-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--target-gap); }
+/* phones: button rows stack one per line, centred */
+@media (max-width: 599.98px) {
+  .button-row { flex-direction: column; align-items: center; }
+}
 .text-muted { color: var(--ink-muted); }
 .icon-brand { color: var(--brand); }
 
