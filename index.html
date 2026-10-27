@@ -1,910 +1,301 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description"
-		content="BlueBuzzah - Open-source vibrotactile therapy gloves for Parkinson's disease symptom management. Based on peer-reviewed vCR research.">
-	<meta name="theme-color" content="#0a0a0a">
-	<title>BlueBuzzah - Open-Source Vibrotactile Therapy</title>
-
-	<link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-	<meta name="apple-mobile-web-app-title" content="BuzzahBuddy" />
-	<link rel="manifest" href="/site.webmanifest" />
-	<link rel="stylesheet" href="styles.css">
-
-	<!-- Tailwind CSS -->
-	<script src="https://cdn.tailwindcss.com"></script>
-	<script>
-		tailwind.config = {
-			theme: {
-				extend: {
-					colors: {
-						background: '#0a0a0a',
-						foreground: '#fafafa',
-						primary: '#35B6F2',
-						'primary-foreground': '#0a0a0a',
-						secondary: '#05212D',
-						'secondary-light': '#0d3a4d',
-						muted: '#a3a3a3',
-						border: 'hsl(199, 74%, 15%)',
-					},
-					fontFamily: {
-						sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-					},
-					animation: {
-						'fade-in': 'fadeIn 0.6s ease-out forwards',
-						'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
-						'fade-in-down': 'fadeInDown 0.4s ease-out forwards',
-						'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
-					},
-				},
-			},
-		}
-	</script>
-
-	<style>
-		/* CSS Variables matching BlueBuzzah-Updater */
-		:root {
-			--background: 0 0% 4%;
-			--foreground: 0 0% 98%;
-			--card: 199 74% 10%;
-			--card-foreground: 0 0% 98%;
-			--primary: 198 86% 58%;
-			--primary-foreground: 0 0% 4%;
-			--secondary: 199 74% 10%;
-			--secondary-foreground: 0 0% 98%;
-			--muted: 199 74% 15%;
-			--muted-foreground: 0 0% 64%;
-			--border: 199 74% 15%;
-			--ring: 198 86% 58%;
-			--radius: 0.5rem;
-		}
-
-		/* Animations */
-		@keyframes fadeIn {
-			from {
-				opacity: 0;
-			}
-
-			to {
-				opacity: 1;
-			}
-		}
-
-		@keyframes fadeInUp {
-			from {
-				opacity: 0;
-				transform: translateY(20px);
-			}
-
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-
-		@keyframes fadeInDown {
-			from {
-				opacity: 0;
-				transform: translateY(-10px);
-			}
-
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-
-		@keyframes pulseGlow {
-
-			0%,
-			100% {
-				opacity: 0.4;
-			}
-
-			50% {
-				opacity: 0.7;
-			}
-		}
-
-		/* Respect reduced motion */
-		@media (prefers-reduced-motion: reduce) {
-
-			*,
-			*::before,
-			*::after {
-				animation-duration: 0.01ms !important;
-				animation-iteration-count: 1 !important;
-				transition-duration: 0.01ms !important;
-			}
-		}
-
-		/* Custom scrollbar */
-		::-webkit-scrollbar {
-			width: 8px;
-			height: 8px;
-		}
-
-		::-webkit-scrollbar-track {
-			background: #0a0a0a;
-		}
-
-		::-webkit-scrollbar-thumb {
-			background: hsl(199, 74%, 15%);
-			border-radius: 4px;
-		}
-
-		::-webkit-scrollbar-thumb:hover {
-			background: #35B6F2;
-		}
-
-		/* Card gradient background */
-		.card-gradient {
-			background: linear-gradient(135deg, #05212D 0%, hsl(199, 74%, 12%) 100%);
-		}
-
-		/* Blue glow effects */
-		.glow-blue {
-			box-shadow: 0 0 15px rgba(53, 182, 242, 0.2);
-		}
-
-		.glow-blue-hover:hover {
-			box-shadow: 0 10px 30px -5px rgba(53, 182, 242, 0.25);
-		}
-
-		/* Primary button glow */
-		.btn-primary {
-			box-shadow: 0 0 20px rgba(53, 182, 242, 0.3);
-			transition: all 0.2s ease-in-out;
-		}
-
-		.btn-primary:hover {
-			box-shadow: 0 0 30px rgba(53, 182, 242, 0.5);
-			transform: scale(1.02);
-		}
-
-		.btn-primary:active {
-			transform: scale(0.98);
-		}
-
-		/* Glass morphism for nav */
-		.glass-nav {
-			background: rgba(10, 10, 10, 0.8);
-			backdrop-filter: blur(12px);
-			-webkit-backdrop-filter: blur(12px);
-		}
-
-		/* Hero background effect */
-		.hero-bg {
-			background:
-				radial-gradient(ellipse 80% 50% at 50% -20%, rgba(53, 182, 242, 0.15), transparent),
-				radial-gradient(ellipse 60% 40% at 80% 60%, rgba(5, 33, 45, 0.8), transparent),
-				#0a0a0a;
-		}
-
-		/* Stagger animations */
-		.stagger-1 {
-			animation-delay: 0.1s;
-		}
-
-		.stagger-2 {
-			animation-delay: 0.2s;
-		}
-
-		.stagger-3 {
-			animation-delay: 0.3s;
-		}
-
-		.stagger-4 {
-			animation-delay: 0.4s;
-		}
-
-		.stagger-5 {
-			animation-delay: 0.5s;
-		}
-
-		.stagger-6 {
-			animation-delay: 0.6s;
-		}
-
-		/* Focus states */
-		a:focus-visible,
-		button:focus-visible {
-			outline: 2px solid #35B6F2;
-			outline-offset: 2px;
-		}
-
-		/* Smooth link transitions */
-		a,
-		button {
-			transition: all 0.2s ease-in-out;
-		}
-
-		/* Badge pulse for "Coming Soon" */
-		.badge-pulse {
-			animation: pulseGlow 3s ease-in-out infinite;
-		}
-	</style>
+	<meta name="description" content="BlueBuzzah is open, experimental vibrotactile therapy for people living with Parkinson's: gloves you can build, firmware you can read and apps that stay out of the way.">
+	<title>BlueBuzzah: open-source vibrotactile therapy</title>
+	<script src="js/theme.js"></script>
+	<link rel="preload" href="css/fonts/lexend-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="css/fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="css/tokens.css">
+	<link rel="stylesheet" href="css/bundle.css">
+	<link rel="stylesheet" href="css/site.css">
+	<link rel="icon" href="favicon.ico" sizes="48x48">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+	<link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
+	<link rel="manifest" href="site.webmanifest">
+	<meta name="apple-mobile-web-app-title" content="BlueBuzzah">
+	<meta name="theme-color" content="#080c1b">
+	<script src="js/site.js" defer></script>
 </head>
 
-<body class="bg-background text-foreground font-sans antialiased">
+<body>
 
-	<!-- Fixed Navigation -->
-	<header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-border">
-		<nav class="max-w-6xl mx-auto px-6 py-4">
-			<div class="flex items-center justify-between">
-				<!-- Logo -->
-				<a href="#" class="flex items-center gap-2 group">
-					<img src="assets/favicon.svg" alt="BlueBuzzah logo" class="w-8 h-8 rounded-lg">
-					<span class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">BlueBuzzah</span>
-				</a>
-
-				<!-- Desktop Nav Links -->
-				<div class="hidden md:flex items-center gap-8">
-					<a href="#about" class="text-muted hover:text-foreground">About</a>
-					<a href="#research" class="text-muted hover:text-foreground">Research</a>
-					<a href="#products" class="text-muted hover:text-foreground">Products</a>
-					<a href="#downloads"
-						class="text-foreground font-medium px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 hover:bg-primary/20">
-						Downloads
-					</a>
+	<header class="site-header">
+		<div class="container header-row">
+			<a class="lockup" href="index.html">
+				<img src="assets/bluebuzzah-mark-512.png" alt="" width="42" height="40">
+				<span class="title-l">BlueBuzzah</span>
+			</a>
+			<nav class="nav-desktop" aria-label="Main">
+				<ul class="list-reset">
+					<li><a class="nav-link label" href="index.html#how-it-works">Learn</a></li>
+					<li><a class="nav-link label" href="https://github.com/BlueBuzzah/BlueBuzzah-Hardware/wiki">Build</a></li>
+					<li><a class="nav-link label" href="index.html#download">Download</a></li>
+					<li><a class="nav-link label" href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Getting-Started">Docs</a></li>
+					<li><a class="nav-link label" href="index.html#community">Community</a></li>
+				</ul>
+			</nav>
+			<a class="bb-btn bb-btn--primary header-cta" href="index.html#download"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/download.svg#icon"/></svg><span class="bb-btn__label">Download Updater</span></a>
+			<details class="nav-mobile">
+				<summary class="bb-btn bb-btn--quiet"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/menu.svg#icon"/></svg><span class="bb-btn__label">Menu</span></summary>
+				<div class="nav-mobile__panel">
+					<nav aria-label="Main">
+						<ul class="list-reset">
+							<li><a class="nav-link label" href="index.html#how-it-works">Learn</a></li>
+							<li><a class="nav-link label" href="https://github.com/BlueBuzzah/BlueBuzzah-Hardware/wiki">Build</a></li>
+							<li><a class="nav-link label" href="index.html#download">Download</a></li>
+							<li><a class="nav-link label" href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Getting-Started">Docs</a></li>
+							<li><a class="nav-link label" href="index.html#community">Community</a></li>
+						</ul>
+					</nav>
+					<a class="bb-btn bb-btn--primary bb-btn--full" href="index.html#download"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/download.svg#icon"/></svg><span class="bb-btn__label">Download Updater</span></a>
 				</div>
-
-				<!-- Mobile Menu Button -->
-				<button class="md:hidden p-2 text-muted hover:text-foreground" id="mobile-menu-btn" aria-label="Toggle menu">
-					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-					</svg>
-				</button>
-			</div>
-
-			<!-- Mobile Menu -->
-			<div class="md:hidden hidden pt-4 pb-2 border-t border-border mt-4" id="mobile-menu">
-				<div class="flex flex-col gap-4">
-					<a href="#about" class="text-muted hover:text-foreground py-2">About</a>
-					<a href="#research" class="text-muted hover:text-foreground py-2">Research</a>
-					<a href="#products" class="text-muted hover:text-foreground py-2">Products</a>
-					<a href="#downloads" class="text-foreground font-medium py-2">Downloads</a>
-				</div>
-			</div>
-		</nav>
+			</details>
+		</div>
 	</header>
 
 	<main>
-		<!-- Hero Section -->
-		<section class="hero-bg min-h-screen flex items-center pt-20">
-			<div class="max-w-6xl mx-auto px-6 py-20">
-				<div class="max-w-3xl">
+		<section class="hero">
+			<div class="container hero__inner">
+				<div class="stack hero__text">
+					<h1 class="display-xl">Open-source vibrotactile therapy for Parkinson's</h1>
+					<p class="body-l prose">BlueBuzzah gloves send gentle, timed pulses to your fingertips. Research suggests this may help with some movement symptoms. Everything is open, so you can build it, read it and change it.</p>
+					<div class="button-row">
+						<a class="bb-btn bb-btn--primary" href="#about"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/circle-question-mark.svg#icon"/></svg><span class="bb-btn__label">What is BlueBuzzah?</span></a>
+						<a class="bb-btn bb-btn--secondary" href="https://github.com/BlueBuzzah/BlueBuzzah-Hardware/wiki"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/hammer.svg#icon"/></svg><span class="bb-btn__label">Build a pair</span></a>
+					</div>
+				</div>
+				<img class="hero__mark" src="assets/bluebuzzah-mark-512.png" alt="" width="200" height="193">
+			</div>
+		</section>
 
-					<!-- Headline -->
-					<h1
-						class="opacity-0 animate-fade-in-up stagger-2 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-						<span><a href="https://github.com/BlueBuzzah" class="text-primary">Open-Source</a></span><br />
-						Vibrotactile Therapy for Parkinson's Disease
-					</h1>
+		<section id="about" class="section section--sunken">
+			<div class="container">
+				<h2 class="display-l section__title">What is BlueBuzzah?</h2>
+				<div class="about-grid">
+					<div class="prose stack">
+						<p class="body-l">BlueBuzzah is a community-driven, open-source project creating accessible vibrotactile therapy devices for people living with Parkinson's disease. Our approach is inspired by groundbreaking research on vibrotactile coordinated reset (vCR) stimulation.</p>
+						<p class="body-l">The system applies gentle vibrations to fingertips, stimulating sensory neurons connected to motor control regions of the brain. Research suggests this may help address tremor, rigidity, and movement challenges.</p>
+						<p class="body-l">Built on readily available hardware and open-source firmware, BlueBuzzah empowers patients, caregivers, and makers to build their own therapy devices.</p>
+					</div>
+					<ul class="list-reset grid-2 about-features">
+						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/zap.svg#icon"/></svg><div><p class="body-strong">Bluetooth Low Energy</p><p class="body-s text-muted">Wireless device sync</p></div></li>
+						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/clock.svg#icon"/></svg><div><p class="body-strong">8+ Hours Battery</p><p class="body-s text-muted">Extended therapy sessions</p></div></li>
+						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/settings.svg#icon"/></svg><div><p class="body-strong">Configurable Patterns</p><p class="body-s text-muted">Customizable therapy</p></div></li>
+						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/square-terminal.svg#icon"/></svg><div><p class="body-strong">Open Source</p><p class="body-s text-muted">MIT licensed</p></div></li>
+					</ul>
+				</div>
+			</div>
+		</section>
 
-					<!-- Subheadline -->
-					<p
-						class="opacity-0 animate-fade-in-up stagger-3 text-lg md:text-xl text-muted leading-relaxed mb-8 max-w-2xl">
-						BlueBuzzah is an open-source vibrotactile coordinated reset (vCR) therapy device system.
-						Our wireless gloves deliver gentle, patterned vibrations to fingertips based on peer-reviewed research
-						showing potential benefits for motor symptoms.
-					</p>
+		<section id="how-it-works" class="section">
+			<div class="container">
+				<h2 class="display-l section__title">How it works</h2>
+				<!-- cards mirror bundle.js Card (DS import 1793120889-b415) -->
+				<ol class="list-reset grid-3">
+					<li class="bb-card bb-card--lg" aria-labelledby="step-build">
+						<header class="bb-card__head"><div><h3 class="bb-card__title title-with-icon" id="step-build"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/hand.svg#icon"/></svg>Build your gloves</h3></div></header>
+						<p class="body">Follow the open build guide to put together a pair of gloves. Each fingertip gets a small vibration motor.</p>
+					</li>
+					<li class="bb-card bb-card--lg" aria-labelledby="step-firmware">
+						<header class="bb-card__head"><div><h3 class="bb-card__title title-with-icon" id="step-firmware"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/usb.svg#icon"/></svg>Load the firmware</h3></div></header>
+						<p class="body">Plug each glove into your computer. BlueBuzzah Updater loads the firmware and sets which glove is left and which is right.</p>
+					</li>
+					<li class="bb-card bb-card--lg" aria-labelledby="step-session">
+						<header class="bb-card__head"><div><h3 class="bb-card__title title-with-icon" id="step-session"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/smartphone.svg#icon"/></svg>Start a session</h3></div></header>
+						<p class="body">The gloves pulse each fingertip in a changing order. The BuzzahBuddy phone app, coming soon, will let you start, stop and adjust sessions.</p>
+					</li>
+				</ol>
+			</div>
+		</section>
 
-					<!-- CTA Buttons -->
-					<div class="opacity-0 animate-fade-in-up stagger-4 flex flex-wrap gap-4">
-						<a href="#about"
-							class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold">
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-							</svg>
-							What is BlueBuzzah?
-						</a>
-						<a href="#research"
-							class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-secondary hover:border-primary/30">
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-							</svg>
-							View the Research
-						</a>
+		<section id="science" class="section section--sunken">
+			<div class="container">
+				<h2 class="display-l section__title">The science behind it</h2>
+				<div class="prose stack">
+					<p class="body-l">BlueBuzzah is based on research into vibrotactile coordinated reset, or vCR. vCR sends short pulses to the fingertips in a changing order. Researchers think this may calm the overactive brain signals linked to Parkinson's movement symptoms.</p>
+					<p class="body-l">The studies so far are small and early. People in those studies reported easier movement, but this is not proof that vCR works for everyone.</p>
+				</div>
+				<!-- cards mirror bundle.js Card (DS import 1793120889-b415) -->
+				<ul class="list-reset grid-2 section-block">
+					<li class="bb-card bb-card--lg" aria-labelledby="paper-tass">
+						<header class="bb-card__head">
+							<div><p class="bb-card__eyebrow">NEURAL REGENERATION RESEARCH · 2021</p><h3 class="bb-card__title" id="paper-tass" data-verbatim><a class="title-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8771098/">Vibrotactile Coordinated Reset Stimulation for the Treatment of Parkinson's Disease <svg class="bb-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/external-link.svg#icon"/></svg></a></h3></div>
+							
+						</header>
+						<p class="body-s text-muted">Tass PA, Stanford University School of Medicine</p>
+						<p class="body">A review of vCR research so far. People in early studies reported fewer movement symptoms. Larger studies are still needed.</p>
+					</li>
+					<li class="bb-card bb-card--lg" aria-labelledby="paper-pfeifer">
+						<header class="bb-card__head">
+							<div><p class="bb-card__eyebrow">FRONTIERS IN PHYSIOLOGY · 2021</p><h3 class="bb-card__title" id="paper-pfeifer" data-verbatim><a class="title-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8055937/">Coordinated Reset Vibrotactile Stimulation Induces Sustained Cumulative Benefits in Parkinson's Disease <svg class="bb-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/external-link.svg#icon"/></svg></a></h3></div>
+							
+						</header>
+						<p class="body-s text-muted">Pfeifer KJ, Kromer JA, Cook AJ, et al.</p>
+						<p class="body">A small study that followed people for 6 months. People reported easier movement over 3 months that lasted to the 6-month check-in. Brain recordings also changed.</p>
+					</li>
+				</ul>
+				<!-- mirrors bundle.js Banner (DS import 1793120889-b415) -->
+				<div class="bb-banner bb-banner--info section-block">
+					<svg class="bb-icon bb-banner__icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/info.svg#icon"/></svg>
+					<div class="bb-banner__body">
+						<p class="bb-banner__title">Disclaimer</p>
+						<div class="bb-banner__text"><p>BlueBuzzah devices are not FDA approved medical devices and not intended to diagnose, treat, cure, or prevent any disease. The information provided through BlueBuzzah is for general wellness purposes only and not a substitute for professional medical advice, diagnosis, or treatment.</p></div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- About Section -->
-		<section id="about" class="py-24 bg-background">
-			<div class="max-w-6xl mx-auto px-6">
-				<div class="grid lg:grid-cols-2 gap-12 items-center">
-					<!-- Content -->
-					<div>
-						<h2 class="text-3xl md:text-4xl font-bold mb-6">
-							What is <span class="text-primary">BlueBuzzah</span>?
-						</h2>
-						<div class="space-y-4 text-muted leading-relaxed">
-							<p>
-								BlueBuzzah is a community-driven, open-source project creating accessible vibrotactile therapy
-								devices for people living with Parkinson's disease. Our approach is inspired by groundbreaking
-								research on vibrotactile coordinated reset (vCR) stimulation.
-							</p>
-							<p>
-								The system applies gentle vibrations to fingertips, stimulating sensory neurons
-								connected to motor control regions of the brain. Research
-								suggests this may help address tremor, rigidity, and movement challenges.
-							</p>
-							<p>
-								Built on readily available hardware and open-source firmware,
-								BlueBuzzah empowers patients, caregivers, and makers to build their own therapy devices.
-							</p>
-						</div>
-
-						<!-- Features list -->
-						<div class="mt-8 grid sm:grid-cols-2 gap-4">
-							<div class="flex items-start gap-3">
-								<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-									<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
-								</div>
-								<div>
-									<div class="font-medium text-foreground">Bluetooth Low Energy</div>
-									<div class="text-sm text-muted">Wireless device sync</div>
-								</div>
-							</div>
-							<div class="flex items-start gap-3">
-								<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-									<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-									</svg>
-								</div>
-								<div>
-									<div class="font-medium text-foreground">8+ Hours Battery</div>
-									<div class="text-sm text-muted">Extended therapy sessions</div>
-								</div>
-							</div>
-							<div class="flex items-start gap-3">
-								<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-									<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-									</svg>
-								</div>
-								<div>
-									<div class="font-medium text-foreground">Configurable Patterns</div>
-									<div class="text-sm text-muted">Customizable therapy</div>
-								</div>
-							</div>
-							<div class="flex items-start gap-3">
-								<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-									<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-									</svg>
-								</div>
-								<div>
-									<div class="font-medium text-foreground">Open Source</div>
-									<div class="text-sm text-muted">MIT licensed</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Disclaimer Card -->
-					<div class="card-gradient rounded-xl border border-border p-6 glow-blue-hover">
-						<div class="flex items-start gap-4">
-							<div class="w-10 h-10 rounded-lg bg-yellow-500/10 flex items-center justify-center flex-shrink-0">
-								<svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-								</svg>
-							</div>
-							<div>
-								<h3 class="font-semibold text-foreground mb-2">Disclaimer</h3>
-								<p class="text-sm text-muted leading-relaxed">
-									BlueBuzzah devices are <strong class="text-foreground">not FDA approved</strong> medical devices
-									and not intended to diagnose, treat, cure, or prevent any disease. The information provided through
-									BlueBuzzah is for general wellness purposes only and not a substitute for professional medical
-									advice, diagnosis, or treatment.
-									<br /><br />
-									<strong class="text-foreground">Important:</strong> People with implanted electrodes from deep brain
-									stimulation (DBS), heart pacemakers, or other internal electronic devices should take
-									special precautions around all electronic devices, including BlueBuzzah. Consult your
-									physician before use.
-								</p>
-							</div>
-						</div>
+		<section id="parts" class="section">
+			<div class="container">
+				<h2 class="display-l section__title">The four parts</h2>
+				<ul class="list-reset grid-2">
+					<li class="bb-card bb-card--lg" aria-labelledby="part-hardware">
+						<header class="bb-card__head">
+							<div><h3 class="bb-card__title title-with-icon" id="part-hardware"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/cpu.svg#icon"/></svg>Hardware</h3></div>
+							<div class="bb-card__actions"><span class="bb-badge bb-badge--brand"><svg class="bb-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/info.svg#icon"/></svg><span>In progress</span></span></div>
+						</header>
+						<p class="body">The gloves: a vibration motor for each fingertip, a circuit board and 3D-printable parts. The battery lasts 8 hours or more.</p>
+						<a class="bb-btn bb-btn--quiet card-action" href="https://github.com/BlueBuzzah/BlueBuzzah-Hardware/wiki"><span class="bb-btn__label">Build guide</span></a>
+					</li>
+					<li class="bb-card bb-card--lg" aria-labelledby="part-firmware">
+						<header class="bb-card__head">
+							<div><h3 class="bb-card__title title-with-icon" id="part-firmware"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/code.svg#icon"/></svg>Firmware</h3></div>
+							
+						</header>
+						<p class="body">The code that runs on the gloves. It keeps the left and right glove in step and lets you adjust the pulse pattern.</p>
+						<a class="bb-btn bb-btn--quiet card-action" href="https://github.com/BlueBuzzah/BlueBuzzah-Firmware/wiki"><span class="bb-btn__label">Firmware docs</span></a>
+					</li>
+					<li class="bb-card bb-card--lg" aria-labelledby="part-updater">
+						<header class="bb-card__head">
+							<div><h3 class="bb-card__title title-with-icon" id="part-updater"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/hard-drive-download.svg#icon"/></svg>BlueBuzzah Updater</h3></div>
+							
+						</header>
+						<p class="body">A desktop app for macOS and Windows. It loads new firmware onto your gloves and sets them up.</p>
+						<a class="bb-btn bb-btn--quiet card-action" href="#download"><span class="bb-btn__label">Download</span></a>
+					</li>
+					<li class="bb-card bb-card--lg" aria-labelledby="part-buzzahbuddy">
+						<header class="bb-card__head">
+							<div><h3 class="bb-card__title title-with-icon" id="part-buzzahbuddy"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/smartphone.svg#icon"/></svg>BuzzahBuddy</h3></div>
+							<div class="bb-card__actions"><span class="bb-badge bb-badge--brand"><svg class="bb-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/info.svg#icon"/></svg><span>Coming soon</span></span></div>
+						</header>
+						<p class="body">A phone app for iPhone and Android to start, stop and adjust sessions.</p>
+						<a class="bb-btn bb-btn--quiet card-action" href="https://buzzahbuddy.com"><span class="bb-btn__label">Visit BuzzahBuddy.com</span><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/external-link.svg#icon"/></svg></a>
+					</li>
+				</ul>
+				<!-- mirrors bundle.js Banner (DS import 1793120889-b415) -->
+				<div class="bb-banner bb-banner--warning section-block">
+					<svg class="bb-icon bb-banner__icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/triangle-alert.svg#icon"/></svg>
+					<div class="bb-banner__body">
+						<p class="bb-banner__title">Important</p>
+						<div class="bb-banner__text"><p>People with implanted electrodes from deep brain stimulation (DBS), heart pacemakers, or other internal electronic devices should take special precautions around all electronic devices, including BlueBuzzah. Consult your physician before use.</p></div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Research Section -->
-		<section id="research" class="py-24 bg-secondary/30">
-			<div class="max-w-6xl mx-auto px-6">
-				<div class="text-center mb-12">
-					<h2 class="text-3xl md:text-4xl font-bold mb-4">
-						Peer-Reviewed <span class="text-primary">Research</span>
-					</h2>
-					<p class="text-muted max-w-2xl mx-auto">
-						BlueBuzzah is inspired by groundbreaking clinical research on vibrotactile coordinated reset (vCR)
-						stimulation conducted by leading neuroscience researchers.
-					</p>
+		<section id="download" class="section section--sunken">
+			<div class="container stack">
+				<h2 class="display-l">Download BlueBuzzah Updater</h2>
+				<p class="body-l prose">BlueBuzzah Updater loads the firmware onto your gloves and sets them up. Both downloads are always here, so you can get the version for another computer too.</p>
+				<div class="button-row download-row">
+					<a class="download-badge" href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/releases/latest/download/BlueBuzzah_Updater_universal.dmg"><img src="assets/download-macos.png" alt="Download app for macOS" width="186" height="60"></a>
+					<a class="download-badge" href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/releases/latest/download/BlueBuzzah_Updater_x64_en-US.exe"><img src="assets/download-windows.png" alt="Download for Windows" width="182" height="60"></a>
+					<a class="bb-btn bb-btn--primary" href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Getting-Started"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/book.svg#icon"/></svg><span class="bb-btn__label">Read the guide</span></a>
 				</div>
-
-				<div class="grid md:grid-cols-2 gap-6">
-					<!-- Paper 1 -->
-					<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8771098/" target="_blank" rel="noopener noreferrer"
-						class="card-gradient rounded-xl border border-border p-6 glow-blue-hover group block">
-						<div class="flex items-start justify-between mb-4">
-							<span
-								class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-								<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-								</svg>
-								Neural Regen Res, 2021
-							</span>
-							<svg class="w-5 h-5 text-muted group-hover:text-primary transition-colors" fill="none"
-								stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-							</svg>
-						</div>
-						<h3 class="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors leading-snug">
-							Vibrotactile Coordinated Reset Stimulation for the Treatment of Parkinson's Disease
-						</h3>
-						<p class="text-sm text-muted mb-4">
-							Tass PA, MD, PhD — Stanford University School of Medicine
-						</p>
-						<p class="text-sm text-muted leading-relaxed">
-							Review of vCR stimulation as non-invasive treatment delivering patterned vibratory bursts to
-							fingertips. Patients showed significant reductions in UPDRS motor scores with some reducing
-							medication doses during treatment.
-						</p>
-					</a>
-
-					<!-- Paper 2 -->
-					<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8055937/" target="_blank" rel="noopener noreferrer"
-						class="card-gradient rounded-xl border border-border p-6 glow-blue-hover group block">
-						<div class="flex items-start justify-between mb-4">
-							<span
-								class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-								<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-								</svg>
-								Frontiers in Physiology, 2021
-							</span>
-							<svg class="w-5 h-5 text-muted group-hover:text-primary transition-colors" fill="none"
-								stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-							</svg>
-						</div>
-						<h3 class="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors leading-snug">
-							Coordinated Reset Vibrotactile Stimulation Induces Sustained Cumulative Benefits in Parkinson's Disease
-						</h3>
-						<p class="text-sm text-muted mb-4">
-							Pfeifer KJ, Kromer JA, Cook AJ, et al.
-						</p>
-						<p class="text-sm text-muted leading-relaxed">
-							Clinical feasibility study demonstrating significant motor improvements over three months with
-							benefits persisting at six-month follow-ups. Brain imaging revealed decreased cortical sensorimotor
-							high beta power after treatment.
-						</p>
-					</a>
-				</div>
+				<h3 class="title-m">What you need</h3>
+				<ul class="body">
+					<li>macOS 10.15 Catalina or later</li>
+					<li>Windows 10 (64-bit) or later</li>
+				</ul>
 			</div>
 		</section>
 
-		<!-- Products Section -->
-		<section id="products" class="py-24 bg-background">
-			<div class="max-w-6xl mx-auto px-6">
-				<div class="text-center mb-12">
-					<h2 class="text-3xl md:text-4xl font-bold mb-4">
-						The <span class="text-primary">BlueBuzzah</span> Ecosystem
-					</h2>
-					<p class="text-muted max-w-2xl mx-auto">
-						A complete open-source platform for vibrotactile therapy, from hardware to software.
-					</p>
-				</div>
-
-				<div class="grid md:grid-cols-3 gap-6">
-					<!-- Hardware Card -->
-					<div class="card-gradient rounded-xl border border-border p-6 glow-blue-hover relative overflow-hidden">
-						<div class="absolute top-4 right-4">
-							<span
-								class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium border border-primary/30">
-								Coming Soon
-							</span>
-						</div>
-						<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-							<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-							</svg>
-						</div>
-						<h3 class="text-xl font-semibold text-foreground mb-2">BlueBuzzah Hardware</h3>
-						<p class="text-muted text-sm leading-relaxed mb-4">
-							Open-source glove hardware featuring LRA (Linear Resonant Actuator) tactors,
-							Adafruit Feather nRF52840, and 3D-printable enclosures.
-						</p>
-						<ul class="space-y-2 text-sm text-muted">
-							<li class="flex items-center gap-2">
-								<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-								</svg>
-								DIY build instructions
-							</li>
-							<li class="flex items-center gap-2">
-								<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-								</svg>
-								PCB design files
-							</li>
-							<li class="flex items-center gap-2">
-								<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-								</svg>
-								3D printable parts
-							</li>
-						</ul>
-					</div>
-
-					<!-- Updater Card -->
-					<a href="#downloads" class="card-gradient rounded-xl border border-border p-6 glow-blue-hover group block">
-						<div
-							class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-							<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-							</svg>
-						</div>
-						<h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">BlueBuzzah
-							Updater</h3>
-						<p class="text-muted text-sm leading-relaxed mb-4">
-							Desktop application for device management. Flash updates and
-							configure your devices with intuitive step-by-step wizards.
-						</p>
-						<ul class="space-y-2 text-sm text-muted mb-4">
-							<li class="flex items-center gap-2">
-								<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-								</svg>
-								macOS & Windows
-							</li>
-							<li class="flex items-center gap-2">
-								<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-								</svg>
-								Auto firmware updates
-							</li>
-							<li class="flex items-center gap-2">
-								<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-								</svg>
-								Device configuration
-							</li>
-						</ul>
-						<span class="inline-flex items-center gap-1 text-primary text-sm font-medium group-hover:underline">
-							Download Now
-							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-							</svg>
-						</span>
-					</a>
-
-					<!-- BuzzahBuddy Card -->
-					<a href="https://buzzahbuddy.com" target="_blank" rel="noopener noreferrer"
-						class="card-gradient rounded-xl border border-border p-6 glow-blue-hover group block relative overflow-hidden">
-						<div class="absolute top-4 right-4">
-							<span
-								class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium border border-primary/30">
-								Coming Soon
-							</span>
-						</div>
-						<div
-							class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-							<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-							</svg>
-						</div>
-						<h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-							BuzzahBuddy</h3>
-						<p class="text-muted text-sm leading-relaxed mb-4">
-							Mobile companion app for therapy session control and progress monitoring.
-							Start, stop, and customize your therapy sessions from your phone.
-						</p>
-						<ul class="space-y-2 text-sm text-muted mb-4">
-							<li class="flex items-center gap-2">
-								<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-								</svg>
-								iOS & Android
-							</li>
-							<li class="flex items-center gap-2">
-								<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-								</svg>
-								Session tracking
-							</li>
-							<li class="flex items-center gap-2">
-								<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-								</svg>
-								Progress insights
-							</li>
-						</ul>
-						<span class="inline-flex items-center gap-1 text-primary text-sm font-medium group-hover:underline">
-							Visit BuzzahBuddy.com
-							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-							</svg>
-						</span>
-					</a>
-				</div>
-			</div>
-		</section>
-
-		<!-- Downloads Section -->
-		<section id="downloads" class="py-24 bg-secondary/30">
-			<div class="max-w-6xl mx-auto px-6">
-				<div class="text-center mb-12">
-					<h2 class="text-3xl md:text-4xl font-bold mb-4">
-						Download <span class="text-primary">BlueBuzzah Updater</span>
-					</h2>
-					<p class="text-muted max-w-2xl mx-auto">
-						Get started by downloading the device management app for your operating system.
-					</p>
-				</div>
-
-				<div class="max-w-xl mx-auto">
-					<div class="card-gradient rounded-xl border border-border p-8 glow-blue">
-						<!-- Download Buttons -->
-						<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-							<a href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/releases/latest/download/BlueBuzzah_Updater_x64_en-US.exe"
-								class="transform hover:scale-105 transition-transform">
-								<img src="assets/download-windows.png" alt="Download for Windows">
-							</a>
-							<a href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/releases/latest/download/BlueBuzzah_Updater_universal.dmg"
-								class="transform hover:scale-105 transition-transform">
-								<img src="assets/download-macos.png" alt="Download for macOS">
-							</a>
-						</div>
-
-						<!-- Requirements -->
-						<div class="border-t border-border pt-6">
-							<h4 class="font-medium text-foreground mb-3 text-center">System Requirements</h4>
-							<div class="grid sm:grid-cols-2 gap-4 text-sm">
-								<div class="flex items-start gap-2">
-									<svg class="w-4 h-4 text-muted mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-									</svg>
-									<div>
-										<div class="text-foreground">macOS</div>
-										<div class="text-muted">10.15 Catalina or later</div>
-									</div>
-								</div>
-								<div class="flex items-start gap-2">
-									<svg class="w-4 h-4 text-muted mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-									</svg>
-									<div>
-										<div class="text-foreground">Windows</div>
-										<div class="text-muted">Windows 10 (64-bit) or later</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Documentation Link -->
-						<div class="mt-6 text-center">
-							<a href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Getting-Started" target="_blank"
-								rel="noopener noreferrer"
-								class="inline-flex items-center gap-1 text-primary text-sm font-medium group-hover:underline">
-								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-								</svg>
-								Read the Getting Started Guide
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Acknowledgements Section -->
-		<section id="acknowledgements" class="py-24 bg-background">
-			<div class="max-w-6xl mx-auto px-6">
-				<div class="text-center mb-12">
-					<h2 class="text-3xl md:text-4xl font-bold mb-4">
-						<span class="text-primary">Acknowledgements</span>
-					</h2>
-					<p class="text-muted max-w-2xl mx-auto">
-						BlueBuzzah exists thanks to the dedication of researchers, community members, and contributors, including
-						but not limited to:
-					</p>
-				</div>
-
-				<div class="grid md:grid-cols-2 gap-6">
-					<!-- Dr. Peter Tass -->
-					<div class="card-gradient rounded-xl border border-border p-6 glow-blue-hover">
-						<div class="flex items-start gap-4">
-							<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-								<svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-								</svg>
-							</div>
-							<div>
-								<h3 class="font-semibold text-foreground mb-1">Dr. Peter Tass &amp; Tass Lab, Stanford</h3>
-								<p class="text-sm text-muted leading-relaxed">
-									For all their dedicated work in inventing and improving a vibrotactile glove treatment for
-									Parkinson's.
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- Parkinson's Community -->
-					<div class="card-gradient rounded-xl border border-border p-6 glow-blue-hover">
-						<div class="flex items-start gap-4">
-							<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-								<svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-								</svg>
-							</div>
-							<div>
-								<h3 class="font-semibold text-foreground mb-1">The Parkinson's Community</h3>
-								<p class="text-sm text-muted leading-relaxed">
-									Community members from Health Unlocked, GitHub, YouTube, and beyond for their participation, feedback,
-									and suggestions.
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- BlueBuzzah Partners -->
-					<div class="card-gradient rounded-xl border border-border p-6 glow-blue-hover">
-						<div class="flex items-start gap-4">
-							<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-								<svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-								</svg>
-							</div>
-							<div>
-								<h3 class="font-semibold text-foreground mb-1">The Founding BlueBuzzah Partners</h3>
-								<p class="text-sm text-muted leading-relaxed">
-									PWPInnovator898 and TactileDesign on GitHub, for their tireless efforts in research, development, prototyping, testing, and
-									open-sourcing the BlueBuzzah project.
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- Kris Wilk -->
-					<div class="card-gradient rounded-xl border border-border p-6 glow-blue-hover">
-						<div class="flex items-start gap-4">
-							<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-								<svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-								</svg>
-							</div>
-							<div>
-								<h3 class="font-semibold text-foreground mb-1">Kris Wilk</h3>
-								<p class="text-sm text-muted leading-relaxed">
-									For the development and contribution of the original
-									<a href="https://github.com/kriswilk/buzzah"
-										class="inline-flex items-center gap-1 text-primary text-sm font-medium group-hover:underline">Buzzah!</a>
-									wired device and software.
-								</p>
-							</div>
-						</div>
-					</div>
+		<section id="community" class="section">
+			<div class="container">
+				<h2 class="display-l section__title">Community</h2>
+				<p class="body-l prose">BlueBuzzah exists thanks to researchers, testers and people living with Parkinson's who share what they learn.</p>
+				<ul class="list-reset grid-2 section-block">
+					<li class="bb-card bb-card--lg bb-card--flat" aria-labelledby="thanks-tass">
+						<header class="bb-card__head">
+							<div><h3 class="bb-card__title" id="thanks-tass">Dr. Peter Tass and Tass Lab, Stanford</h3></div>
+							
+						</header>
+						<p class="body">For inventing and improving vibrotactile coordinated reset.</p>
+					</li>
+					<li class="bb-card bb-card--lg bb-card--flat" aria-labelledby="thanks-community">
+						<header class="bb-card__head">
+							<div><h3 class="bb-card__title" id="thanks-community">The Parkinson's community</h3></div>
+							
+						</header>
+						<p class="body">People from Health Unlocked, GitHub, YouTube and beyond, for testing, feedback and ideas.</p>
+					</li>
+					<li class="bb-card bb-card--lg bb-card--flat" aria-labelledby="thanks-partners">
+						<header class="bb-card__head">
+							<div><h3 class="bb-card__title" id="thanks-partners">The founding BlueBuzzah Partners</h3></div>
+							
+						</header>
+						<p class="body">PWPInnovator898 and TactileDesign on GitHub, for research, building, testing and open-sourcing BlueBuzzah.</p>
+					</li>
+					<li class="bb-card bb-card--lg bb-card--flat" aria-labelledby="thanks-wilk">
+						<header class="bb-card__head">
+							<div><h3 class="bb-card__title" id="thanks-wilk">Kris Wilk</h3></div>
+							
+						</header>
+						<p class="body">For the original <a href="https://github.com/kriswilk/buzzah">Buzzah!</a> wired device and software.</p>
+					</li>
+				</ul>
+				<div class="button-row section-block">
+					<a class="bb-btn bb-btn--primary" href="https://github.com/BlueBuzzah"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/git-pull-request-arrow.svg#icon"/></svg><span class="bb-btn__label">Contribute on GitHub</span></a>
 				</div>
 			</div>
 		</section>
 	</main>
 
-	<!-- Footer -->
-	<footer class="py-12 bg-background border-t border-border">
-		<div class="max-w-6xl mx-auto px-6">
-			<div class="grid md:grid-cols-3 gap-8 mb-8">
-				<!-- Brand -->
-				<div>
-					<div class="flex items-center gap-2 mb-4">
-						<img src="assets/favicon.svg" alt="BlueBuzzah logo" class="w-8 h-8 rounded-lg">
-						<span class="text-lg font-bold text-foreground">BlueBuzzah</span>
-					</div>
-					<p class="text-sm text-muted leading-relaxed">
-						Open-source vibrotactile therapy for Parkinson's disease. Built by the community,
-						inspired by science.
-					</p>
-				</div>
-
-				<!-- Links -->
-				<div>
-					<h4 class="font-semibold text-foreground mb-4">Resources</h4>
-					<ul class="space-y-2 text-sm">
-						<li>
-							<a href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Getting-Started" target="_blank"
-								rel="noopener noreferrer" class="text-muted hover:text-primary">Documentation</a>
-						</li>
-						<li>
-							<a href="https://github.com/BlueBuzzah" target="_blank" rel="noopener noreferrer"
-								class="text-muted hover:text-primary">GitHub Organization</a>
-						</li>
-						<li>
-							<a href="#research" class="text-muted hover:text-primary">Research Papers</a>
-						</li>
-						<li>
-							<a href="privacy.html" class="text-muted hover:text-primary">Privacy Policy</a>
-						</li>
+	<footer class="site-footer">
+		<div class="container footer-grid">
+			<div class="footer-top">
+				<a class="lockup" href="index.html">
+					<img src="assets/bluebuzzah-mark-512.png" alt="" width="42" height="40">
+					<span class="title-l">BlueBuzzah</span>
+				</a>
+				<nav aria-label="Footer">
+					<ul class="list-reset footer-links">
+						<li><a class="nav-link body-s" href="https://github.com/BlueBuzzah">GitHub</a></li>
+						<li><a class="nav-link body-s" href="privacy.html">Privacy policy</a></li>
+						<li class="body-s js-only" hidden><button type="button" class="bb-btn bb-btn--quiet btn-compact" data-open-settings><svg class="bb-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/settings.svg#icon"/></svg><span class="bb-btn__label">Display settings</span></button></li>
 					</ul>
-				</div>
-
-				<!-- Products -->
-				<div>
-					<h4 class="font-semibold text-foreground mb-4">Products</h4>
-					<ul class="space-y-2 text-sm">
-						<li>
-							<a href="#downloads" class="text-muted hover:text-primary">BlueBuzzah Updater</a>
-						</li>
-						<li>
-							<a href="https://buzzahbuddy.com" target="_blank" rel="noopener noreferrer"
-								class="text-muted hover:text-primary">BuzzahBuddy</a>
-						</li>
-					</ul>
-				</div>
+				</nav>
 			</div>
-
-			<!-- Bottom -->
-			<div class="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-				<p class="text-sm text-muted">
-					&copy; 2025 BlueBuzzah Partners. Open-source under MIT license.
-				</p>
-				<p class="text-xs text-muted text-center md:text-right max-w-md">
-					For informational and personal use only.<br />Not FDA approved. Consult your healthcare provider.
-				</p>
-			</div>
+			<p class="body-s text-muted">BlueBuzzah devices are not FDA approved medical devices and not intended to diagnose, treat, cure, or prevent any disease. The information provided through BlueBuzzah is for general wellness purposes only and not a substitute for professional medical advice, diagnosis, or treatment.</p>
+			<p class="caption text-muted">&copy; 2025 BlueBuzzah Partners</p>
 		</div>
+		<dialog class="settings-dialog" aria-labelledby="settings-title">
+			<h2 class="title-l" id="settings-title">Display settings</h2>
+			<p class="body-s text-muted">BlueBuzzah follows your device's settings. Changes here apply to this browser only.</p>
+			<div class="theme-controls">
+				<!-- mirrors bundle.js SegmentedControl (DS import 1793120889-b415) -->
+				<div class="bb-seg">
+					<span class="bb-seg__label" id="theme-label">Appearance</span>
+					<div class="bb-seg__track" role="radiogroup" aria-labelledby="theme-label">
+						<button type="button" role="radio" aria-checked="true" tabindex="0" class="bb-seg__opt bb-seg__opt--on" data-mode="system"><svg class="bb-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/check.svg#icon"/></svg><span>System</span></button>
+						<button type="button" role="radio" aria-checked="false" tabindex="-1" class="bb-seg__opt" data-mode="light"><span>Light</span></button>
+						<button type="button" role="radio" aria-checked="false" tabindex="-1" class="bb-seg__opt" data-mode="dark"><span>Dark</span></button>
+					</div>
+				</div>
+				<!-- mirrors bundle.js Switch (DS import 1793120889-b415) -->
+				<button type="button" role="switch" aria-checked="false" aria-labelledby="hc-label" aria-describedby="hc-desc" class="bb-switch">
+					<span class="bb-switch__text"><span class="bb-switch__label" id="hc-label">High contrast</span><span class="bb-switch__desc" id="hc-desc">Stronger colors and borders</span></span>
+					<span class="bb-switch__track" aria-hidden="true"><span class="bb-switch__thumb"></span></span>
+				</button>
+			</div>
+			<form method="dialog"><button class="bb-btn bb-btn--primary bb-btn--full"><span class="bb-btn__label">Done</span></button></form>
+		</dialog>
 	</footer>
-
-	<!-- Mobile Menu Script -->
-	<script>
-		const menuBtn = document.getElementById('mobile-menu-btn');
-		const mobileMenu = document.getElementById('mobile-menu');
-
-		menuBtn.addEventListener('click', () => {
-			mobileMenu.classList.toggle('hidden');
-		});
-
-		// Close menu when clicking a link
-		mobileMenu.querySelectorAll('a').forEach(link => {
-			link.addEventListener('click', () => {
-				mobileMenu.classList.add('hidden');
-			});
-		});
-	</script>
 </body>
 
 </html>

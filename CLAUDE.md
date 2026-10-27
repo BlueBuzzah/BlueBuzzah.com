@@ -1,6 +1,23 @@
 # BlueBuzzah.com
 
-Static landing page for the BlueBuzzah open-source vibrotactile therapy project: what it is, the research behind it, and BlueBuzzah Updater downloads. `index.html` and `privacy.html`, with Tailwind via CDN (`cdn.tailwindcss.com`) and a little vanilla JS. There is no build step. It deploys as-is to GitHub Pages (`CNAME`).
+Static landing page for the BlueBuzzah open-source vibrotactile therapy project: what it is, the research behind it, and BlueBuzzah Updater downloads. `index.html` and `privacy.html`, styled with the design system's `css/tokens.css` and `css/bundle.css` (its `bb-` component classes on plain HTML, no React) plus `css/site.css` for layout. `js/theme.js` sets `data-theme` before first paint; `js/site.js` adds the mobile-menu close and the footer's Display settings dialog (theme override). There is no build step. It deploys as-is to GitHub Pages (`CNAME`). Pages must stay readable with JavaScript off.
+
+## Working on it
+
+There are no scripts or tests. Preview with `python3 -m http.server 8000` and check changes in a browser: narrow and wide widths, light and dark themes, keyboard.
+
+- **Copied from the design system, never edited by hand:** `css/tokens.css`, `css/bundle.css`, `css/fonts/`, `assets/bluebuzzah-mark-512.png`, the favicon/app icons in `assets/` and `favicon.ico`. After a design-system re-import, re-copy them from the workspace root:
+  ```bash
+  DS=.claude/skills/bluebuzzah-design-system; SITE=projects/BlueBuzzah.com
+  cp $DS/tokens.css $DS/components/bundle.css $SITE/css/ && cp $DS/fonts/* $SITE/css/fonts/
+  cp $DS/assets/Logos/bluebuzzah-mark-512.png $DS/assets/Web/{favicon-16,favicon-32,apple-touch-icon-180,icon-192,icon-512,icon-maskable-512}.png $SITE/assets/
+  cp $DS/favicons/favicon.ico $SITE/
+  ```
+  `css/fonts/` must sit next to `css/tokens.css`, since its `@font-face` URLs are relative.
+- **Icons are Lucide SVG files in `assets/icons/`** (v1.55.0, ISC; see `assets/icons/LICENSE.txt`), one file per glyph, used everywhere by reference:
+  `<svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons/NAME.svg#icon"/></svg>`
+  To add or replace an icon, download it from `https://unpkg.com/lucide-static@1.55.0/icons/NAME.svg` and add `id="icon"` to its root `<svg>`. That's the only edit, and every use updates. The files draw in `currentColor`, so icons take their text's colour. Use sizes 20, 24 or 32, and always pair an icon with a word.
+- Static markup that mirrors a `bundle.js` component carries a `<!-- mirrors bundle.js <Comp> (DS import …) -->` comment. Re-check it after a design-system re-import.
 
 ## Design System — required for every UI/UX change
 
@@ -14,8 +31,11 @@ Before making a UI/UX change:
 
 Rules:
 
-- **The design system wins any conflict.** The current pages predate it. Build new and changed sections to the design system rather than copying the surrounding legacy styles. That includes the disclaimer, which must use the canonical text verbatim.
-- **Take every value from the design system's tokens.** Use `tokens.css` (custom properties, all four themes) and map the Tailwind theme to those variables. Never hand-type a hex color, size, radius, duration or font.
+- **The design system wins any conflict, except the legal notices.** The medical disclaimer and the implanted-device notice use this text verbatim, chosen for legal reasons. Never replace them with design-system wording or reword them. The disclaimer:
+  > BlueBuzzah devices are not FDA approved medical devices and not intended to diagnose, treat, cure, or prevent any disease. The information provided through BlueBuzzah is for general wellness purposes only and not a substitute for professional medical advice, diagnosis, or treatment.
+  The implanted-device notice (a warning Banner whose title is "Important:", with the rest as its text):
+  > Important: People with implanted electrodes from deep brain stimulation (DBS), heart pacemakers, or other internal electronic devices should take special precautions around all electronic devices, including BlueBuzzah. Consult your physician before use.
+- **Take every value from the design system's tokens.** Use `var(--token)` from `tokens.css` (custom properties, all four themes). Never hand-type a hex color, size, radius, duration or font, and never add a CSS framework.
 - **Copy, don't link.** Copy `tokens.css`, the fonts, icons, logo and the `assets/Web` favicon set into this repo. Never reference the workspace path from a page, because the site deploys on its own.
 - **Don't invent rules.** If the design system doesn't cover something, ask rather than inventing a rule.
 - **Full migrations:** a whole-site pass is the `/implement-design-system` command, run from the workspace.
