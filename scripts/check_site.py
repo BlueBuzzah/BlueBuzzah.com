@@ -348,6 +348,19 @@ def check_banners():
     return '; '.join(errs)
 
 
+def check_how_it_works_cards():
+    """Each step is a Card named by its own title, as bundle.js Card renders it."""
+    root = dom(pages()['index.html'])
+    sec = next((n for n in root.iter() if n.attrs.get('id') == 'how-it-works'), None)
+    steps = [n for n in sec.iter() if n.tag == 'li'] if sec else []
+    errs = [] if len(steps) == 3 else [f'{len(steps)} steps']
+    for li in steps:
+        title = next((n for n in li.iter() if 'bb-card__title' in n.classes()), None)
+        if 'bb-card' not in li.classes() or not title or li.attrs.get('aria-labelledby') != title.attrs.get('id'):
+            errs.append(f'step "{li.text()[:30]}" is not a titled Card')
+    return '; '.join(errs)
+
+
 def check_no_whole_card_links():
     return '; '.join(f'{p}: <a> wraps a card' for p, t in pages().items() for n in dom(t).iter()
                      if n.tag == 'a' and any(c.startswith('bb-card') for x in n.iter() for c in x.classes()))
