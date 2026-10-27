@@ -67,7 +67,7 @@ document.querySelectorAll('.nav-mobile a').forEach(function (a) {
   var dialog = box.closest('dialog'), opener = document.querySelector('[data-open-settings]');
   if (dialog && opener && dialog.showModal) {
     opener.addEventListener('click', function () { dialog.showModal(); });
-    opener.hidden = false;
+    opener.closest('.js-only').hidden = false;
   }
   render();
 })();

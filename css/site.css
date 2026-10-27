@@ -90,12 +90,20 @@ a.bb-btn { box-sizing: border-box; }
 /* Footer (web.md Layout: disclaimer, GitHub, license, contact) --------- */
 .site-footer { background: var(--surface); border-top: var(--border-hairline) solid var(--line); padding-block: var(--space-8) var(--space-6); }
 .footer-grid { display: grid; gap: var(--space-4); }
-.footer-top, .footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--target-gap) var(--space-8); }
-/* pull the links' hit-area padding back so their text lines up with the container edges */
-.footer-links { display: flex; flex-wrap: wrap; gap: var(--target-gap); margin-inline: calc(-1 * var(--space-3)); }
-.footer-bottom { padding-top: var(--space-4); border-top: var(--border-hairline) solid var(--line); }
-/* bb-btn's display would otherwise beat the [hidden] attribute */
+.footer-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--target-gap) var(--space-8); }
+/* pull the first link's hit-area padding back so its text lines up with the container's left edge;
+   the row ends with the outlined Display settings button, which needs no pull on the right */
+.footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--target-gap); margin-inline-start: calc(-1 * var(--space-3)); }
+/* a display rule (e.g. bb-btn's) would otherwise beat the [hidden] attribute */
 .js-only[hidden] { display: none; }
+
+/* Compact Button: smaller to the eye, same 48px target. accessibility.md Motor: "Extend hit areas past
+   the visual edge when the visual must be smaller." Text size comes from the parent (.body-s). */
+.btn-compact {
+  position: relative; min-height: calc(var(--target) - var(--space-3)); padding-inline: var(--space-3);
+  gap: var(--space-1); font-size: inherit; line-height: inherit;
+}
+.btn-compact::after { content: ""; position: absolute; inset: calc((100% - var(--target)) / 2) 0; }
 
 /* Display settings: a sheet over scrim (README Color: surface-overlay, shadow-3; Space: radius-xl, space-8) */
 .settings-dialog {
@@ -118,7 +126,7 @@ a.bb-btn { box-sizing: border-box; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 @media (forced-colors: active) {
-  .site-header, .site-footer, .footer-bottom, .nav-mobile__panel, .settings-dialog { border-color: CanvasText; }
+  .site-header, .site-footer, .nav-mobile__panel, .settings-dialog { border-color: CanvasText; }
 }
 
 /* Home sections (web.md Home page 3-5) ---------------------------------- */
