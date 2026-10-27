@@ -1,5 +1,5 @@
-/* Sets data-theme on <html> before first paint: the OS setting, unless the person chose an override
-   in Display settings. Load as a blocking script before the stylesheets. */
+/* Sets data-theme on <html> before first paint: the OS setting (dark when it can't be determined), unless
+   the person chose an override in Display settings. Load as a blocking script before the stylesheets. */
 (function () {
   var KEY = 'bb-theme';
   var DEFAULT = { mode: 'system', hc: null };
@@ -30,8 +30,9 @@
   }
 
   function apply() {
+    // dark unless the OS says light: an unknown preference defaults to dark
     document.documentElement.dataset.theme = resolve(read(),
-      matchMedia('(prefers-color-scheme: dark)').matches, matchMedia('(prefers-contrast: more)').matches);
+      !matchMedia('(prefers-color-scheme: light)').matches, matchMedia('(prefers-contrast: more)').matches);
   }
 
   window.bbTheme = { read: read, save: save, apply: apply };
