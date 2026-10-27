@@ -58,6 +58,11 @@ def check_sync():
     return r.returncode and (r.stdout + r.stderr).strip()[:400]
 
 
+def check_theme_test():
+    r = subprocess.run(['node', str(ROOT / 'scripts/test_theme.mjs')], capture_output=True, text=True)
+    return r.returncode and (r.stdout + r.stderr).strip()[-400:]
+
+
 def main():
     failed = 0
     for name, fn in [(n, f) for n, f in globals().items() if n.startswith('check_') and callable(f)]:
