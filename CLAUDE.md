@@ -1,6 +1,20 @@
 # BlueBuzzah.com
 
-Static landing page for the BlueBuzzah open-source vibrotactile therapy project: what it is, the research behind it, and BlueBuzzah Updater downloads. `index.html` and `privacy.html`, with Tailwind via CDN (`cdn.tailwindcss.com`) and a little vanilla JS. There is no build step. It deploys as-is to GitHub Pages (`CNAME`).
+Static landing page for the BlueBuzzah open-source vibrotactile therapy project: what it is, the research behind it, and BlueBuzzah Updater downloads. `index.html` and `privacy.html`, styled with the design system's `css/tokens.css` and `css/bundle.css` (its `bb-` component classes on plain HTML, no React) plus `css/site.css` for layout. `js/theme.js` sets `data-theme` before first paint; `js/site.js` adds the mobile-menu close and the footer theme override. There is no build step. It deploys as-is to GitHub Pages (`CNAME`). Pages must stay readable with JavaScript off.
+
+## Commands
+
+```bash
+python3 scripts/check_site.py               # design-system checks; run before every commit
+node scripts/test_theme.mjs                  # theme resolution (also run by check_site.py)
+python3 scripts/sync_design_system.py        # re-copy tokens, fonts, logo, favicons, icon sprite after a design-system re-import
+python3 scripts/sync_design_system.py --check  # report drift from the design system
+python3 -m http.server 8000                  # local preview; the icon sprite (assets/icons.svg) needs http, not file://
+```
+
+- Never edit `css/tokens.css`, `css/bundle.css`, `css/fonts/`, `assets/icons.svg` or the favicon files by hand. They are copies; change the design system and re-sync.
+- Icons come from the sprite: `<svg class="bb-icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#name"/></svg>`. To add one, add its name to `ICONS` in `scripts/sync_design_system.py`. Glyphs the design system doesn't ship go in `scripts/lucide/` from `lucide-static@1.55.0`.
+- Static markup that mirrors a `bundle.js` component carries a `<!-- mirrors bundle.js <Comp> (DS import …) -->` comment. Re-check it after a design-system re-import.
 
 ## Design System — required for every UI/UX change
 
@@ -14,8 +28,8 @@ Before making a UI/UX change:
 
 Rules:
 
-- **The design system wins any conflict.** The current pages predate it. Build new and changed sections to the design system rather than copying the surrounding legacy styles. That includes the disclaimer, which must use the canonical text verbatim.
-- **Take every value from the design system's tokens.** Use `tokens.css` (custom properties, all four themes) and map the Tailwind theme to those variables. Never hand-type a hex color, size, radius, duration or font.
+- **The design system wins any conflict.** That includes the disclaimer, which must use the canonical text verbatim.
+- **Take every value from the design system's tokens.** Use `var(--token)` from `tokens.css` (custom properties, all four themes). Never hand-type a hex color, size, radius, duration or font, and never add a CSS framework.
 - **Copy, don't link.** Copy `tokens.css`, the fonts, icons, logo and the `assets/Web` favicon set into this repo. Never reference the workspace path from a page, because the site deploys on its own.
 - **Don't invent rules.** If the design system doesn't cover something, ask rather than inventing a rule.
 - **Full migrations:** a whole-site pass is the `/implement-design-system` command, run from the workspace.
