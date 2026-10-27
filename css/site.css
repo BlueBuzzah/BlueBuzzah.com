@@ -140,6 +140,9 @@ a.bb-btn { box-sizing: border-box; }
    the svg box is one line tall and its viewBox keeps the 24px glyph centred in it */
 .title-with-icon { display: flex; align-items: flex-start; gap: var(--space-2); }
 .title-with-icon > svg { height: 1lh; }
+/* "What is BlueBuzzah?" features: icon beside a bold line and a muted line, centred on the bold line */
+.feature { display: flex; align-items: flex-start; gap: var(--space-3); }
+.feature > svg { height: 1lh; }
 .title-link .bb-icon { display: inline-block; vertical-align: middle; }
 /* outlined like the secondary Button beside them, with the same hover/pressed border states (bundle.css .bb-btn--secondary) */
 .download-badge {
