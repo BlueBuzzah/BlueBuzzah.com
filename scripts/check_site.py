@@ -205,8 +205,9 @@ def check_disclaimer():
     return '; '.join(errs)
 
 
-def check_scroll_padding():
-    return 'scroll-padding-top' not in site_css() and 'site.css lacks scroll-padding-top'
+def check_nothing_pinned():
+    """A pinned header wrapped to two rows at 900-990px and hid focused links (WCAG 2.4.11); web.md never asks for one."""
+    return re.search(r'position:\s*(sticky|fixed)', site_css()) and 'site.css pins an element over the content'
 
 
 def check_no_js_traps():

@@ -86,8 +86,6 @@ a.bb-btn { box-sizing: border-box; }
   .nav-desktop, .header-cta { display: none; }
 }
 @media (min-width: 900px) {
-  html { scroll-padding-top: calc(var(--target) + 2 * var(--space-3) + var(--space-4)); }
-  .site-header { position: sticky; top: 0; z-index: 10; }
   .nav-mobile { display: none; }
 }
 

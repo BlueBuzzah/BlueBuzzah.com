@@ -20,8 +20,8 @@
     try {
       var p = JSON.parse(raw);
       if (p && /^(system|light|dark)$/.test(p.mode) && (p.hc === null || typeof p.hc === 'boolean')) return copy(p);
-    } catch (e) { /* bad JSON: follow the OS */ }
-    return copy(DEFAULT);
+    } catch (e) { /* bad JSON */ }
+    return copy(memo || DEFAULT); // nothing stored (or the save failed): this page view's choice, else the OS
   }
 
   function save(pref) {
