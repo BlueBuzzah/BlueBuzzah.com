@@ -88,12 +88,12 @@ a.bb-btn { box-sizing: border-box; }
 }
 
 /* Footer (web.md Layout: disclaimer, GitHub, license, contact) --------- */
-.site-footer { background: var(--surface); border-top: var(--border-hairline) solid var(--line); padding-block: var(--space-12) var(--space-8); }
-.footer-grid { display: grid; gap: var(--space-6); }
+.site-footer { background: var(--surface); border-top: var(--border-hairline) solid var(--line); padding-block: var(--space-8) var(--space-6); }
+.footer-grid { display: grid; gap: var(--space-4); }
 .footer-top, .footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--target-gap) var(--space-8); }
 /* pull the links' hit-area padding back so their text lines up with the container edges */
 .footer-links { display: flex; flex-wrap: wrap; gap: var(--target-gap); margin-inline: calc(-1 * var(--space-3)); }
-.footer-bottom { padding-top: var(--space-6); border-top: var(--border-hairline) solid var(--line); }
+.footer-bottom { padding-top: var(--space-4); border-top: var(--border-hairline) solid var(--line); }
 /* bb-btn's display would otherwise beat the [hidden] attribute */
 .js-only[hidden] { display: none; }
 
