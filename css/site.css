@@ -107,9 +107,10 @@ a.bb-btn { box-sizing: border-box; }
 
 /* Home sections (web.md Home page 3-5) ---------------------------------- */
 .section-block { margin-top: var(--space-8); }
+/* the flex gap is the card's only vertical spacing, so the head drops bundle.css's margin (else 24px, not 12px) */
 .bb-card { display: flex; flex-direction: column; gap: var(--space-3); }
 /* rows stack at narrow widths and 200% zoom: the nowrap badge drops below the title (README Type: layouts reflow) */
-.bb-card__head { flex-wrap: wrap; }
+.bb-card__head { flex-wrap: wrap; margin-bottom: 0; }
 .card-action { margin-top: auto; align-self: flex-start; }
 .title-link .bb-icon { display: inline-block; vertical-align: middle; }
 .download-badge { display: inline-block; border-radius: var(--radius-md); line-height: 0; }
