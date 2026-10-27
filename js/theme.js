@@ -3,6 +3,7 @@
 (function (root) {
   var KEY = 'bb-theme';
   var DEFAULT = { mode: 'system', hc: null };
+  var memo = null; // the last choice, for when storage is blocked
 
   // hc: null follows prefers-contrast; true/false is the person's override
   function resolve(pref, prefersDark, prefersMore) {
@@ -11,15 +12,20 @@
     return (dark ? 'dark' : 'light') + (hc ? '-hc' : '');
   }
 
+  function copy(p) { return { mode: p.mode, hc: p.hc }; }
+
   function read() {
+    var raw;
+    try { raw = localStorage.getItem(KEY); } catch (e) { return copy(memo || DEFAULT); } // storage blocked
     try {
-      var p = JSON.parse(localStorage.getItem(KEY));
-      if (p && /^(system|light|dark)$/.test(p.mode) && (p.hc === null || typeof p.hc === 'boolean')) return p;
-    } catch (e) { /* blocked storage or bad JSON: follow the OS */ }
-    return { mode: DEFAULT.mode, hc: DEFAULT.hc };
+      var p = JSON.parse(raw);
+      if (p && /^(system|light|dark)$/.test(p.mode) && (p.hc === null || typeof p.hc === 'boolean')) return copy(p);
+    } catch (e) { /* bad JSON: follow the OS */ }
+    return copy(DEFAULT);
   }
 
   function save(pref) {
+    memo = copy(pref);
     try { localStorage.setItem(KEY, JSON.stringify(pref)); } catch (e) { /* the choice lasts this page view only */ }
   }
 

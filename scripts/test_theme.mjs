@@ -18,6 +18,8 @@ assert.equal(t.resolve({ mode: 'light', hc: true }, true, false), 'light-hc');
 Object.defineProperty(globalThis, 'localStorage', { configurable: true, get() { throw new Error('denied'); } });
 assert.deepEqual(t.read(), SYS);
 assert.doesNotThrow(() => t.save({ mode: 'dark', hc: true }));
+// ...and the choice still holds for this page view
+assert.deepEqual(t.read(), { mode: 'dark', hc: true });
 
 // garbage and invalid values fall back to the default
 const store = {};

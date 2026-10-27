@@ -1,278 +1,61 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description"
-		content="BlueBuzzah - Open-source vibrotactile therapy gloves for Parkinson's disease symptom management. Based on peer-reviewed vCR research.">
-	<meta name="theme-color" content="#0a0a0a">
-	<title>BlueBuzzah - Open-Source Vibrotactile Therapy</title>
-
-	<link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-	<meta name="apple-mobile-web-app-title" content="BuzzahBuddy" />
-	<link rel="manifest" href="/site.webmanifest" />
-	<link rel="stylesheet" href="styles.css">
-
-	<!-- Tailwind CSS -->
-	<script src="https://cdn.tailwindcss.com"></script>
-	<script>
-		tailwind.config = {
-			theme: {
-				extend: {
-					colors: {
-						background: '#0a0a0a',
-						foreground: '#fafafa',
-						primary: '#35B6F2',
-						'primary-foreground': '#0a0a0a',
-						secondary: '#05212D',
-						'secondary-light': '#0d3a4d',
-						muted: '#a3a3a3',
-						border: 'hsl(199, 74%, 15%)',
-					},
-					fontFamily: {
-						sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-					},
-					animation: {
-						'fade-in': 'fadeIn 0.6s ease-out forwards',
-						'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
-						'fade-in-down': 'fadeInDown 0.4s ease-out forwards',
-						'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
-					},
-				},
-			},
-		}
-	</script>
-
-	<style>
-		/* CSS Variables matching BlueBuzzah-Updater */
-		:root {
-			--background: 0 0% 4%;
-			--foreground: 0 0% 98%;
-			--card: 199 74% 10%;
-			--card-foreground: 0 0% 98%;
-			--primary: 198 86% 58%;
-			--primary-foreground: 0 0% 4%;
-			--secondary: 199 74% 10%;
-			--secondary-foreground: 0 0% 98%;
-			--muted: 199 74% 15%;
-			--muted-foreground: 0 0% 64%;
-			--border: 199 74% 15%;
-			--ring: 198 86% 58%;
-			--radius: 0.5rem;
-		}
-
-		/* Animations */
-		@keyframes fadeIn {
-			from {
-				opacity: 0;
-			}
-
-			to {
-				opacity: 1;
-			}
-		}
-
-		@keyframes fadeInUp {
-			from {
-				opacity: 0;
-				transform: translateY(20px);
-			}
-
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-
-		@keyframes fadeInDown {
-			from {
-				opacity: 0;
-				transform: translateY(-10px);
-			}
-
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-
-		@keyframes pulseGlow {
-
-			0%,
-			100% {
-				opacity: 0.4;
-			}
-
-			50% {
-				opacity: 0.7;
-			}
-		}
-
-		/* Respect reduced motion */
-		@media (prefers-reduced-motion: reduce) {
-
-			*,
-			*::before,
-			*::after {
-				animation-duration: 0.01ms !important;
-				animation-iteration-count: 1 !important;
-				transition-duration: 0.01ms !important;
-			}
-		}
-
-		/* Custom scrollbar */
-		::-webkit-scrollbar {
-			width: 8px;
-			height: 8px;
-		}
-
-		::-webkit-scrollbar-track {
-			background: #0a0a0a;
-		}
-
-		::-webkit-scrollbar-thumb {
-			background: hsl(199, 74%, 15%);
-			border-radius: 4px;
-		}
-
-		::-webkit-scrollbar-thumb:hover {
-			background: #35B6F2;
-		}
-
-		/* Card gradient background */
-		.card-gradient {
-			background: linear-gradient(135deg, #05212D 0%, hsl(199, 74%, 12%) 100%);
-		}
-
-		/* Blue glow effects */
-		.glow-blue {
-			box-shadow: 0 0 15px rgba(53, 182, 242, 0.2);
-		}
-
-		.glow-blue-hover:hover {
-			box-shadow: 0 10px 30px -5px rgba(53, 182, 242, 0.25);
-		}
-
-		/* Primary button glow */
-		.btn-primary {
-			box-shadow: 0 0 20px rgba(53, 182, 242, 0.3);
-			transition: all 0.2s ease-in-out;
-		}
-
-		.btn-primary:hover {
-			box-shadow: 0 0 30px rgba(53, 182, 242, 0.5);
-			transform: scale(1.02);
-		}
-
-		.btn-primary:active {
-			transform: scale(0.98);
-		}
-
-		/* Glass morphism for nav */
-		.glass-nav {
-			background: rgba(10, 10, 10, 0.8);
-			backdrop-filter: blur(12px);
-			-webkit-backdrop-filter: blur(12px);
-		}
-
-		/* Hero background effect */
-		.hero-bg {
-			background:
-				radial-gradient(ellipse 80% 50% at 50% -20%, rgba(53, 182, 242, 0.15), transparent),
-				radial-gradient(ellipse 60% 40% at 80% 60%, rgba(5, 33, 45, 0.8), transparent),
-				#0a0a0a;
-		}
-
-		/* Stagger animations */
-		.stagger-1 {
-			animation-delay: 0.1s;
-		}
-
-		.stagger-2 {
-			animation-delay: 0.2s;
-		}
-
-		.stagger-3 {
-			animation-delay: 0.3s;
-		}
-
-		.stagger-4 {
-			animation-delay: 0.4s;
-		}
-
-		.stagger-5 {
-			animation-delay: 0.5s;
-		}
-
-		.stagger-6 {
-			animation-delay: 0.6s;
-		}
-
-		/* Focus states */
-		a:focus-visible,
-		button:focus-visible {
-			outline: 2px solid #35B6F2;
-			outline-offset: 2px;
-		}
-
-		/* Smooth link transitions */
-		a,
-		button {
-			transition: all 0.2s ease-in-out;
-		}
-
-		/* Badge pulse for "Coming Soon" */
-		.badge-pulse {
-			animation: pulseGlow 3s ease-in-out infinite;
-		}
-	</style>
+	<meta name="description" content="BlueBuzzah is open, experimental vibrotactile therapy for people living with Parkinson's: gloves you can build, firmware you can read and apps that stay out of the way.">
+	<title>BlueBuzzah: open-source vibrotactile therapy</title>
+	<script src="js/theme.js"></script>
+	<link rel="preload" href="css/fonts/lexend-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="css/fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="css/tokens.css">
+	<link rel="stylesheet" href="css/bundle.css">
+	<link rel="stylesheet" href="css/site.css">
+	<link rel="icon" href="favicon.ico" sizes="48x48">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+	<link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
+	<link rel="manifest" href="site.webmanifest">
+	<meta name="apple-mobile-web-app-title" content="BlueBuzzah">
+	<meta name="theme-color" content="#080c1b">
+	<script src="js/site.js" defer></script>
 </head>
 
-<body class="bg-background text-foreground font-sans antialiased">
+<body>
 
-	<!-- Fixed Navigation -->
-	<header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-border">
-		<nav class="max-w-6xl mx-auto px-6 py-4">
-			<div class="flex items-center justify-between">
-				<!-- Logo -->
-				<a href="#" class="flex items-center gap-2 group">
-					<img src="assets/favicon.svg" alt="BlueBuzzah logo" class="w-8 h-8 rounded-lg">
-					<span class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">BlueBuzzah</span>
-				</a>
-
-				<!-- Desktop Nav Links -->
-				<div class="hidden md:flex items-center gap-8">
-					<a href="#about" class="text-muted hover:text-foreground">About</a>
-					<a href="#research" class="text-muted hover:text-foreground">Research</a>
-					<a href="#products" class="text-muted hover:text-foreground">Products</a>
-					<a href="#downloads"
-						class="text-foreground font-medium px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 hover:bg-primary/20">
-						Downloads
-					</a>
+	<header class="site-header">
+		<div class="container header-row">
+			<a class="lockup" href="index.html">
+				<img src="assets/bluebuzzah-mark-512.png" alt="" width="42" height="40">
+				<span class="title-l">BlueBuzzah</span>
+			</a>
+			<nav class="nav-desktop" aria-label="Main">
+				<ul class="list-reset">
+					<li><a class="nav-link label" href="index.html#how-it-works">Learn</a></li>
+					<li><a class="nav-link label" href="https://github.com/BlueBuzzah/BlueBuzzah-Hardware/wiki">Build</a></li>
+					<li><a class="nav-link label" href="index.html#download">Download</a></li>
+					<li><a class="nav-link label" href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Getting-Started">Docs</a></li>
+					<li><a class="nav-link label" href="index.html#community">Community</a></li>
+				</ul>
+			</nav>
+			<a class="bb-btn bb-btn--primary header-cta" href="index.html#download"><svg class="bb-icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#download"/></svg><span class="bb-btn__label">Download Updater</span></a>
+			<details class="nav-mobile">
+				<summary class="bb-btn bb-btn--quiet"><svg class="bb-icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#menu"/></svg><span class="bb-btn__label">Menu</span></summary>
+				<div class="nav-mobile__panel">
+					<nav aria-label="Main">
+						<ul class="list-reset">
+							<li><a class="nav-link label" href="index.html#how-it-works">Learn</a></li>
+							<li><a class="nav-link label" href="https://github.com/BlueBuzzah/BlueBuzzah-Hardware/wiki">Build</a></li>
+							<li><a class="nav-link label" href="index.html#download">Download</a></li>
+							<li><a class="nav-link label" href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Getting-Started">Docs</a></li>
+							<li><a class="nav-link label" href="index.html#community">Community</a></li>
+						</ul>
+					</nav>
+					<a class="bb-btn bb-btn--primary bb-btn--full" href="index.html#download"><svg class="bb-icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#download"/></svg><span class="bb-btn__label">Download Updater</span></a>
 				</div>
-
-				<!-- Mobile Menu Button -->
-				<button class="md:hidden p-2 text-muted hover:text-foreground" id="mobile-menu-btn" aria-label="Toggle menu">
-					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-					</svg>
-				</button>
-			</div>
-
-			<!-- Mobile Menu -->
-			<div class="md:hidden hidden pt-4 pb-2 border-t border-border mt-4" id="mobile-menu">
-				<div class="flex flex-col gap-4">
-					<a href="#about" class="text-muted hover:text-foreground py-2">About</a>
-					<a href="#research" class="text-muted hover:text-foreground py-2">Research</a>
-					<a href="#products" class="text-muted hover:text-foreground py-2">Products</a>
-					<a href="#downloads" class="text-foreground font-medium py-2">Downloads</a>
-				</div>
-			</div>
-		</nav>
+			</details>
+		</div>
 	</header>
 
 	<main>
@@ -825,86 +608,38 @@
 		</section>
 	</main>
 
-	<!-- Footer -->
-	<footer class="py-12 bg-background border-t border-border">
-		<div class="max-w-6xl mx-auto px-6">
-			<div class="grid md:grid-cols-3 gap-8 mb-8">
-				<!-- Brand -->
-				<div>
-					<div class="flex items-center gap-2 mb-4">
-						<img src="assets/favicon.svg" alt="BlueBuzzah logo" class="w-8 h-8 rounded-lg">
-						<span class="text-lg font-bold text-foreground">BlueBuzzah</span>
+	<footer class="site-footer">
+		<div class="container footer-stack">
+			<a class="lockup" href="index.html">
+				<img src="assets/bluebuzzah-mark-512.png" alt="" width="42" height="40">
+				<span class="title-l">BlueBuzzah</span>
+			</a>
+			<p class="body-s prose">BlueBuzzah is an experimental, open-source project. It is not FDA-approved and is not a substitute for medical care. Talk with your neurologist before using it.</p>
+			<ul class="list-reset footer-links">
+				<li><a href="https://github.com/BlueBuzzah">GitHub</a></li>
+				<li><a href="https://opensource.org/license/mit">MIT license</a></li>
+				<li><a href="mailto:privacy@bluebuzzah.com">Contact</a></li>
+				<li><a href="privacy.html">Privacy policy</a></li>
+			</ul>
+			<div class="theme-controls" hidden>
+				<!-- mirrors bundle.js SegmentedControl (DS import 1793120889-b415) -->
+				<div class="bb-seg">
+					<span class="bb-seg__label" id="theme-label">Appearance</span>
+					<div class="bb-seg__track" role="radiogroup" aria-labelledby="theme-label">
+						<button type="button" role="radio" aria-checked="true" tabindex="0" class="bb-seg__opt bb-seg__opt--on" data-mode="system"><svg class="bb-icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="assets/icons.svg#check"/></svg><span>System</span></button>
+						<button type="button" role="radio" aria-checked="false" tabindex="-1" class="bb-seg__opt" data-mode="light"><span>Light</span></button>
+						<button type="button" role="radio" aria-checked="false" tabindex="-1" class="bb-seg__opt" data-mode="dark"><span>Dark</span></button>
 					</div>
-					<p class="text-sm text-muted leading-relaxed">
-						Open-source vibrotactile therapy for Parkinson's disease. Built by the community,
-						inspired by science.
-					</p>
 				</div>
-
-				<!-- Links -->
-				<div>
-					<h4 class="font-semibold text-foreground mb-4">Resources</h4>
-					<ul class="space-y-2 text-sm">
-						<li>
-							<a href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Getting-Started" target="_blank"
-								rel="noopener noreferrer" class="text-muted hover:text-primary">Documentation</a>
-						</li>
-						<li>
-							<a href="https://github.com/BlueBuzzah" target="_blank" rel="noopener noreferrer"
-								class="text-muted hover:text-primary">GitHub Organization</a>
-						</li>
-						<li>
-							<a href="#research" class="text-muted hover:text-primary">Research Papers</a>
-						</li>
-						<li>
-							<a href="privacy.html" class="text-muted hover:text-primary">Privacy Policy</a>
-						</li>
-					</ul>
-				</div>
-
-				<!-- Products -->
-				<div>
-					<h4 class="font-semibold text-foreground mb-4">Products</h4>
-					<ul class="space-y-2 text-sm">
-						<li>
-							<a href="#downloads" class="text-muted hover:text-primary">BlueBuzzah Updater</a>
-						</li>
-						<li>
-							<a href="https://buzzahbuddy.com" target="_blank" rel="noopener noreferrer"
-								class="text-muted hover:text-primary">BuzzahBuddy</a>
-						</li>
-					</ul>
-				</div>
+				<!-- mirrors bundle.js Switch (DS import 1793120889-b415) -->
+				<button type="button" role="switch" aria-checked="false" aria-labelledby="hc-label" aria-describedby="hc-desc" class="bb-switch">
+					<span class="bb-switch__text"><span class="bb-switch__label" id="hc-label">High contrast</span><span class="bb-switch__desc" id="hc-desc">Stronger colors and borders</span></span>
+					<span class="bb-switch__track" aria-hidden="true"><span class="bb-switch__thumb"></span></span>
+				</button>
 			</div>
-
-			<!-- Bottom -->
-			<div class="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-				<p class="text-sm text-muted">
-					&copy; 2025 BlueBuzzah Partners. Open-source under MIT license.
-				</p>
-				<p class="text-xs text-muted text-center md:text-right max-w-md">
-					For informational and personal use only.<br />Not FDA approved. Consult your healthcare provider.
-				</p>
-			</div>
+			<p class="caption text-muted">&copy; 2025 BlueBuzzah Partners</p>
 		</div>
 	</footer>
-
-	<!-- Mobile Menu Script -->
-	<script>
-		const menuBtn = document.getElementById('mobile-menu-btn');
-		const mobileMenu = document.getElementById('mobile-menu');
-
-		menuBtn.addEventListener('click', () => {
-			mobileMenu.classList.toggle('hidden');
-		});
-
-		// Close menu when clicking a link
-		mobileMenu.querySelectorAll('a').forEach(link => {
-			link.addEventListener('click', () => {
-				mobileMenu.classList.add('hidden');
-			});
-		});
-	</script>
 </body>
 
 </html>
