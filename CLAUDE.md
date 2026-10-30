@@ -1,6 +1,6 @@
 # BlueBuzzah.com
 
-Static landing page for the BlueBuzzah open-source vibrotactile therapy project: what it is, the research behind it, and BlueBuzzah Updater downloads. `index.html` and `privacy.html`, styled with the design system's `css/tokens.css` and `css/bundle.css` (its `bb-` component classes on plain HTML, no React) plus `css/site.css` for layout. `js/theme.js` sets `data-theme` before first paint; `js/site.js` adds the mobile-menu close and the footer's Display settings dialog (theme override). There is no build step. It deploys as-is to GitHub Pages (`CNAME`). Pages must stay readable with JavaScript off.
+Static landing page for the BlueBuzzah open-source vibrotactile therapy project: what it is, the research behind it, and downloads for BlueBuzzah Updater and BuzzahBuddy. `index.html` and `privacy.html`, styled with the design system's `css/tokens.css` and `css/bundle.css` (its `bb-` component classes on plain HTML, no React) plus `css/site.css` for layout. `js/theme.js` sets `data-theme` before first paint; `js/site.js` adds the mobile-menu close and the footer's Display settings dialog (theme override). There is no build step. It deploys as-is to GitHub Pages (`CNAME`). Pages must stay readable with JavaScript off.
 
 ## Working on it
 

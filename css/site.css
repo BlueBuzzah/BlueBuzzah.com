@@ -167,9 +167,8 @@ a.bb-btn { box-sizing: border-box; }
 }
 .download-badge:hover { border-color: var(--brand-hover); }
 .download-badge:active { border-color: var(--brand-pressed); }
-/* the guide button matches the outlined badges' height, even when it wraps to its own line */
-.download-row { --badge-height: 60px; } /* the badge images' intrinsic height (width/height attributes) */
-.download-row .bb-btn { min-height: calc(var(--badge-height) + 2 * var(--border-control)); }
+/* official store badges (also .download-badge) at the Updater badges' 60px image height; width follows each image's ratio */
+.store-badge img { height: 60px; width: auto; }
 
 /* Long-form pages (privacy) ------------------------------------------- */
 .stack-lg > * + * { margin-top: var(--space-10); }
