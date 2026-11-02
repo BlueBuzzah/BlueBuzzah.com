@@ -4,3 +4,8 @@ temp/
 # Claude Code
 .claude/settings.local.json
 .claude/worktrees/
+
+# VitePress
+node_modules/
+src/.vitepress/dist/
+src/.vitepress/cache/
