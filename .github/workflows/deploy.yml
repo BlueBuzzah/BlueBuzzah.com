@@ -26,7 +26,8 @@ jobs:
           path: src/.vitepress/dist
 
   deploy:
-    if: github.event_name != 'pull_request'
+    # main only: pull requests (refs/pull/…) and manual runs on other branches build but never deploy
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     # only deploys queue; pull-request builds never wait on or delay one

@@ -23,7 +23,7 @@ There are no tests, and no dev server: `vitepress dev` renders pages client-side
 - **Page markup goes in the `.vue` files, never as HTML in a `.md` file.** Markdown ends an HTML block at the first blank line and turns the next indented line into a code block, which breaks the build.
 - **A new page** needs a `src/<name>.md` with `page`, `title` and `description` (without a description VitePress writes "A VitePress site"), a `<Name>.vue`, and a branch for it in `Layout.vue`.
 - Keep `mpa: true` (no Vue runtime or client router; links and `#` anchors behave natively) and `appearance: false` (otherwise VitePress adds its own dark-mode script that fights `theme.js`).
-- Reference public files by absolute path (`/assets/…`, `/css/…`). A referenced file that doesn't exist fails the build.
+- Reference public files by absolute path (`/assets/…`, `/css/…`). A missing `<img src>` or `<use href>` target in a `.vue` template fails the build. `<a href>` targets and the `head` paths in `config.mts` aren't checked, so a typo there builds and deploys.
 - The build deletes VitePress's `404.html` (blank in MPA mode), so GitHub Pages serves its own 404.
 - **Copied from the design system, never edited by hand:** `src/public/css/tokens.css`, `src/public/css/bundle.css`, `src/public/css/fonts/`, `src/public/assets/bluebuzzah-mark-512.png`, the favicon/app icons in `src/public/assets/` and `src/public/favicon.ico`. After a design-system re-import, re-copy them from the workspace root:
   ```bash
