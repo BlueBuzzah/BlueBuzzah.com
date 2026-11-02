@@ -8,11 +8,17 @@ BlueBuzzah develops open-source vibrotactile coordinated reset (vCR) therapy dev
 
 ## Tech Stack
 
-- **HTML5** - Semantic markup
-- **BlueBuzzah design system** - `css/tokens.css` and `css/bundle.css` copied from the design system, plus `css/site.css` for layout; icons are [Lucide](https://lucide.dev) SVG files in `assets/icons/`
+- **[VitePress](https://vitepress.dev) 1.6.4** - Builds the pages to plain static HTML (MPA mode, custom theme, no framework JavaScript)
+- **BlueBuzzah design system** - `css/tokens.css` and `css/bundle.css` copied from the design system, plus `css/site.css` for layout; icons are [Lucide](https://lucide.dev) SVG files in `src/public/assets/icons/`
 - **Vanilla JavaScript** - Theme selection and the Display settings dialog; the pages read fine without it
 
-No build process required. The site is fully static and can be deployed anywhere.
+```bash
+npm install
+npm run build    # static site in src/.vitepress/dist/
+npm run preview  # serve the build at http://localhost:4173
+```
+
+Pushes to `main` deploy to GitHub Pages through `.github/workflows/deploy.yml`.
 
 ## Disclaimer
 
