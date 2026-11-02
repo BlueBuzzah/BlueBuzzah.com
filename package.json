@@ -2,9 +2,8 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "vitepress dev src",
 		"build": "vitepress build src",
-		"preview": "vitepress preview src"
+		"preview": "python3 -m http.server 4173 -d src/.vitepress/dist"
 	},
 	"devDependencies": {
 		"vitepress": "1.6.4"
