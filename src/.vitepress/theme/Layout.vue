@@ -18,7 +18,6 @@ const { frontmatter } = useData()
 				<ul class="list-reset">
 					<li><a class="nav-link label" href="/#how-it-works">Learn</a></li>
 					<li><a class="nav-link label" href="/docs/">Build</a></li>
-					<li><a class="nav-link label" href="/#download">Download</a></li>
 					<li><a class="nav-link label" href="/docs/">Docs</a></li>
 					<li><a class="nav-link label" href="/#community">Community</a></li>
 				</ul>
@@ -31,7 +30,6 @@ const { frontmatter } = useData()
 						<ul class="list-reset">
 							<li><a class="nav-link label" href="/#how-it-works">Learn</a></li>
 							<li><a class="nav-link label" href="/docs/">Build</a></li>
-							<li><a class="nav-link label" href="/#download">Download</a></li>
 							<li><a class="nav-link label" href="/docs/">Docs</a></li>
 							<li><a class="nav-link label" href="/#community">Community</a></li>
 						</ul>
