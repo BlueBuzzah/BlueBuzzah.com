@@ -24,14 +24,14 @@ Switch the board off first. Plug each lead into the port in this table:
 
 The port numbers run opposite to the fingers, so follow the table, not the order on the board.
 
-<Shot src="/docs/img/board-ports-labeled" alt="Top view of the BlueBuzzah v3 board with its five motor ports in a column down the right side, numbered 1 to 5 from the XIAO end and labeled Thumb, Little, Ring, Middle and Index." />
+<Shot src="/docs/img/board-ports-labeled" alt="Top view of the BlueBuzzah v3 board with its 5 motor ports in a column down the right side, numbered 1 to 5 from the XIAO end and labeled Thumb, Little, Ring, Middle and Index." />
 
 Leave the wires loose until you've tested them.
 
 ## Switch on
 
 - Each connected tactor buzzes for about half a second.
-- With fewer than four tactors connected, the light shows a red double blink and then a slow red blink, and sessions won't start. Switch the board off, reseat the connectors, and switch it on again.
+- With fewer than 4 tactors connected, the light shows a red double blink and then a slow red blink, and sessions won't start. Switch the board off, reseat the connectors, and switch it on again.
 
 ## Test every finger
 
@@ -52,7 +52,6 @@ Check the other glove the same way. One glove tells you nothing about the other.
 
 - Gather the wires into a single loom as they run from the fingertips toward the board.
 - Leave slack at each finger joint, so a full curl doesn't pull on the connector.
-- Anchor the loom at one or two points on the back of the hand, with stitching or fabric glue.
 - Don't bend the wire sharply at the connector. Let it exit straight and curve gradually.
 - Leave a small service loop near the board, so you can unplug a connector without tugging the harness.
 

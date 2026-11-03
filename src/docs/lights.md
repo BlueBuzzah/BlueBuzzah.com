@@ -29,6 +29,8 @@ The gloves lost their link. The light flashes for 30 seconds, then returns to br
 
 ## During a session
 
+If you turn on **Turn Off the Glove Light during Sessions** in BuzzahBuddy, the light stays dark while a session runs.
+
 ### Pulsing green
 
 A session is running.
@@ -36,8 +38,6 @@ A session is running.
 ### Solid yellow
 
 The session is paused.
-
-If you turn on **Turn Off the Glove Light during Sessions** in BuzzahBuddy, the light stays dark while a session runs.
 
 ## Battery
 

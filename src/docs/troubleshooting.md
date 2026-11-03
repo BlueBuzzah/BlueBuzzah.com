@@ -105,13 +105,9 @@ Keep the board plugged in, and don't close the Updater during a flash (see [Firm
 
 ## Fit and comfort
 
-### The tactor shifts on the glove
+### The tactor shifts on the glove or drifts off the fingertip
 
 The glove is too loose. Use a snugger glove or a smaller size (see [Pick and label the gloves](/docs/gloves#pick-and-label-the-gloves) in stage 4).
-
-### The tactor drifts off the fingertip
-
-The glove is too loose. Use a smaller glove size.
 
 ### The tactor moves under the fabric
 

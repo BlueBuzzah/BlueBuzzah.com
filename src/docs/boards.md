@@ -14,7 +14,7 @@ tools:
   - Tape and a marker
 figure:
   src: /docs/img/bluebuzzah-v3-pcb
-  alt: "The assembled BlueBuzzah v3 PCB with the XIAO ESP32-S3 at the front left, the slide switch at the front edge, and five motor ports along the back"
+  alt: "The assembled BlueBuzzah v3 PCB with the XIAO ESP32-S3 at the front left, the slide switch at the front edge, and 5 motor ports along the back"
   caption: The assembled board.
 ---
 
@@ -49,7 +49,7 @@ Use a USB-C cable that carries data. Some cables only charge, and the Updater wo
 Flash both boards in one run, or one at a time.
 
 1. Connect the board over USB-C. The Updater lists it as **BlueBuzzah v3**, with its port shown beside it.
-2. Open **Firmware**. Under **Choose Devices**, select the board. Choose primary for one board and secondary for the other. With two boards selected, the Updater suggests one of each. [Understanding Device Roles](https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Understanding-Device-Roles) explains what each role does.
+2. Open **Firmware**. Under **Choose Devices**, select the board. Choose primary for one board and secondary for the other. With 2 boards selected, the Updater suggests one of each. [Understanding Device Roles](https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Understanding-Device-Roles) explains what each role does.
 3. Keep the latest version, then select **Update Firmware**. The Updater writes the firmware and sets the role in the same run.
 4. Label each board with its role, using tape and a marker.
 
