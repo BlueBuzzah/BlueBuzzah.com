@@ -80,7 +80,7 @@ To change a design, start from the STEP files.
 - Small Phillips screwdriver, to fasten the board in the case.
 - A 3D printer or print service.
 - A phone or tablet with BuzzahBuddy.
-- A computer for the BlueBuzzah Updater (Windows or macOS).
+- A computer for the [BlueBuzzah Updater](/docs/updater/) (Windows or macOS).
 - Optional: a soldering iron to tin wire ends, and a multimeter for fault-finding.
 
 ## Cost
