@@ -33,7 +33,7 @@ Do this once.
 2. Open **Test Motors** on the **Gloves** tab.
 3. Tap a **Primary Glove** finger button and see which glove buzzes. That glove is the primary.
 
-If it's the wrong hand, swap the roles. See [Firmware and glove roles](/docs/firmware).
+If it's the wrong hand, swap the roles. See [Swap which glove is primary](/docs/updater/firmware#swap-which-glove-is-primary).
 
 ## Charging and battery
 
@@ -45,5 +45,5 @@ Charge each glove over USB-C. BuzzahBuddy shows each glove's battery level.
 ## Where to go next
 
 - Every light pattern is in [What the lights mean](/docs/lights).
-- Therapy profiles and firmware updates are in [Firmware and glove roles](/docs/firmware).
+- Therapy patterns are in [Configure the gloves](/docs/updater/configure), and firmware updates in [Update the firmware](/docs/updater/firmware).
 - If something's wrong, see [Troubleshooting](/docs/troubleshooting).

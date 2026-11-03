@@ -44,20 +44,20 @@ The motors run only from the battery, never from USB. A board on USB alone flash
 
 ## Install the firmware
 
-The BlueBuzzah Updater runs on Windows and macOS. Follow its [Getting Started](https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Getting-Started) page to download and install it.
+The BlueBuzzah Updater runs on Windows and macOS. Download it from [Get the Updater](/docs/updater/).
 
 Use a USB-C cable that carries data. Some cables only charge, and the Updater won't see the board through them.
 
 Flash both boards in one run, or one at a time.
 
 1. Connect the board over USB-C. The Updater lists it as **BlueBuzzah v3**, with its port shown beside it.
-2. Open **Firmware**. Under **Choose Devices**, select the board. Choose primary for 1 board and secondary for the other. With 2 boards selected, the Updater suggests one of each. [Understanding Device Roles](https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Understanding-Device-Roles) explains what each role does.
+2. Open **Firmware**. Under **Choose Devices**, select the board. Choose primary for 1 board and secondary for the other. With 2 boards selected, the Updater suggests one of each.
 3. Keep the latest version, then select **Update Firmware**. The Updater writes the firmware and sets the role in the same run.
 4. Label each board with its role, using tape and a marker.
 
 The firmware is the same on both boards. It doesn't matter yet which board gets which role. You pair each role with a glove in [stage 4, Fit the tactors in the gloves](/docs/gloves).
 
-Therapy profiles, later updates and swapping roles are in [Firmware and glove roles](/docs/firmware).
+[Update the firmware](/docs/updater/firmware) has more on each step, later updates and swapping roles. Therapy patterns are in [Configure the gloves](/docs/updater/configure).
 
 ## Check the boards
 

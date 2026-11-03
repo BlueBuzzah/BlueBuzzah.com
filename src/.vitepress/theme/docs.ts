@@ -16,11 +16,18 @@ export const stages: DocPage[] = [
 	{ path: 'docs/first-session.md', href: '/docs/first-session', title: 'Your first session', short: 'First session' }
 ]
 
+// Use the Updater: the desktop app's guide, not in the StageRail or Pager
+export const updater: DocPage[] = [
+	{ path: 'docs/updater/index.md', href: '/docs/updater/', title: 'Get the Updater' },
+	{ path: 'docs/updater/firmware.md', href: '/docs/updater/firmware', title: 'Update the firmware' },
+	{ path: 'docs/updater/configure.md', href: '/docs/updater/configure', title: 'Configure the gloves' },
+	{ path: 'docs/updater/troubleshooting.md', href: '/docs/updater/troubleshooting', title: 'Fix Updater problems' }
+]
+
 // Keep handy: reference pages, not in the StageRail or Pager
 export const keepHandy: DocPage[] = [
 	{ path: 'docs/lights.md', href: '/docs/lights', title: 'What the lights mean' },
 	{ path: 'docs/troubleshooting.md', href: '/docs/troubleshooting', title: 'Troubleshooting' },
-	{ path: 'docs/firmware.md', href: '/docs/firmware', title: 'Firmware and glove roles' },
 	{ path: 'docs/safety.md', href: '/docs/safety', title: 'Safety and disclaimers' },
 	{ path: 'docs/acknowledgements.md', href: '/docs/acknowledgements', title: 'Acknowledgements' }
 ]

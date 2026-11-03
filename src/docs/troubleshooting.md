@@ -11,7 +11,7 @@ Every light pattern is in [What the lights mean](/docs/lights).
 
 ### Breathing blue, never solid green
 
-Switch on both gloves, bring them closer, and power-cycle both. Check that 1 is primary and the other secondary (see [Firmware and glove roles](/docs/firmware)). A glove switched on alone stays breathing blue, which is normal.
+Switch on both gloves, bring them closer, and power-cycle both. Check that 1 is primary and the other secondary (see [Update the firmware](/docs/updater/firmware)). A glove switched on alone stays breathing blue, which is normal.
 
 ### Purple, flashing
 
@@ -87,7 +87,7 @@ The app relays these buttons through the primary, so the primary must be on and 
 
 ### The pattern lands on the wrong hand
 
-Swap the roles with the Updater (see [Swap which glove is primary](/docs/firmware#swap-which-glove-is-primary)), then check with **Test Motors** on the **Gloves** tab.
+Swap the roles with the Updater (see [Swap which glove is primary](/docs/updater/firmware#swap-which-glove-is-primary)), then check with **Test Motors** on the **Gloves** tab.
 
 ### Test Motors is unavailable
 
@@ -95,13 +95,7 @@ A session is running. Stop it on the **Session** tab first.
 
 ## Updater
 
-### The board isn't in the Updater
-
-Use a USB-C cable that carries data, not a charge-only one. Try another port, or select **Rescan**.
-
-### A flash fails or stops
-
-Keep the board plugged in, and don't close the Updater during a flash (see [Firmware and glove roles](/docs/firmware)).
+Flash and setup problems, and how to share the Updater's log, are in [Fix Updater problems](/docs/updater/troubleshooting).
 
 ## Fit and comfort
 
