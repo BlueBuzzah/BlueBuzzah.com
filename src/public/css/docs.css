@@ -95,3 +95,17 @@
 }
 
 .docs-pager { margin-top: var(--space-16); }
+
+/* Markdown components (Banner, Notices, Checklist, BuyList) -------------------------------------------------- */
+.docs-body .bb-banner__text p + p { margin-top: var(--space-2); }
+/* Checkbox rows stack in a Card with line dividers (Checkbox README) */
+.docs-checklist { padding: var(--space-2); }
+.docs-checklist > ul > li + li { border-top: var(--border-hairline) solid var(--line); }
+.docs-body > div > .buy-list { max-width: none; border-top: var(--border-hairline) solid var(--line); }
+.buy-list > li { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; padding-block: var(--space-2); border-bottom: var(--border-hairline) solid var(--line); }
+.buy-list__shop { gap: var(--space-2); font-weight: 600; justify-self: start; /* narrow: under the spec, aligned with the text after the 24px box */ margin-left: calc(var(--space-4) + 24px + var(--space-3)); }
+.buy-list__shop--none { color: var(--ink-muted); display: flex; align-items: center; min-height: var(--target); font-weight: 400; }
+@container (min-width: 40rem) {
+  .buy-list > li { grid-template-columns: minmax(0, 1fr) 14rem; }
+  .buy-list__shop { margin-left: 0; justify-self: end; text-align: right; padding-right: var(--space-4); }
+}
