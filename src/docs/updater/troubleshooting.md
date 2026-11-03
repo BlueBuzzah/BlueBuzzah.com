@@ -7,11 +7,9 @@ lead: When a flash or setup doesn't finish, the Updater says what went wrong and
 
 ## When something goes wrong
 
-The Updater shows what happened, with numbered steps to try. Follow them, then try again: select **Try Again** after a flash, or **Apply to Devices** after a setup. The exact error appears below the steps.
+The Updater says what happened, and for most problems lists numbered steps to try. The exact error appears under **Details**. Follow the steps, or the matching message below, then try again: select **Try Again** after a flash, or **Apply to Devices** after a setup.
 
-<!-- planned-image: /docs/img/updater/flash-failed | screenshot | a flash that didn't finish: the error banner with its steps and Copy Details, then Details and each glove marked Failed -->
-
-Common messages and what to do are below.
+<Shot src="/docs/img/updater/flash-failed" alt="A flash where 1 of 2 devices didn't update: Copy Details, the error under Details, and the Secondary device marked Failed." caption="A flash that finished on 1 glove but not the other." />
 
 ## View and share the log
 
