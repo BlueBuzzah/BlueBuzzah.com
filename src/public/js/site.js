@@ -6,7 +6,7 @@ document.querySelectorAll('.nav-mobile a').forEach(function (a) {
 });
 
 // Display settings sheet (footer): Appearance (System / Light / Dark) + High contrast.
-// Mirrors bundle.js SegmentedControl and Switch behaviour (DS import 1793120889-b415).
+// Mirrors bundle.js SegmentedControl and Switch behaviour (DS import 1793723291-7e67).
 (function () {
   var t = window.bbTheme;
   var box = document.querySelector('.theme-controls');
@@ -17,7 +17,7 @@ document.querySelectorAll('.nav-mobile a').forEach(function (a) {
 
   function check(size) {
     return '<svg class="bb-icon" width="' + size + '" height="' + size + '" viewBox="0 0 24 24" aria-hidden="true" ' +
-      'focusable="false"><use href="assets/icons/check.svg#icon"/></svg>';
+      'focusable="false"><use href="/assets/icons/check.svg#icon"/></svg>';
   }
 
   function render() {
