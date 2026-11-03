@@ -109,3 +109,23 @@
   .buy-list > li { grid-template-columns: minmax(0, 1fr) 14rem; }
   .buy-list__shop { margin-left: 0; justify-self: end; text-align: right; padding-right: var(--space-4); }
 }
+
+/* Page content: images outside a step, tables, download rows, Start here's stage list ------------------------- */
+/* an image outside a step (a part on its own) is no larger than a step thumbnail under its text */
+.docs-body > div > .shot { max-width: calc(var(--space-20) * 4); }
+.docs-files { display: flex; flex-wrap: wrap; gap: var(--target-gap); }
+/* Markdown tables (finger-to-port, cost, case contents). VitePress gives each one tabindex="0", so it shows focus. */
+.docs-body > div > table { width: 100%; border-collapse: collapse; }
+.docs-body th, .docs-body td { padding: var(--space-3) var(--space-4) var(--space-3) 0; border-bottom: var(--border-hairline) solid var(--line); text-align: left; vertical-align: top; }
+.docs-body th { border-bottom-color: var(--line-strong); font-weight: 600; }
+.docs-body table:focus-visible { outline: 3px solid transparent; outline-offset: 2px; box-shadow: var(--focus-ring); }
+/* Start here (StageList.vue): 48px link rows with a line between and target-gap between neighbours */
+.docs-stages__list > li { padding-block: calc(var(--target-gap) / 2); border-top: var(--border-hairline) solid var(--line); }
+.docs-stages__list > li:last-child { border-bottom: var(--border-hairline) solid var(--line); }
+.docs-stages__link {
+  display: flex; align-items: center; gap: var(--space-4); box-sizing: border-box; min-height: var(--target);
+  padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); color: var(--ink); font-weight: 600; text-decoration: none;
+}
+.docs-stages__link:hover { background: var(--surface-sunken); }
+.docs-stages__num { min-width: var(--space-8); color: var(--brand); }
+.docs-stages__start { margin-top: var(--space-8); }
