@@ -25,7 +25,7 @@ When a run doesn't finish, **Copy Details** copies the same log.
 
 The log clears when you select **Done** or **Start Over**, so copy or save it first.
 
-<!-- planned-image: /docs/img/updater/log | screenshot | the open log, with Copy Log and Save Log above its numbered lines -->
+<Shot src="/docs/img/updater/log" alt="The open log, with Copy Log and Save Log above its numbered lines." caption="The log, open, with Copy Log and Save Log." />
 
 ## Common messages
 

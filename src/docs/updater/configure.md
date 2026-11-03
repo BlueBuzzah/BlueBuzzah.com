@@ -19,7 +19,7 @@ Open **Configure**. Under **Choose a Pattern**, pick one:
 
 The Updater remembers your choice for next time.
 
-<!-- planned-image: /docs/img/updater/choose-pattern | screenshot | the Configure page's Choose a Pattern list, with Regular selected -->
+<Shot src="/docs/img/updater/choose-pattern" alt="Choose a Pattern, with Regular selected above Noisy, Hybrid, Gentle and Custom." caption="The 5 patterns, with Regular selected." />
 
 ## Custom settings
 
@@ -38,7 +38,7 @@ After you change a value, **Reset to Defaults** puts back the defaults. **Load f
 
 Custom settings need the primary glove plugged in when you apply them.
 
-<!-- planned-image: /docs/img/updater/custom-pattern | screenshot | the Custom Pattern settings, with each box and its range -->
+<Shot src="/docs/img/updater/custom-pattern" alt="The Custom Pattern settings at their defaults, each box with its range below it." caption="The Custom settings, each with its range." />
 
 You can also change the strength later in BuzzahBuddy, with the **Softest Buzz** and **Strongest Buzz** settings of the Custom profile, under **Edit Settings** on the **Gloves** tab.
 
@@ -52,10 +52,13 @@ You can also change the strength later in BuzzahBuddy, with the **Softest Buzz**
 1. Connect the gloves with a USB-C data cable. Under **Choose Devices**, select both. Only gloves with firmware installed are listed.
 2. Select **Apply to Devices**.
 3. Keep the gloves plugged in until it finishes. They restart on their own when setup is done.
+
+   <Shot src="/docs/img/updater/configure-progress" alt="Setup in progress: the first device is done and the second is setting up." caption="Setup in progress, 1 glove at a time." />
+
 4. When the Updater shows the pattern is set, select **Done**.
 
-Give both gloves the same settings so they work properly as a pair. If only 1 is plugged in, configure the other one the same way next.
+   <Shot src="/docs/img/updater/configure-done" alt="The success banner says Custom is set on both devices, and both are marked Done." caption="The pattern is set on both gloves." />
 
-<!-- planned-image: /docs/img/updater/configure-done | screenshot | the finished setup, saying the pattern is set on both devices, with each glove marked Done -->
+Give both gloves the same settings so they work properly as a pair. If only 1 is plugged in, configure the other one the same way next.
 
 If setup doesn't finish, see [Fix Updater problems](/docs/updater/troubleshooting).

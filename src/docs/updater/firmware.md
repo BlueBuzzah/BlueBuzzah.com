@@ -19,7 +19,7 @@ When you update, give each glove the role it had before, so the gloves stay on t
 
 If a glove isn't listed, select **Rescan**. See [Fix Updater problems](/docs/updater/troubleshooting#no-devices-found) if it still isn't there.
 
-<!-- planned-image: /docs/img/updater/choose-devices | screenshot | Choose Devices with 2 BlueBuzzah v3 gloves selected, one set to Primary and one to Secondary -->
+<Shot src="/docs/img/updater/choose-devices" alt="Choose Devices with 2 BlueBuzzah v2 devices selected, one set to the Primary role and one to Secondary." caption="2 gloves selected, with a role each." />
 
 ## Choose a version
 
@@ -31,7 +31,7 @@ To pick a different one, select **Change Version**. Each version has its **Relea
 - **Downloaded:** already on this computer, so it works without the internet. **Delete Download** removes it.
 - **Experimental:** an early build for testing, which may have bugs. These are hidden until you turn on **Show experimental versions**.
 
-<!-- planned-image: /docs/img/updater/choose-version | screenshot | the Choose a Version dialog, listing versions with the Latest and Downloaded badges -->
+<Shot src="/docs/img/updater/choose-version" alt="The Choose a Version dialog, with v2.1.2 chosen and marked Latest and Downloaded." caption="Choosing a version." />
 
 ## Install it
 
@@ -40,13 +40,13 @@ To pick a different one, select **Change Version**. Each version has its **Relea
 
 The Updater checks the gloves, downloads the firmware, writes it to each glove, then sets each role. Each glove shows its own progress.
 
-<!-- planned-image: /docs/img/updater/flash-progress | screenshot | a flash in progress, with the overall progress bar and each glove's progress -->
+<Shot src="/docs/img/updater/flash-progress" alt="A flash in progress: the Primary device is flashing and the Secondary device is waiting." caption="A flash in progress. Each glove has its own progress bar." />
 
 To stop a flash, select **Stop**, then **Stop Flash**. A stopped glove may not start until you flash it again.
 
 When it's done, the Updater shows that the firmware is on your gloves. Select **Done**, then unplug them. Turn both gloves on and they find each other on their own.
 
-<!-- planned-image: /docs/img/updater/flash-done | screenshot | the finished flash, saying the firmware is on both devices, with each glove marked Done -->
+<Shot src="/docs/img/updater/flash-done" alt="The success banner says firmware v2.1.2 is on both devices, and both are marked Done." caption="The flash is done on both gloves." />
 
 If the flash doesn't finish, see [Fix Updater problems](/docs/updater/troubleshooting).
 
