@@ -1,5 +1,5 @@
 <template>
-	<!-- mirrors bundle.js Banner (DS import 1793723291-7e67): the legal notices, untitled, verbatim from CLAUDE.md -->
+	<!-- mirrors bundle.js Banner (DS import 1793729877-6a2e): the legal notices, untitled, verbatim from CLAUDE.md -->
 	<div class="bb-banner bb-banner--info bb-banner--untitled">
 		<svg class="bb-icon bb-banner__icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/info.svg#icon"/></svg>
 		<div class="bb-banner__body">

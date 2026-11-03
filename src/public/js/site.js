@@ -6,7 +6,7 @@ document.querySelectorAll('.nav-mobile a').forEach(function (a) {
 });
 
 // Display settings sheet (footer): Appearance (System / Light / Dark) + High contrast.
-// Mirrors bundle.js SegmentedControl and Switch behaviour (DS import 1793723291-7e67).
+// Mirrors bundle.js SegmentedControl and Switch behaviour (DS import 1793729877-6a2e).
 (function () {
   var t = window.bbTheme;
   var box = document.querySelector('.theme-controls');
@@ -73,7 +73,7 @@ document.querySelectorAll('.nav-mobile a').forEach(function (a) {
 })();
 
 // Image lightbox (docs pages): every a[data-lightbox] opens the page's one .bb-lightbox.
-// Mirrors the Lightbox README's page behaviour (DS import 1793723291-7e67). Without showModal the links open the image file.
+// Mirrors the Lightbox README's page behaviour (DS import 1793729877-6a2e). Without showModal the links open the image file.
 (function () {
   var dialog = document.querySelector('.bb-lightbox');
   var links = document.querySelectorAll('a[data-lightbox]');

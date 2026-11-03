@@ -248,6 +248,48 @@ summary.bb-btn::-webkit-details-marker { display: none; }
 .bb-pattern__pulse--now { background: var(--accent); box-shadow: 0 0 0 3px var(--brand-soft); }
 .bb-pattern__caption { font-size: 0.9375rem; line-height: 1.375rem; color: var(--ink-muted); }
 
+/* GloveLight --------------------------------------------------------- */
+/* The glove's status light: a lit dot (::after) over an unlit ring (::before) on a media-ground lens.
+   Timings are the firmware's (include/config.h LED_*_MS, src/hardware.cpp LEDController::update). As on the glove, blinks start lit and fades start at their dimmest. */
+.bb-light {
+  --bb-light-color: var(--light-blue);
+  --bb-light-breathe: 2000ms;       /* BREATHE_SLOW: fade cycle */
+  --bb-light-pulse: 1500ms;         /* PULSE_SLOW: fade cycle */
+  --bb-light-blink-slow: 2000ms;    /* BLINK_SLOW: 1000 on, 1000 off */
+  --bb-light-blink: 500ms;          /* BLINK_CONNECT: 250 on, 250 off */
+  --bb-light-blink-fast: 400ms;     /* BLINK_FAST: 200 on, 200 off */
+  /* BLINK_URGENT is 150 on, 150 off on the glove; slowed on screen so nothing flashes more than three times a second (README Motion) */
+  --bb-light-blink-urgent: 340ms;
+  --bb-light-double-blink: 1250ms;  /* DOUBLE_BLINK: on 150, off 150, on 150, off 650 */
+  --bb-light-fade-ease: cubic-bezier(0.37, 0, 0.63, 1); /* sine in-out, like the firmware's sine breath */
+  position: relative; display: inline-block; flex: none; vertical-align: middle; box-sizing: border-box; width: var(--icon-l); height: var(--icon-l);
+  border: var(--border-hairline) solid var(--line); border-radius: var(--radius-full); background: var(--media-ground); overflow: hidden;
+}
+.bb-light::before, .bb-light::after { content: ""; position: absolute; inset: 25%; box-sizing: border-box; border-radius: var(--radius-full); }
+.bb-light::before { border: var(--border-control) solid color-mix(in srgb, var(--bb-light-color) 58%, var(--media-ground)); }
+.bb-light::after { background: var(--bb-light-color); box-shadow: 0 0 6px 2px color-mix(in srgb, var(--bb-light-color) 60%, transparent); }
+.bb-light--blue { --bb-light-color: var(--light-blue); }
+.bb-light--cyan { --bb-light-color: var(--light-cyan); }
+.bb-light--green { --bb-light-color: var(--light-green); }
+.bb-light--yellow { --bb-light-color: var(--light-yellow); }
+.bb-light--orange { --bb-light-color: var(--light-orange); }
+.bb-light--red { --bb-light-color: var(--light-red); }
+.bb-light--purple { --bb-light-color: var(--light-purple); }
+.bb-light--breathe::after { animation: bb-light-fade var(--bb-light-breathe) var(--bb-light-fade-ease) infinite; }
+.bb-light--pulse::after { animation: bb-light-fade var(--bb-light-pulse) var(--bb-light-fade-ease) infinite; }
+.bb-light--blink-slow::after { animation: bb-light-blink var(--bb-light-blink-slow) step-end infinite; }
+.bb-light--blink::after { animation: bb-light-blink var(--bb-light-blink) step-end infinite; }
+.bb-light--blink-fast::after { animation: bb-light-blink var(--bb-light-blink-fast) step-end infinite; }
+.bb-light--blink-urgent::after { animation: bb-light-blink var(--bb-light-blink-urgent) step-end infinite; }
+.bb-light--double-blink::after { animation: bb-light-double-blink var(--bb-light-double-blink) step-end infinite; }
+/* WCAG 2.2.2: a ticked "Pause the lights" checkbox (input.bb-lights-pause) anywhere on the page holds every light steady and lit, like reduced motion; no JavaScript needed */
+:root:has(input.bb-lights-pause:checked) .bb-light::after { animation: none; opacity: 1; }
+@keyframes bb-light-fade { 0%, 100% { opacity: 0.1; } 50% { opacity: 1; } } /* the firmware's breath never drops below 10% */
+@keyframes bb-light-blink { 0% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes bb-light-double-blink { 0% { opacity: 1; } 12% { opacity: 0; } 24% { opacity: 1; } 36%, 100% { opacity: 0; } }
+.bb-light-seq { display: inline-flex; align-items: center; gap: var(--space-2); vertical-align: middle; font-size: 0.875rem; line-height: 1.25rem; color: var(--ink-muted); } /* caption */
+.bb-light-label { display: inline-flex; align-items: center; gap: var(--space-3); }
+
 /* TabBar ------------------------------------------------------------- */
 .bb-tabbar { display: flex; justify-content: space-around; gap: var(--space-1); padding: var(--space-2) var(--space-2) var(--space-3); background: var(--surface-raised); border-top: var(--border-hairline) solid var(--line); }
 .bb-tab {
@@ -328,6 +370,7 @@ summary.bb-btn::-webkit-details-marker { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .bb-btn, .bb-switch__track, .bb-switch__thumb, .bb-check__input, .bb-seg__opt, .bb-progress__fill, .bb-ring__arc, .bb-tab__icon, .bb-field__input, .bb-pager__link { transition: none; }
   .bb-ring--idle .bb-ring__track { animation: none; stroke: var(--brand-soft); }
+  .bb-light::after { animation: none; opacity: 1; } /* steady and lit; the words beside it still name the pattern */
 }
 @media (forced-colors: active) {
   .bb-btn, .bb-stepper__btn, .bb-seg__opt, .bb-glove, .bb-badge, .bb-banner, .bb-card, .bb-pager__link, .bb-thumb { border: 2px solid ButtonText; }
@@ -348,4 +391,8 @@ summary.bb-btn::-webkit-details-marker { display: none; }
   .bb-stagerail__link[aria-current] .bb-stagerail__num, .bb-stagerail__dot--on { background: Highlight; border-color: Highlight; color: HighlightText; forced-color-adjust: none; }
   .bb-pattern__pulse, .bb-progress__fill { background: Highlight; forced-color-adjust: none; }
   .bb-ring__arc { stroke: Highlight; }
+  /* GloveLight: system colors in place of the light's color; lit is a filled dot, unlit the bare ring. */
+  .bb-light { forced-color-adjust: none; background: Canvas; border-color: CanvasText; }
+  .bb-light::before { border-color: CanvasText; }
+  .bb-light::after { background: CanvasText; box-shadow: none; }
 }

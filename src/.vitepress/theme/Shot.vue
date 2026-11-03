@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// mirrors bundle.js Lightbox thumbnail (DS import 1793723291-7e67); without JavaScript the links open the image.
+// mirrors bundle.js Lightbox thumbnail (DS import 1793729877-6a2e); without JavaScript the links open the image.
 // src is the image path without extension: NAME.webp is the full image, NAME-thumb.webp the 640px thumbnail.
 defineProps<{ src: string; alt: string; caption?: string }>()
 </script>

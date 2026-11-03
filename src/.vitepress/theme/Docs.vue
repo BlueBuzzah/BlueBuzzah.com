@@ -24,7 +24,7 @@ const next = stage && index < stages.length - 1 ? { hint: `Next: stage ${index +
 
 		<main class="docs-main">
 			<template v-if="stage">
-				<!-- mirrors bundle.js StageRail (DS import 1793723291-7e67) -->
+				<!-- mirrors bundle.js StageRail (DS import 1793729877-6a2e) -->
 				<nav class="bb-stagerail docs-rail" aria-label="Build stages">
 					<ol class="bb-stagerail__list">
 						<li v-for="(s, i) in stages" :key="s.path"><a class="bb-stagerail__link" :href="s.href" :aria-current="i === index ? 'step' : undefined"><span class="bb-stagerail__num">{{ i + 1 }}</span><span class="bb-stagerail__label">{{ s.short }}</span></a></li>
@@ -37,11 +37,11 @@ const next = stage && index < stages.length - 1 ? { hint: `Next: stage ${index +
 			<p v-if="fm.lead" class="body-l docs-lead">{{ fm.lead }}</p>
 
 			<div v-if="fm.need || fm.tools || fm.figure" class="docs-intro">
-				<!-- mirrors bundle.js Card (DS import 1793723291-7e67), holding Checkbox rows -->
+				<!-- mirrors bundle.js Card (DS import 1793729877-6a2e), holding Checkbox rows -->
 				<section v-if="fm.need || fm.tools" class="bb-card bb-card--lg docs-need" aria-labelledby="docs-need-title">
 					<header class="bb-card__head"><div><h2 class="bb-card__title" id="docs-need-title">You'll need</h2></div></header>
 					<ul v-if="fm.need" class="list-reset docs-need__list">
-						<!-- mirrors bundle.js Checkbox (DS import 1793723291-7e67) -->
+						<!-- mirrors bundle.js Checkbox (DS import 1793729877-6a2e) -->
 						<li v-for="(item, i) in fm.need" :key="i"><label class="bb-check"><input type="checkbox" class="bb-check__input"><span class="bb-check__text"><span class="bb-check__label">{{ item.qty }} {{ item.label }}</span></span></label></li>
 					</ul>
 					<template v-if="fm.tools">
@@ -56,14 +56,14 @@ const next = stage && index < stages.length - 1 ? { hint: `Next: stage ${index +
 
 			<Content class="docs-body" />
 
-			<!-- mirrors bundle.js Pager (DS import 1793723291-7e67) -->
+			<!-- mirrors bundle.js Pager (DS import 1793729877-6a2e) -->
 			<nav v-if="previous || next" class="bb-pager docs-pager" aria-label="Pages">
 				<a v-if="previous" class="bb-pager__link bb-pager__link--prev" :href="previous.href"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/chevron-left.svg#icon"/></svg><span class="bb-pager__text"><span class="bb-pager__hint">{{ previous.hint }}</span><span class="bb-pager__title">{{ previous.title }}</span></span></a>
 				<a v-if="next" class="bb-pager__link bb-pager__link--next" :href="next.href"><span class="bb-pager__text"><span class="bb-pager__hint">{{ next.hint }}</span><span class="bb-pager__title">{{ next.title }}</span></span><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/chevron-right.svg#icon"/></svg></a>
 			</nav>
 		</main>
 
-		<!-- mirrors bundle.js Lightbox (DS import 1793723291-7e67): the page's one shared dialog, which site.js fills and opens -->
+		<!-- mirrors bundle.js Lightbox (DS import 1793729877-6a2e): the page's one shared dialog, which site.js fills and opens -->
 		<dialog class="bb-lightbox" aria-label="Image">
 			<form method="dialog" class="bb-lightbox__bar"><button class="bb-lightbox__close"><svg class="bb-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/x.svg#icon"/></svg><span>Close</span></button></form>
 			<img class="bb-lightbox__img" alt=""><p class="bb-lightbox__caption"></p>

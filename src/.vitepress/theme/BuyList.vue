@@ -18,7 +18,7 @@ function label(p: Part) {
 
 <template>
 	<ul class="list-reset buy-list">
-		<!-- mirrors bundle.js Checkbox (DS import 1793723291-7e67), with the store link beside it -->
+		<!-- mirrors bundle.js Checkbox (DS import 1793729877-6a2e), with the store link beside it -->
 		<li v-for="(p, i) in parts" :key="i">
 			<label class="bb-check"><input type="checkbox" class="bb-check__input" :aria-describedby="`buy-spec-${i}`"><span class="bb-check__text"><span class="bb-check__label">{{ label(p) }}</span><span class="bb-check__detail" :id="`buy-spec-${i}`" aria-hidden="true">{{ p.spec }}</span></span></label>
 			<a v-if="p.href" class="buy-list__shop link-icon" :href="p.href"><span>{{ p.store || 'Buy' }}</span><svg class="bb-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/external-link.svg#icon"/></svg></a>

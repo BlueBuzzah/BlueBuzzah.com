@@ -68,7 +68,7 @@ const { frontmatter } = useData()
 			<h2 class="title-l" id="settings-title">Display settings</h2>
 			<p class="body-s text-muted">BlueBuzzah follows your device's settings. Changes here apply to this browser only.</p>
 			<div class="theme-controls">
-				<!-- mirrors bundle.js SegmentedControl (DS import 1793723291-7e67) -->
+				<!-- mirrors bundle.js SegmentedControl (DS import 1793729877-6a2e) -->
 				<div class="bb-seg">
 					<span class="bb-seg__label" id="theme-label">Appearance</span>
 					<div class="bb-seg__track" role="radiogroup" aria-labelledby="theme-label">
@@ -77,7 +77,7 @@ const { frontmatter } = useData()
 						<button type="button" role="radio" aria-checked="false" tabindex="-1" class="bb-seg__opt" data-mode="dark"><span>Dark</span></button>
 					</div>
 				</div>
-				<!-- mirrors bundle.js Switch (DS import 1793723291-7e67) -->
+				<!-- mirrors bundle.js Switch (DS import 1793729877-6a2e) -->
 				<button type="button" role="switch" aria-checked="false" aria-labelledby="hc-label" aria-describedby="hc-desc" class="bb-switch">
 					<span class="bb-switch__text"><span class="bb-switch__label" id="hc-label">High contrast</span><span class="bb-switch__desc" id="hc-desc">Stronger colors and borders</span></span>
 					<span class="bb-switch__track" aria-hidden="true"><span class="bb-switch__thumb"></span></span>
