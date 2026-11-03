@@ -12,7 +12,7 @@ tools:
   - Small Phillips screwdriver
 figure:
   src: /docs/img/bluebuzzah-exploded-labeled
-  alt: "Exploded view of the BlueBuzzah case and its contents, labeled in assembly order: number 1 lower shell, number 2 battery, number 3 BlueBuzzah v3 PCB, number 4 M2 screws, number 5 switch, number 6 antenna, number 7 upper shell"
+  alt: "Exploded view of the BlueBuzzah case and its contents, numbered in assembly order: 1: lower shell, 2: battery, 3: BlueBuzzah v3 PCB, 4: 2 M2 screws, 5: switch, 6: antenna, 7: upper shell"
   caption: The case and its contents, numbered in the order they go together.
 ---
 

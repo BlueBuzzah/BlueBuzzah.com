@@ -4,9 +4,9 @@ title: Start here
 description: "How to build a pair of BlueBuzzah gloves: what to buy and print, then how to put them together, in 7 stages."
 lead: "BlueBuzzah is a pair of vibrotactile gloves you build yourself, for Parkinson's disease research. This guide takes you from buying the parts to your first session, in 7 stages."
 figure:
-  src: /docs/img/bluebuzzah-exploded
-  alt: "Exploded view of one BlueBuzzah case and what goes in it: the upper shell, the switch, 2 M2 screws, the antenna, the BlueBuzzah v3 PCB, the battery and the lower shell"
-  caption: One glove's case and what goes inside it.
+  src: /docs/img/bluebuzzah-exploded-labeled
+  alt: "Exploded view of the BlueBuzzah case and its contents, numbered in assembly order: 1: lower shell, 2: battery, 3: BlueBuzzah v3 PCB, 4: 2 M2 screws, 5: switch, 6: antenna, 7: upper shell"
+  caption: One glove's case and what goes inside it, numbered in the order it goes together.
 ---
 
 <Notices />

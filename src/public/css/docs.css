@@ -4,12 +4,11 @@
 
 .docs { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); padding-block: var(--space-6) var(--space-16); }
 
-/* Docs nav (web.md Docs: left nav, sticky on desktop, "Contents" disclosure on mobile) -------------------------- */
+/* Docs nav (web.md Docs: left nav, scrolls with the page, "Contents" disclosure on mobile) -------------------------- */
 .docs-side { display: none; }
 .docs-nav__group { margin-block: var(--space-6) var(--space-2); padding-inline: var(--space-3); }
 .docs-nav__group:first-child { margin-top: 0; }
 .docs-nav__list { display: grid; gap: var(--target-gap); }
-.docs-nav__sub { margin-top: var(--target-gap); }
 /* 48px rows; the current page has a brand-soft fill, a brand edge and bold text, plus aria-current. The edge is a real
    border (not a shadow) so forced-colors mode keeps it; other rows pad the same space instead of a transparent border,
    which forced colors would draw. */
@@ -23,20 +22,13 @@
   padding-left: var(--space-3); border-left: var(--space-1) solid var(--brand);
   background: var(--brand-soft); font-weight: 700;
 }
-/* the current page's own sections: indented, muted, in tokens.css .body-s restated (must equal it; re-check after a design-system re-import) */
-.docs-nav__sublink { padding-left: var(--space-8); color: var(--ink-muted); font-size: 0.9375rem; line-height: 1.375rem; }
-.docs-nav__sublink:hover { color: var(--ink); }
 
 .docs-contents > .docs-nav { padding-top: var(--space-4); }
 
 @media (min-width: 900px) {
   .docs { grid-template-columns: calc(var(--space-16) * 4) minmax(0, 1fr); gap: var(--space-10); padding-top: var(--space-8); }
   .docs-contents { display: none; }
-  /* inner padding keeps the focus ring inside the scroll box */
-  .docs-side {
-    display: block; position: sticky; top: 0; align-self: start; box-sizing: border-box;
-    max-height: 100vh; max-height: 100dvh; overflow-y: auto; padding: var(--space-2);
-  }
+  .docs-side { display: block; }
 }
 
 /* Content column: layout inside it follows the column's own width (container queries) ----------------------- */

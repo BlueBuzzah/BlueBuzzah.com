@@ -14,8 +14,6 @@ export default defineConfig({
 	// links omit .html; the files keep it, so GitHub Pages serves both /privacy and /privacy.html
 	cleanUrls: true,
 	markdown: {
-		// page.headers lists a docs page's ## sections for the docs nav
-		headers: { level: [2] },
 		// no "#" permalink inside each heading: without VitePress's default theme it's a stray, empty focusable link
 		anchor: { permalink: false }
 	},
