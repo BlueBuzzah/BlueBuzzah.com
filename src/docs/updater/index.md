@@ -20,8 +20,6 @@ On macOS, open the download and drag the Updater into Applications. On Windows, 
 
 ## Find your way around
 
-<!-- planned-image: /docs/img/updater/firmware-page | screenshot | the Updater's Firmware page, with the sidebar showing Firmware, Configure and Settings -->
-
 The sidebar has 3 sections. Each one has a keyboard shortcut, shown beside it.
 
 - **Firmware:** install or update the firmware, and set each glove's role. See [Update the firmware](/docs/updater/firmware).
