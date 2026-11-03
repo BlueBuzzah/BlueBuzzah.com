@@ -1,13 +1,13 @@
-/* Docs pages (Docs.vue, DocsNav.vue). Linked on every page, so every rule sits under a .docs class. Every value is a
-   design-system token, except the spec's layout widths (16rem nav, 15rem / 20rem step thumbnails, 40rem container
-   query), which have none. Breakpoint: web.md's 900px, where the side nav becomes the Contents disclosure. */
+/* Docs pages (Docs.vue, DocsNav.vue, StageList.vue, BuyList.vue). Linked on every page, so every rule sits under a .docs
+   or docs component class. Every value is a design-system token, except layout widths with no token (the 40rem container
+   query, the 14rem buy-list shop column, the 24px checkbox box width). Breakpoint: web.md's 900px, where the side nav
+   becomes the Contents disclosure. */
 
 .docs { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); padding-block: var(--space-6) var(--space-16); }
 
 /* Docs nav (web.md Docs: left nav, scrolls with the page, "Contents" disclosure on mobile) -------------------------- */
 .docs-side { display: none; }
 .docs-nav__group { margin-block: var(--space-6) var(--space-2); padding-inline: var(--space-3); }
-.docs-nav__group:first-child { margin-top: 0; }
 .docs-nav__list { display: grid; gap: var(--target-gap); }
 /* 48px rows; the current page has a brand-soft fill, a brand edge and bold text, plus aria-current. The edge is a real
    border (not a shadow) so forced-colors mode keeps it; other rows pad the same space instead of a transparent border,
@@ -76,6 +76,7 @@
    it; the last row is flexible, so a tall thumbnail adds its height there instead of spreading the text apart. */
 @container (min-width: 40rem) {
   .docs-intro { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+  .docs-intro:has(> :only-child) { grid-template-columns: minmax(0, 1fr); }
   .docs-body > div > ol > li:has(> .shot) {
     display: grid; grid-template-columns: minmax(0, 1fr) calc(var(--space-20) * 3); grid-template-rows: repeat(3, auto) 1fr;
     column-gap: var(--space-6); align-items: start; max-width: none;
@@ -95,10 +96,10 @@
 .docs-checklist > ul > li + li { border-top: var(--border-hairline) solid var(--line); }
 .docs-body > div > .buy-list { max-width: none; border-top: var(--border-hairline) solid var(--line); }
 .buy-list > li { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; padding-block: var(--space-2); border-bottom: var(--border-hairline) solid var(--line); }
-.buy-list__shop { gap: var(--space-2); font-weight: 600; justify-self: start; /* narrow: under the spec, aligned with the text after the 24px box */ margin-left: calc(var(--space-4) + 24px + var(--space-3)); }
+.buy-list__shop { gap: var(--space-2); font-weight: 600; justify-self: start; /* narrow: under the spec, aligned with the text after the checkbox box (24px, the DS Checkbox's fixed size) */ margin-left: calc(var(--space-4) + 24px + var(--space-3)); }
 .buy-list__shop--none { color: var(--ink-muted); display: flex; align-items: center; min-height: var(--target); font-weight: 400; }
 @container (min-width: 40rem) {
-  .buy-list > li { grid-template-columns: minmax(0, 1fr) 14rem; }
+  .buy-list > li { grid-template-columns: minmax(0, 1fr) 14rem; /* 14rem fits the longest shop name ('Amazon (5-pack)') beside the spec */ }
   .buy-list__shop { margin-left: 0; justify-self: end; text-align: right; padding-right: var(--space-4); }
 }
 
@@ -110,7 +111,7 @@
 .docs-body > div > table { width: 100%; border-collapse: collapse; }
 .docs-body th, .docs-body td { padding: var(--space-3) var(--space-4) var(--space-3) 0; border-bottom: var(--border-hairline) solid var(--line); text-align: left; vertical-align: top; }
 .docs-body th { border-bottom-color: var(--line-strong); font-weight: 600; }
-.docs-body table:focus-visible { outline: 3px solid transparent; outline-offset: 2px; box-shadow: var(--focus-ring); }
+.docs-body table:focus-visible { outline: var(--focus-width) solid transparent; outline-offset: var(--focus-offset); box-shadow: var(--focus-ring); }
 /* Start here (StageList.vue): 48px link rows with a line between and target-gap between neighbours */
 .docs-stages__list > li { padding-block: calc(var(--target-gap) / 2); border-top: var(--border-hairline) solid var(--line); }
 .docs-stages__list > li:last-child { border-bottom: var(--border-hairline) solid var(--line); }

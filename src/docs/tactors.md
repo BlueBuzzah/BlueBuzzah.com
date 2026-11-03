@@ -11,7 +11,7 @@ need:
 tools: [Wire strippers, Flush trim wire cutters, Tweezers]
 figure:
   src: /docs/img/tactor-exploded-labeled
-  alt: Exploded view of one tactor with 10 numbered parts in build order
+  alt: Exploded view of 1 tactor with 10 numbered parts in build order
   caption: The 10 tactor parts, numbered in build order.
 ---
 
@@ -36,9 +36,9 @@ Build 8 tactors, 4 per glove: index, middle, ring and little. If you're adding t
 
 Each tactor uses 1 ready-made JST PH 2-pin female connector lead, about 6 in (150 mm) or longer. The connector plugs into a motor port on the board.
 
-1. Cut each lead about 6 in (150 mm) from the connector. A longer lead leaves room to trim later.
+1. If a lead is longer than about 6 in (150 mm), cut it there.
 
-   <Shot src="/docs/img/wire-lead" alt="A tactor wire lead with a white 2-pin JST-PH connector and bare ends" />
+   <Shot src="/docs/img/wire-lead" alt="A tactor wire lead with a white 2-pin JST PH connector and bare ends" />
 
 2. Strip 5 mm of insulation from both wires.
 3. Leave the ends bare. The wire plug presses them onto the motor.
@@ -59,7 +59,7 @@ The wire plug (3) holds the bare ends of the wire lead (4) on the LRA motor (2).
 
 2. Bend the bare wires around to each side of the wire plug and into the vertical side slots.
 
-   <Shot src="/docs/img/tactor-wires-bent" alt="The 2 bare copper ends come up out of the wire plug's slot, bend outward along its top face, one to each side, and turn down into the vertical side slots." />
+   <Shot src="/docs/img/tactor-wires-bent" alt="The 2 bare copper ends come up out of the wire plug's slot, bend outward along its top face, 1 to each side, and turn down into the vertical side slots." />
 
 3. Bend the insulated wire down until it rests in the horizontal notch. The bare wires should be flush with the top of the wire plug. If they're too long, trim them flush with the flush trim wire cutters.
 

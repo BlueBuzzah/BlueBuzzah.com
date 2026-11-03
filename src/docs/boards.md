@@ -6,7 +6,7 @@ lead: "Fit the antenna, connect the battery and install the firmware on both boa
 need:
   - { qty: 2, label: boards }
   - { qty: 2, label: antennas }
-  - { qty: 2, label: charged batteries }
+  - { qty: 2, label: batteries }
   - { qty: 1, label: USB-C data cable }
 tools:
   - A computer with the BlueBuzzah Updater (Windows or macOS)
@@ -34,9 +34,11 @@ To remove a plug, pull on the plug body, never the cable.
 
 ## Connect the battery
 
-1. Plug the charged battery into the battery connector on each board.
+1. Plug a battery into the battery connector on each board.
 
-   <Shot src="/docs/img/battery" alt="The PKCELL LP552035 battery with its red and black lead ending in a white 2-pin JST-PH plug" />
+   <Shot src="/docs/img/battery" alt="The PKCELL LP552035 battery with its red and black lead ending in a white 2-pin JST PH plug" />
+
+The board charges the battery whenever USB-C is connected.
 
 The motors run only from the battery, never from USB. A board on USB alone flashes fine but can't buzz a motor.
 
@@ -49,7 +51,7 @@ Use a USB-C cable that carries data. Some cables only charge, and the Updater wo
 Flash both boards in one run, or one at a time.
 
 1. Connect the board over USB-C. The Updater lists it as **BlueBuzzah v3**, with its port shown beside it.
-2. Open **Firmware**. Under **Choose Devices**, select the board. Choose primary for one board and secondary for the other. With 2 boards selected, the Updater suggests one of each. [Understanding Device Roles](https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Understanding-Device-Roles) explains what each role does.
+2. Open **Firmware**. Under **Choose Devices**, select the board. Choose primary for 1 board and secondary for the other. With 2 boards selected, the Updater suggests one of each. [Understanding Device Roles](https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Understanding-Device-Roles) explains what each role does.
 3. Keep the latest version, then select **Update Firmware**. The Updater writes the firmware and sets the role in the same run.
 4. Label each board with its role, using tape and a marker.
 
@@ -74,7 +76,7 @@ An orange slow blink means the board has no role yet. Go back to the Updater and
 
 Don't move on until both boards pass. You pass when all of these are true:
 
-<Checklist :items="['Both boards flashed without errors.', 'Each board has a role, one primary and one secondary, and a label.', 'BuzzahBuddy connects.', 'The Gloves tab shows a Primary card and a Secondary card.', 'Both cards show the badge Connected and a battery level.']" />
+<Checklist :items="['Both boards flashed without errors.', 'Each board has a role, 1 primary and 1 secondary, and a label.', 'BuzzahBuddy connects.', 'The Gloves tab shows a Primary card and a Secondary card.', 'Both cards show the badge Connected and a battery level.']" />
 
 If the **Secondary** card shows **Not Connected**, the secondary isn't linked to the primary. Check that it's powered on and close to the primary. If it shows **No Reading**, the primary is connected but isn't reporting on the secondary.
 

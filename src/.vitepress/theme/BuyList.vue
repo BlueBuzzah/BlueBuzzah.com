@@ -7,7 +7,7 @@ interface Part { qty: string | number; name: string; spec: string; store?: strin
 const { frontmatter: fm } = useData()
 const parts: Part[] = fm.value.buy ?? []
 
-// "2" + "Antenna" -> "2 Antenna"; "24, buy extra" -> "24 Compression springs, buy extra"; "a few" -> "Straps or small zip ties, a few"
+// "2" + "Antennas" -> "2 Antennas"; "24, buy extra" -> "24 Compression springs, buy extra"; "a few" -> "Straps or small zip ties, a few"
 function label(p: Part) {
 	const qty = String(p.qty)
 	if (!/^\d/.test(qty)) return `${p.name}, ${qty}`

@@ -11,7 +11,7 @@ Every light pattern is in [What the lights mean](/docs/lights).
 
 ### Breathing blue, never solid green
 
-Switch on both gloves, bring them closer, and power-cycle both. Check that one is primary and the other secondary (see [Firmware and glove roles](/docs/firmware)). A glove switched on alone stays breathing blue, which is normal.
+Switch on both gloves, bring them closer, and power-cycle both. Check that 1 is primary and the other secondary (see [Firmware and glove roles](/docs/firmware)). A glove switched on alone stays breathing blue, which is normal.
 
 ### Purple, flashing
 
@@ -43,7 +43,7 @@ Recheck the battery connection. Check that the USB-C cable and port are giving p
 
 Connect the battery. The motor drivers run from the battery, so USB power alone never drives them.
 
-### One finger is dead in Test Motors
+### 1 finger is dead in Test Motors
 
 Tap each finger button to find it. Reseat its wire plug so the bare wire touches the LRA motor (see [stage 3](/docs/tactors#connect-the-wire-plug-and-lra-motor)), then reseat its JST connector (see [stage 5](/docs/wiring#which-finger-goes-in-which-port)).
 
@@ -57,7 +57,7 @@ Reseat the wire plug and the JST connector. If a wire has pulled out of the conn
 
 ### Weak buzz that started after routing the wires
 
-A wire is strained or pinched. Loosen the routing and add slack at the joint under tension (see [stage 5](/docs/wiring#secure-the-wires)).
+A wire is strained or pinched. Loosen the routing and add slack at the joint under tension (see [stage 5](/docs/wiring#route-the-wires)).
 
 ### Buzz was right before routing and wrong after
 

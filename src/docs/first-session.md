@@ -4,7 +4,7 @@ title: Your first session
 description: "Stage 7 of building BlueBuzzah gloves: run a session with your finished pair, check which glove is primary, and keep the batteries charged."
 lead: Run a session with your finished pair, check which glove is primary, and keep both gloves charged.
 need:
-  - { qty: 2, label: "charged gloves, one primary and one secondary" }
+  - { qty: 2, label: "charged gloves, 1 primary and 1 secondary" }
   - { qty: 1, label: phone or tablet with BuzzahBuddy }
 ---
 

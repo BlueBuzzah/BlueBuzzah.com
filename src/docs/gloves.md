@@ -1,8 +1,8 @@
 ---
 page: docs
 title: Fit the tactors in the gloves
-description: "Stage 4 of building BlueBuzzah gloves: fit 4 tactors in each glove, one per finger, with the wire leads leaving through a tiny hole between the fingers."
-lead: "Fit 4 tactors in each glove, one per finger: index, middle, ring and little. You wire them in the next stage."
+description: "Stage 4 of building BlueBuzzah gloves: fit 4 tactors in each glove, 1 per finger, with the wire leads leaving through a tiny hole between the fingers."
+lead: "Fit 4 tactors in each glove, 1 per finger: index, middle, ring and little. You wire them in the next stage."
 need:
   - { qty: 2, label: stretchy gloves }
   - { qty: 8, label: tactors from stage 3 }
@@ -10,7 +10,7 @@ tools:
   - Fabric scissors
   - Cutting mat
   - Marker
-  - Ruler
+  - Tape
 ---
 
 ## Pick and label the gloves
@@ -23,7 +23,7 @@ Label the left-hand glove and the right-hand glove with tape. Write down which b
 
 The tactor sits snugly in the glove's fingertip. Its wire lead runs back along the inside of the finger. The lead's JST PH (2 mm) connector goes out through a tiny hole cut in the glove between the fingers, near the hand and finger webbing, and plugs into the board later.
 
-Do this for each finger. Check the mark before you cut. A hole can't be uncut.
+Do this for each finger. Any gap between the fingers works for any lead, and 2 leads can share a hole. Check the mark before you cut. A hole can't be uncut.
 
 1. Put the glove on and mark the spot between the fingers, near the webbing where the finger meets the hand.
 2. Take the glove off. On the cutting mat, cut a tiny hole at the mark. Make it just big enough for the JST PH connector on the wire lead to pass through.
@@ -47,6 +47,6 @@ The standard build has no thumb tactor. If you add one, don't copy a finger fit.
 
 ## Leave the wires loose
 
-Leave enough slack inside each finger for it to curl fully without pulling on the tactor. Don't secure the wires yet. You route and secure them in [stage 5](/docs/wiring#secure-the-wires), after you test each tactor.
+Leave enough slack inside each finger for it to curl fully without pulling on the tactor. Don't route the wires yet. You route them in [stage 5](/docs/wiring#route-the-wires), after you test each tactor.
 
 <!-- planned-image: images/v3/assembly/glove-wires-loose.jpg | photo -->

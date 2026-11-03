@@ -1,8 +1,8 @@
 ---
 page: docs
 title: Wire and test
-description: "Stage 5 of building BlueBuzzah gloves: plug each tactor into the right port, test every finger in BuzzahBuddy, then secure the wires."
-lead: Plug each glove's tactors into its board, test that every finger buzzes in the right place, then secure the wires. Do this for both gloves.
+description: "Stage 5 of building BlueBuzzah gloves: plug each tactor into the right port, test every finger in BuzzahBuddy, then route the wires."
+lead: Plug each glove's tactors into its board, test that every finger buzzes in the right place, then route the wires. Do this for both gloves.
 need:
   - { qty: 2, label: gloves with tactors fitted }
   - { qty: 2, label: boards from stage 2 }
@@ -46,14 +46,16 @@ A tactor in the wrong port still buzzes, so the glove looks fine. This test catc
 
 The secondary's buttons work only while the primary is on and paired.
 
-Check the other glove the same way. One glove tells you nothing about the other.
+Check the other glove the same way. Testing 1 glove tells you nothing about the other.
 
-## Secure the wires
+## Route the wires
 
-- Gather the wires into a single loom as they run from the fingertips toward the board.
-- Leave slack at each finger joint, so a full curl doesn't pull on the connector.
-- Don't bend the wire sharply at the connector. Let it exit straight and curve gradually.
-- Leave a small service loop near the board, so you can unplug a connector without tugging the harness.
+Each lead runs inside its finger and leaves through a hole between the fingers.
+
+- Run each lead from its hole to the case.
+- Leave a little slack so the fingers can curl fully without pulling on a connector.
+- Don't bend a wire sharply at the connector.
+- Leave a small service loop near the board.
 
 <!-- planned-image: images/v3/assembly/glove-harness-routed.jpg | photo -->
 

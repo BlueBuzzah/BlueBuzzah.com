@@ -1,15 +1,15 @@
 ---
 page: docs
 title: Get the parts
-description: "Stage 1 of building BlueBuzzah gloves: order the 2 boards, buy the parts and print the tactor parts and cases for one pair."
-lead: "Everything here is for one pair: 2 boards, 8 tactors, 2 cases and 2 batteries. Order the boards first. They're made to order, so start them before you buy the rest."
+description: "Stage 1 of building BlueBuzzah gloves: order the 2 boards, buy the parts and print the tactor parts and cases for 1 pair."
+lead: "Everything here is for 1 pair: 2 boards, 8 tactors, 2 cases and 2 batteries. Order the boards first. They're made to order, so start them before you buy the rest."
 buy:
-  - { qty: 2, name: Antenna, spec: "Internal 2.4/5 GHz dual-band, IPEX/U.FL plug, model U4-WIFI-R-A0-HB; required", store: "Amazon (5-pack)", href: "https://www.amazon.com/Internal-Antenna-Built-Durable-Lightweight/dp/B08VSJPY7V" }
-  - { qty: 8, name: LRA motor, spec: "Vybronics VLV101040A; 4 per glove", store: Digi-Key, href: "https://www.digikey.com/en/products/detail/vybronics-inc/VLV101040A/12323590" }
+  - { qty: 2, name: Antennas, spec: "Internal 2.4/5 GHz dual-band, IPEX/U.FL plug, model U4-WIFI-R-A0-HB; required", store: "Amazon (5-pack)", href: "https://www.amazon.com/Internal-Antenna-Built-Durable-Lightweight/dp/B08VSJPY7V" }
+  - { qty: 8, name: LRA motors, spec: "Vybronics VLV101040A; 4 per glove", store: Digi-Key, href: "https://www.digikey.com/en/products/detail/vybronics-inc/VLV101040A/12323590" }
   - { qty: "24, buy extra", name: Compression springs, spec: "304 stainless steel, 3 mm OD, 0.3 mm wire, 5 mm free length; 3 per tactor", store: Amazon, href: "https://a.co/d/02bOUyps" }
-  - { qty: 2, name: Battery, spec: "PKCELL LP552035, 3.7 V LiPo, 350 mAh, 36 × 20 × 5.6 mm (1.42 × 0.79 × 0.22 in), 2-pin JST-PH plug (2.00 mm pitch)", store: Digi-Key, href: "https://www.digikey.com/en/products/detail/adafruit-industries-llc/2750/6612470" }
-  - { qty: 8, name: Wire leads, spec: "Ready-made JST PH 2-pin female leads, 6 in (150 mm) or longer; one per tactor", store: Amazon, href: "https://www.amazon.com/daier-Micro-2-Pin-Connector-Female/dp/B01DUC1O68" }
-  - { qty: 2, name: Gloves, spec: "Stretchy nitrile-dipped work gloves, one left and one right, snug; size down if between sizes", store: Your choice }
+  - { qty: 2, name: Batteries, spec: "PKCELL LP552035, 3.7 V LiPo, 350 mAh, 36 × 20 × 5.6 mm (1.42 × 0.79 × 0.22 in), 2-pin JST PH plug (2.00 mm pitch)", store: Digi-Key, href: "https://www.digikey.com/en/products/detail/adafruit-industries-llc/2750/6612470" }
+  - { qty: 8, name: Wire leads, spec: "Ready-made JST PH 2-pin female leads, 6 in (150 mm) or longer; 1 per tactor", store: Amazon, href: "https://www.amazon.com/daier-Micro-2-Pin-Connector-Female/dp/B01DUC1O68" }
+  - { qty: 2, name: Gloves, spec: "Stretchy nitrile-dipped work gloves, 1 left-hand and 1 right-hand, snug; size down if between sizes", store: Your choice }
   - { qty: 1, name: USB-C cable, spec: "Carries data, not charge-only", store: Any store }
   - { qty: 4, name: M2×5 pan-head screws, spec: "2 per case", store: Any hardware store }
   - { qty: a few, name: Straps or small zip ties, spec: "To fasten each case to its glove", store: Any store }
@@ -34,7 +34,7 @@ Any other board maker that assembles boards from these 3 files (gerbers, BOM and
 
 ## Buy the parts
 
-Quantities are for one pair of gloves. Each link is a suggestion. Any listing that matches the description works.
+Quantities are for 1 pair of gloves. Each link is a suggestion. Any listing that matches the description works.
 
 <BuyList />
 
@@ -42,7 +42,7 @@ The antenna is required, because the app and the glove-to-glove link both need i
 
 ## Print the parts
 
-Print everything from one file. It has 3 plates:
+Print everything from 1 file. It has 3 plates:
 
 - **Plate 1:** every tactor part except the finger cups, in PLA or PETG.
 - **Plate 2:** the finger cups, in TPU. We tested TPU 95A and flexible PLA, and we advise TPU.
@@ -73,7 +73,9 @@ To change a design, start from the STEP files.
 - Tweezers, to place small parts.
 - A magnifier or magnifying lamp, to see the small terminals.
 - Fabric scissors, to cut the glove.
-- A marker and ruler, to mark tactor positions.
+- A marker, to mark where to cut the holes.
+- Tape, to label the boards and gloves.
+- A small file, pen knife or sandpaper, to smooth a spring pocket if needed.
 - A cutting mat, to cut the glove on.
 - Small Phillips screwdriver, to fasten the board in the case.
 - A 3D printer or print service.

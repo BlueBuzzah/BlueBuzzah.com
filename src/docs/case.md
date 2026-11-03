@@ -12,7 +12,7 @@ tools:
   - Small Phillips screwdriver
 figure:
   src: /docs/img/bluebuzzah-exploded-labeled
-  alt: "Exploded view of the BlueBuzzah case and its contents, numbered in assembly order: 1: lower shell, 2: battery, 3: BlueBuzzah v3 PCB, 4: 2 M2 screws, 5: switch, 6: antenna, 7: upper shell"
+  alt: "Exploded view of the BlueBuzzah case and its contents, with 7 callouts in assembly order. Callout 1: lower shell. Callout 2: battery. Callout 3: BlueBuzzah v3 PCB. Callout 4: M2 screws, 2 of them. Callout 5: switch. Callout 6: antenna. Callout 7: upper shell"
   caption: The case and its contents, numbered in the order they go together.
 ---
 
@@ -45,25 +45,26 @@ The board's slide switch is tiny. The printed switch fits over its lever and rea
 
 ## What goes inside
 
-| Number | Part | Notes |
+| In the picture | Part | Notes |
 | --- | --- | --- |
-| 2 | **Battery** | PKCELL LP552035, 3.7 V LiPo, 350 mAh, 36 × 20 × 5.6 mm (1.42 × 0.79 × 0.22 in), 2-pin JST-PH (2.00 mm pitch). It lies under the board. Its lead comes up through the cutout in the board's edge to the battery port. |
+| 2 | **Battery** | PKCELL LP552035, 3.7 V LiPo, 350 mAh, 36 × 20 × 5.6 mm (1.42 × 0.79 × 0.22 in), 2-pin JST PH (2.00 mm pitch). It lies under the board. Its lead comes up through the cutout in the board's edge to the battery port. |
 | 3 | **Board** | The board you set up in [stage 2](/docs/boards). |
-| 4 | **2 M2 screws** | M2×5 pan-head screws that hold the board on the standoffs. |
+| 4 | **M2 screws** | 2 M2×5 pan-head screws that hold the board on the standoffs. |
 | 6 | **Antenna** | The board's required antenna, plugged into the XIAO's IPEX/U.FL socket. See [Get the parts](/docs/parts#buy-the-parts). |
 
 ## Put it together
 
 Do this once per glove, with the board, battery and antenna already working from [stage 5](/docs/wiring).
 
-1. **Battery.** Lay the battery (2) flat in the lower shell (1), between the 2 standoffs. Point its taped end and lead at the side wall below the cutout.
-2. **Battery lead.** The battery port is at the front corner of the board (3), on the side away from the XIAO. It faces inward. Halfway along that edge is a small cutout. Bring the lead up through the cutout and plug it into the port. The lead tucks past the edge, not under the board.
-3. **Board.** Lower the board onto the 2 standoffs, with the USB-C port and slide switch at the front-wall notches and the motor ports at the back-wall notches. Screw it down with the 2 M2×5 pan-head screws (4).
-4. **Tactor wire leads.** Plug each lead into its port, as in the [finger-to-port table](/docs/wiring#which-finger-goes-in-which-port). Run each out through its own back-wall notch, without crossing or pinching another.
-5. **Antenna.** Check that the antenna (6) is still plugged into the XIAO. Lay it and its cable inside so nothing is pinched when the case closes.
-6. **Switch.** Fit the printed switch (5) over the slide switch's lever.
-7. **Upper shell.** Press the upper shell (7) onto the lower shell. Guide the switch's knob up through the roof slot. Check that the USB-C port and status light line up with their openings. Slide the switch to check that it turns the glove on and off through the case.
-8. **Mount.** Thread a strap or small zip ties through the strap loops and fasten the case to the back of the glove. Leave each lead enough slack for a full curl of the fingers.
+1. **Switch off and unplug.** Switch the board off, then unplug the battery and the tactor leads.
+2. **Battery.** Lay the battery (2) flat in the lower shell (1), between the 2 standoffs. Point its taped end and lead at the side wall below the cutout.
+3. **Battery lead.** The battery port is at the front corner of the board (3), on the side away from the XIAO. It faces inward. Halfway along that edge is a small cutout. Bring the lead up through the cutout and plug it back into the port. The lead tucks past the edge, not under the board.
+4. **Board.** Lower the board onto the 2 standoffs, with the USB-C port and slide switch at the front-wall notches and the motor ports at the back-wall notches. Screw it down with the 2 M2×5 pan-head screws (4).
+5. **Tactor wire leads.** Plug each lead back into its port, as in the [finger-to-port table](/docs/wiring#which-finger-goes-in-which-port). Run each out through its own back-wall notch, without crossing or pinching another.
+6. **Antenna.** Check that the antenna (6) is still plugged into the XIAO. Lay it and its cable inside so nothing is pinched when the case closes.
+7. **Switch.** Fit the printed switch (5) over the slide switch's lever.
+8. **Upper shell.** Press the upper shell (7) onto the lower shell. Guide the switch's knob up through the roof slot. Check that the USB-C port and status light line up with their openings. Slide the switch to check that it turns the glove on and off through the case.
+9. **Mount.** Thread a strap or small zip ties through the strap loops and fasten the case to the back of the glove. Leave each lead enough slack for a full curl of the fingers.
 
    <Shot src="/docs/img/case-strapped" alt="The closed case with 2 straps. Each strap runs under the case, comes out through a strap loop on each side, and turns down to wrap around the hand." />
 
@@ -73,6 +74,6 @@ If a session is running (the light pulses green), stop it on the **Session** tab
 
 <Checklist :items="['Charge: each glove charges over USB-C with the battery connected. The motors never run on USB alone.', 'Power on: with both gloves powered together, each tactor buzzes briefly and both lights turn solid green.', 'Battery: BuzzahBuddy shows a battery level for both gloves.', 'Fingers: in Test Motors on the Gloves tab, every finger button buzzes the right finger.']" />
 
-If a light stays breathing blue, check that one board is primary and one is secondary, power-cycle both, and bring them closer together.
+If a light stays breathing blue, check that 1 board is primary and 1 is secondary, power-cycle both, and bring them closer together.
 
 Your pair is done! Continue to [Your first session](/docs/first-session).
