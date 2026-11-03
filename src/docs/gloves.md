@@ -17,7 +17,7 @@ tools:
 
 Use stretchy nitrile-dipped work gloves. They should be snug, so the fingertip holds the tactor against the pad of your finger. They must not restrict circulation or be uncomfortable for a full session. A loose glove lets the tactor drift off the skin, and you won't feel the therapy. If you're between sizes, size down.
 
-Label the left-hand glove and the right-hand glove with tape. Write down which board, primary or secondary, goes with the left-hand glove and which goes with the right-hand glove. If you mix them up later, swap the roles in the Updater. See [Firmware and glove roles](/docs/firmware).
+Label the left-hand glove and the right-hand glove with tape. Write down which board, primary or secondary, goes with the left-hand glove and which goes with the right-hand glove. If you mix them up later, swap the roles in the Updater. See [Swap which glove is primary](/docs/updater/firmware#swap-which-glove-is-primary).
 
 ## Place each tactor
 

@@ -152,12 +152,8 @@
 							<div><h3 class="bb-card__title title-with-icon" id="dl-updater"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/hard-drive-download.svg#icon"/></svg>BlueBuzzah Updater</h3></div>
 						</header>
 						<p class="body">BlueBuzzah Updater downloads and updates the firmware on your devices, and allows you to customize their configuration from your computer.</p>
-						<div class="button-row">
-							<a class="download-badge" href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/releases/latest/download/BlueBuzzah_Updater_universal.dmg"><img src="/assets/download-macos.png" alt="Download app for macOS" width="186" height="60"></a>
-							<a class="download-badge" href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/releases/latest/download/BlueBuzzah_Updater_x64_en-US.exe"><img src="/assets/download-windows.png" alt="Download for Windows" width="182" height="60"></a>
-						</div>
-						<p class="body-s text-muted">Requires macOS 10.15 Catalina or later, or Windows 10 (64-bit) or later.</p>
-						<a class="bb-btn bb-btn--quiet card-action" href="https://github.com/BlueBuzzah/BlueBuzzah-Updater/wiki/Getting-Started"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/book.svg#icon"/></svg><span class="bb-btn__label">Read the guide</span></a>
+						<UpdaterDownloads />
+						<a class="bb-btn bb-btn--quiet card-action" href="/docs/updater/"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/book.svg#icon"/></svg><span class="bb-btn__label">Read the guide</span></a>
 					</li>
 					<li class="bb-card bb-card--lg" aria-labelledby="dl-buzzahbuddy">
 						<header class="bb-card__head">

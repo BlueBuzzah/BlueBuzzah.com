@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
-import { keepHandy, stages, startHere } from './docs'
+import { keepHandy, stages, startHere, updater } from './docs'
 
 // Docs.vue renders this twice: the side nav (900px and up) and inside the Contents disclosure (under 900px).
 // idPrefix keeps the group labels' ids unique on the page.
@@ -22,6 +22,12 @@ const { page } = useData()
 				<a class="docs-nav__link" :href="doc.href" :aria-current="doc.path === page.relativePath ? 'page' : undefined"><span>{{ i + 1 }} <span aria-hidden="true">·</span>{{ ' ' }}{{ doc.title }}</span></a>
 			</li>
 		</ol>
+		<p class="overline text-muted docs-nav__group" :id="`${idPrefix}-updater`">Use the Updater</p>
+		<ul class="list-reset docs-nav__list" :aria-labelledby="`${idPrefix}-updater`">
+			<li v-for="doc in updater" :key="doc.path">
+				<a class="docs-nav__link" :href="doc.href" :aria-current="doc.path === page.relativePath ? 'page' : undefined"><span>{{ doc.title }}</span></a>
+			</li>
+		</ul>
 		<p class="overline text-muted docs-nav__group" :id="`${idPrefix}-handy`">Keep handy</p>
 		<ul class="list-reset docs-nav__list" :aria-labelledby="`${idPrefix}-handy`">
 			<li v-for="doc in keepHandy" :key="doc.path">

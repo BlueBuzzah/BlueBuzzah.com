@@ -108,6 +108,8 @@
 /* an image outside a step (a part on its own) is no larger than a step thumbnail under its text */
 .docs-body > div > .shot { max-width: calc(var(--space-20) * 4); }
 .docs-files { display: flex; flex-wrap: wrap; gap: var(--target-gap); }
+/* the Updater download badges (UpdaterDownloads.vue) wrap from the left like .docs-files, instead of site.css's centred phone stack */
+.docs-body .button-row { flex-direction: row; align-items: center; }
 /* Markdown tables (finger-to-port, cost, case contents). VitePress gives each one tabindex="0", so it shows focus. */
 .docs-body > div > table { width: 100%; border-collapse: collapse; }
 .docs-body th, .docs-body td { padding: var(--space-3) var(--space-4) var(--space-3) 0; border-bottom: var(--border-hairline) solid var(--line); text-align: left; vertical-align: top; }

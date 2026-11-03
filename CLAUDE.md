@@ -6,7 +6,7 @@ Static landing page for the BlueBuzzah open-source vibrotactile therapy project:
 
 - `src/.vitepress/theme/Layout.vue`: the shared header, footer and Display settings dialog; picks the page body from the page's `page` frontmatter.
 - `src/.vitepress/theme/Home.vue`, `Privacy.vue`, `Docs.vue`: each page's `<main>`. `DocsNav.vue` is the docs nav (rendered twice: side and mobile Contents).
-- `src/.vitepress/theme/docs.ts`: the one stage list (Start here, stages 1-7, Keep handy) that drives the nav, the StageRail and the Pager. Add or reorder a page there.
+- `src/.vitepress/theme/docs.ts`: the one stage list (Start here, stages 1-7, Use the Updater, Keep handy) that drives the nav, the StageRail and the Pager. Add or reorder a page there.
 - `src/index.md`, `src/privacy.md`: frontmatter only (`page`, `title`, `description`, and `head` for page-only meta such as Open Graph).
 - `src/docs/*.md`: the docs pages, Markdown only (see Docs pages).
 - `src/.vitepress/config.mts`: the global `<head>`. `theme.js` must stay a blocking script before the stylesheets.
@@ -45,8 +45,9 @@ npm run preview  # serve the build at http://localhost:4173 (touches dist/404.ht
 ## Docs pages (`/docs/…`)
 
 - Markdown in `src/docs/`, frontmatter `page: docs`, `title`, `description`, and optionally `lead`, `need` (`[{qty,label}]`), `tools`, `figure` (`{src,alt,caption}`), `buy` (for `<BuyList />`). `Docs.vue` renders the rest. Stage pages get the StageRail and Pager from their place in `docs.ts`.
-- **Markdown uses only these global components and never raw HTML blocks:** `<Notices />` (the legal notices, verbatim; put it on every therapy page), `<Banner tone title>`, `<Checklist :items>`, `<BuyList />`, `<FileButton href label>`, `<FileButtons :files>` (two or more in a row), `<Shot src alt caption>` (put blank lines around it, indented under its step), `<StageList />`, `<LightsTable />` (the lights page's table and its "Pause the lights" checkbox; rows in the component). Source of truth for props is each `.vue` file.
+- **Markdown uses only these global components and never raw HTML blocks:** `<Notices />` (the legal notices, verbatim; put it on every therapy page), `<Banner tone title>`, `<Checklist :items>`, `<BuyList />`, `<FileButton href label>`, `<FileButtons :files>` (two or more in a row), `<Shot src alt caption>` (put blank lines around it, indented under its step), `<StageList />`, `<LightsTable />` (the lights page's table and its "Pause the lights" checkbox; rows in the component), `<UpdaterDownloads />` (the Updater's macOS and Windows download badges; Home.vue uses the same component). Source of truth for props is each `.vue` file.
 - Every top-level ordered list renders as numbered steps (numbers restart at 1; `start=` is ignored). Keep a section's steps one list, indent notes into their step, and use bullets for anything that isn't a step.
+- Pages still waiting for an image carry `<!-- planned-image: /docs/img/NAME | kind | what it shows -->` where the `<Shot>` goes.
 - Images live in `src/public/docs/img/` as `NAME.webp` (up to 1600px wide, never upscaled) and `NAME-thumb.webp` (640px wide), converted once with `cwebp` from the source PNG. No script is committed. Reference them as `/docs/img/NAME` in `figure.src` and `<Shot src>`. A missing one fails the build only through frontmatter or `<Shot>` in Vue; check the built HTML:
   ```bash
   cd src/.vitepress/dist && grep -rhoE '/docs/img/[A-Za-z0-9._-]+' --include='*.html' . | sort -u | while read f; do [ -f ".$f" ] || echo "MISSING $f"; done
