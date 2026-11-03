@@ -1,29 +1,32 @@
 # BlueBuzzah.com
 
-Static landing page for the BlueBuzzah open-source vibrotactile therapy project: what it is, the research behind it, and downloads for BlueBuzzah Updater and BuzzahBuddy. Built with VitePress 1.6.4 in MPA mode with a custom theme: the output is plain static HTML with no framework JavaScript. Two pages, `/` and `/privacy.html`, styled with the design system's `css/tokens.css` and `css/bundle.css` (its `bb-` component classes on plain HTML, no React) plus `css/site.css` for layout. `js/theme.js` sets `data-theme` before first paint; `js/site.js` adds the mobile-menu close and the footer's Display settings dialog (theme override). `.github/workflows/deploy.yml` builds pull requests and deploys `main` to GitHub Pages (source: GitHub Actions). Pages must stay readable with JavaScript off.
+Static landing page for the BlueBuzzah open-source vibrotactile therapy project: what it is, the research behind it, and downloads for BlueBuzzah Updater and BuzzahBuddy. Built with VitePress 1.6.4 in MPA mode with a custom theme: the output is plain static HTML with no framework JavaScript. Pages: `/`, `/privacy` and the build guide under `/docs/…`, styled with the design system's `css/tokens.css` and `css/bundle.css` (its `bb-` component classes on plain HTML, no React) plus `css/site.css` for layout and `css/docs.css` (linked on every page, its rules scoped under `.docs`). `js/theme.js` sets `data-theme` before first paint; `js/site.js` adds the mobile-menu close, the footer's Display settings dialog (theme override) and the docs lightbox. `.github/workflows/deploy.yml` builds pull requests and deploys `main` to GitHub Pages (source: GitHub Actions). Pages must stay readable with JavaScript off.
 
 ## Layout
 
 - `src/.vitepress/theme/Layout.vue`: the shared header, footer and Display settings dialog; picks the page body from the page's `page` frontmatter.
-- `src/.vitepress/theme/Home.vue`, `Privacy.vue`: each page's `<main>`.
+- `src/.vitepress/theme/Home.vue`, `Privacy.vue`, `Docs.vue`: each page's `<main>`. `DocsNav.vue` is the docs nav (rendered twice: side and mobile Contents).
+- `src/.vitepress/theme/docs.ts`: the one stage list (Start here, stages 1-7, Keep handy) that drives the nav, the StageRail and the Pager. Add or reorder a page there.
 - `src/index.md`, `src/privacy.md`: frontmatter only (`page`, `title`, `description`, and `head` for page-only meta such as Open Graph).
+- `src/docs/*.md`: the docs pages, Markdown only (see Docs pages).
 - `src/.vitepress/config.mts`: the global `<head>`. `theme.js` must stay a blocking script before the stylesheets.
-- `src/public/`: everything the pages link, served as-is at the site root (`css/`, `js/`, `assets/`, `favicon.ico`, `site.webmanifest`, `CNAME`).
+- `src/public/`: everything the pages link, served as-is at the site root (`css/`, `js/`, `assets/`, `docs/img/`, `favicon.ico`, `site.webmanifest`, `CNAME`).
 
 ## Working on it
 
 ```bash
 npm install
 npm run build    # static site in src/.vitepress/dist/
-npm run preview  # serve the build at http://localhost:4173
+npm run preview  # serve the build at http://localhost:4173 (touches dist/404.html first)
 ```
 
-There are no tests, and no dev server: `vitepress dev` renders pages client-side after `site.js` has run, so it doesn't match production. Rebuild (under a second) and check the preview in a browser: narrow and wide widths, light and dark themes, keyboard.
+`vitepress preview` crashes without `dist/404.html`, but `buildEnd` deletes it on purpose (GitHub Pages must serve its own 404), so the preview script touches an empty one. It only exists in your local dist. There are no tests, and no dev server: `vitepress dev` renders pages client-side after `site.js` has run, so it doesn't match production. Run `rm -rf src/.vitepress/dist` before `npm run build` when verifying: stale files hide missing images. Rebuild (under a second) and check the preview in a browser: narrow and wide widths, light and dark themes, keyboard.
 
-- **Page markup goes in the `.vue` files, never as HTML in a `.md` file.** Markdown ends an HTML block at the first blank line and turns the next indented line into a code block, which breaks the build.
-- **A new page** needs a `src/<name>.md` with `page`, `title` and `description` (without a description VitePress writes "A VitePress site"), a `<Name>.vue`, and a branch for it in `Layout.vue`.
+- **Page markup goes in the `.vue` files, never as HTML in a `.md` file** (home and privacy). Markdown ends an HTML block at the first blank line and turns the next indented line into a code block, which breaks the build.
+- **A new page** needs a `src/<name>.md` with `page`, `title` and `description` (without a description VitePress writes "A VitePress site"), a `<Name>.vue`, and a branch for it in `Layout.vue`. A new docs page needs only a `src/docs/<slug>.md` and an entry in `docs.ts`; the `.vue` and `Layout.vue` steps apply to the non-docs pages.
+- **Clean URLs** (`cleanUrls: true`): links never end in `.html` (`/docs/parts`, `/privacy`). The files keep `.html`, so both forms are served.
 - Keep `mpa: true` (no Vue runtime or client router; links and `#` anchors behave natively) and `appearance: false` (otherwise VitePress adds its own dark-mode script that fights `theme.js`).
-- Reference public files by absolute path (`/assets/…`, `/css/…`). A missing `<img src>` or `<use href>` target in a `.vue` template fails the build. `<a href>` targets and the `head` paths in `config.mts` aren't checked, so a typo there builds and deploys.
+- Reference public files by absolute path (`/assets/…`, `/css/…`). A missing `<img src>` or `<use href>` target in a `.vue` template fails the build. `<a href>` targets, `#anchor` links and the `head` paths in `config.mts` aren't checked, so a typo there builds and deploys. After a build, grep `src/.vitepress/dist` for the ids and pages you link.
 - The build deletes VitePress's `404.html` (blank in MPA mode), so GitHub Pages serves its own 404.
 - **Copied from the design system, never edited by hand:** `src/public/css/tokens.css`, `src/public/css/bundle.css`, `src/public/css/fonts/`, `src/public/assets/bluebuzzah-mark-512.png`, the favicon/app icons in `src/public/assets/` and `src/public/favicon.ico`. After a design-system re-import, re-copy them from the workspace root:
   ```bash
@@ -39,6 +42,19 @@ There are no tests, and no dev server: `vitepress dev` renders pages client-side
 - Static markup that mirrors a `bundle.js` component carries a `<!-- mirrors bundle.js <Comp> (DS import …) -->` comment. Re-check it after a design-system re-import.
 - **Worktrees go only in `.claude/worktrees/<name>`** inside this repo (gitignored), never beside it in the workspace's `projects/` or anywhere else.
 
+## Docs pages (`/docs/…`)
+
+- Markdown in `src/docs/`, frontmatter `page: docs`, `title`, `description`, and optionally `lead`, `need` (`[{qty,label}]`), `tools`, `figure` (`{src,alt,caption}`), `buy` (for `<BuyList />`). `Docs.vue` renders the rest. Stage pages get the StageRail and Pager from their place in `docs.ts`.
+- **Markdown uses only these global components and never raw HTML blocks:** `<Notices />` (the legal notices, verbatim; put it on every therapy page), `<Banner tone title>`, `<Checklist :items>`, `<BuyList />`, `<FileButton href label>`, `<FileButtons :files>` (two or more in a row), `<Shot src alt caption>` (put blank lines around it, indented under its step), `<StageList />`, `<LightsTable />` (the lights page's table and its "Pause the lights" checkbox; rows in the component). Source of truth for props is each `.vue` file.
+- Every top-level ordered list renders as numbered steps (numbers restart at 1; `start=` is ignored). Keep a section's steps one list, indent notes into their step, and use bullets for anything that isn't a step.
+- Images live in `src/public/docs/img/` as `NAME.webp` (up to 1600px wide, never upscaled) and `NAME-thumb.webp` (640px wide), converted once with `cwebp` from the source PNG. No script is committed. Reference them as `/docs/img/NAME` in `figure.src` and `<Shot src>`. A missing one fails the build only through frontmatter or `<Shot>` in Vue; check the built HTML:
+  ```bash
+  cd src/.vitepress/dist && grep -rhoE '/docs/img/[A-Za-z0-9._-]+' --include='*.html' . | sort -u | while read f; do [ -f ".$f" ] || echo "MISSING $f"; done
+  ```
+  It must print nothing.
+- The left nav doesn't expand to show a page's sections and doesn't scroll on its own.
+- No time estimates for buying, shipping, printing or assembling. Build facts from the owner win over the old wiki.
+
 ## Design System — required for every UI/UX change
 
 Any change a person can see, hear or touch follows the **BlueBuzzah design system**. That includes layout, color, type, spacing, components, icons, logos and favicons, motion, accessibility, and copy (voice, medical claims, the disclaimer). The design system lives in the BlueBuzzah workspace repo as the `bluebuzzah-design-system` skill, at `../../.claude/skills/bluebuzzah-design-system/` from this repo's root.
@@ -51,6 +67,7 @@ Before making a UI/UX change:
 
 Rules:
 
+- **The Home page uses the two separate Banners described here. Docs pages put both notices in one untitled info Banner through `<Notices />`, and `Notices.vue` must stay that way.**
 - **The design system wins any conflict, except the legal notices.** The medical disclaimer and the implanted-device notice use this text verbatim, chosen for legal reasons. Never replace them with design-system wording or reword them. The disclaimer:
   > BlueBuzzah devices are not FDA approved medical devices and not intended to diagnose, treat, cure, or prevent any disease. The information provided through BlueBuzzah is for general wellness purposes only and not a substitute for professional medical advice, diagnosis, or treatment.
   The implanted-device notice (a warning Banner whose title is "Important:", with the rest as its text):

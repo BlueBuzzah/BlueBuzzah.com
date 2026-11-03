@@ -8,7 +8,7 @@
 					of vibrations to user's fingertips. Based upon peer-reviewed research demonstrating potential symptom relief for Parkinson's patients.</p>
 					<div class="button-row">
 						<a class="bb-btn bb-btn--primary" href="#about"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/circle-question-mark.svg#icon"/></svg><span class="bb-btn__label">What is BlueBuzzah?</span></a>
-						<a class="bb-btn bb-btn--secondary" href="https://github.com/BlueBuzzah/BlueBuzzah-Hardware/wiki"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/hammer.svg#icon"/></svg><span class="bb-btn__label">Build a pair</span></a>
+						<a class="bb-btn bb-btn--secondary" href="/docs/"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/hammer.svg#icon"/></svg><span class="bb-btn__label">Build a pair</span></a>
 					</div>
 				</div>
 				<img class="hero__mark" src="/assets/bluebuzzah-mark-512.png" alt="" width="200" height="193">
@@ -37,7 +37,7 @@
 		<section id="how-it-works" class="section">
 			<div class="container">
 				<h2 class="display-l section__title">How it works</h2>
-				<!-- cards mirror bundle.js Card (DS import 1793120889-b415) -->
+				<!-- cards mirror bundle.js Card (DS import 1793729877-6a2e) -->
 				<ol class="list-reset grid-3">
 					<li class="bb-card bb-card--lg" aria-labelledby="step-build">
 						<header class="bb-card__head"><div><h3 class="bb-card__title title-with-icon" id="step-build"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/hand.svg#icon"/></svg>Build your gloves</h3></div></header>
@@ -62,7 +62,7 @@
 					<p class="body-l">BlueBuzzah is inspired by groundbreaking clinical research on vibrotactile coordinated reset (vCR) stimulation conducted
 					by leading neuroscience researchers.</p>
 				</div>
-				<!-- cards mirror bundle.js Card (DS import 1793120889-b415) -->
+				<!-- cards mirror bundle.js Card (DS import 1793729877-6a2e) -->
 				<ul class="list-reset grid-2 section-block">
 					<li class="bb-card bb-card--lg" aria-labelledby="paper-tass">
 						<header class="bb-card__head">
@@ -81,7 +81,7 @@
 						<p class="body">A small study that followed people for 6 months. People reported easier movement over 3 months that lasted to the 6-month check-in. Brain recordings also changed.</p>
 					</li>
 				</ul>
-				<!-- mirrors bundle.js Banner (DS import 1793120889-b415) -->
+				<!-- mirrors bundle.js Banner (DS import 1793729877-6a2e) -->
 				<div class="bb-banner bb-banner--info section-block">
 					<svg class="bb-icon bb-banner__icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/info.svg#icon"/></svg>
 					<div class="bb-banner__body">
@@ -103,7 +103,7 @@
 						</header>
 						<p class="body">Open-source hardware specification utilizing precise LRAs (Linear Resonant Actuators), commodity circuit board
 						components, and 3D-printable enclosures. The battery typically lasts 8 hours or more.</p>
-						<a class="bb-btn bb-btn--quiet card-action" href="https://github.com/BlueBuzzah/BlueBuzzah-Hardware/wiki"><span class="bb-btn__label">Build guide</span></a>
+						<a class="bb-btn bb-btn--quiet card-action" href="/docs/"><span class="bb-btn__label">Build guide</span></a>
 					</li>
 					<li class="bb-card bb-card--lg" aria-labelledby="part-firmware">
 						<header class="bb-card__head">
@@ -131,7 +131,7 @@
 						<a class="bb-btn bb-btn--quiet card-action" href="https://buzzahbuddy.com"><span class="bb-btn__label">Visit BuzzahBuddy.com</span><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/external-link.svg#icon"/></svg></a>
 					</li>
 				</ul>
-				<!-- mirrors bundle.js Banner (DS import 1793120889-b415) -->
+				<!-- mirrors bundle.js Banner (DS import 1793729877-6a2e) -->
 				<div class="bb-banner bb-banner--warning section-block">
 					<svg class="bb-icon bb-banner__icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/triangle-alert.svg#icon"/></svg>
 					<div class="bb-banner__body">
@@ -145,7 +145,7 @@
 		<section id="download" class="section section--sunken">
 			<div class="container">
 				<h2 class="display-l section__title">Downloads</h2>
-				<!-- cards mirror bundle.js Card (DS import 1793120889-b415) -->
+				<!-- cards mirror bundle.js Card (DS import 1793729877-6a2e) -->
 				<ul class="list-reset grid-2">
 					<li class="bb-card bb-card--lg" aria-labelledby="dl-updater">
 						<header class="bb-card__head">
@@ -162,7 +162,7 @@
 					<li class="bb-card bb-card--lg" aria-labelledby="dl-buzzahbuddy">
 						<header class="bb-card__head">
 							<div><h3 class="bb-card__title title-with-icon" id="dl-buzzahbuddy"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/smartphone.svg#icon"/></svg>BuzzahBuddy</h3></div>
-							<!-- mirrors bundle.js StatusBadge tone="brand" icon="flask-conical" (DS import 1793303684-5e2e) -->
+							<!-- mirrors bundle.js StatusBadge tone="brand" icon="flask-conical" (DS import 1793729877-6a2e) -->
 							<div class="bb-card__actions"><span class="bb-badge bb-badge--brand"><svg class="bb-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/flask-conical.svg#icon"/></svg><span>Early Access</span></span></div>
 						</header>
 						<p class="body">BuzzahBuddy lets you control therapy sessions, adjust and customize settings, and track usage, all from your phone.</p>

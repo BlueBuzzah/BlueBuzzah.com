@@ -6,7 +6,7 @@ document.querySelectorAll('.nav-mobile a').forEach(function (a) {
 });
 
 // Display settings sheet (footer): Appearance (System / Light / Dark) + High contrast.
-// Mirrors bundle.js SegmentedControl and Switch behaviour (DS import 1793120889-b415).
+// Mirrors bundle.js SegmentedControl and Switch behaviour (DS import 1793729877-6a2e).
 (function () {
   var t = window.bbTheme;
   var box = document.querySelector('.theme-controls');
@@ -17,7 +17,7 @@ document.querySelectorAll('.nav-mobile a').forEach(function (a) {
 
   function check(size) {
     return '<svg class="bb-icon" width="' + size + '" height="' + size + '" viewBox="0 0 24 24" aria-hidden="true" ' +
-      'focusable="false"><use href="assets/icons/check.svg#icon"/></svg>';
+      'focusable="false"><use href="/assets/icons/check.svg#icon"/></svg>';
   }
 
   function render() {
@@ -70,4 +70,32 @@ document.querySelectorAll('.nav-mobile a').forEach(function (a) {
     opener.closest('.js-only').hidden = false;
   }
   render();
+})();
+
+// Image lightbox (docs pages): every a[data-lightbox] opens the page's one .bb-lightbox.
+// Mirrors the Lightbox README's page behaviour (DS import 1793729877-6a2e). Without showModal the links open the image file.
+(function () {
+  var dialog = document.querySelector('.bb-lightbox');
+  var links = document.querySelectorAll('a[data-lightbox]');
+  if (!dialog || !links.length || !dialog.showModal) return;
+  var img = dialog.querySelector('.bb-lightbox__img');
+  var caption = dialog.querySelector('.bb-lightbox__caption');
+  var opener = null;
+
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var fig = a.closest('figure');
+      var thumb = a.querySelector('.bb-thumb__img') || (fig && fig.querySelector('.bb-thumb__img'));
+      e.preventDefault();
+      opener = a;
+      img.src = a.getAttribute('href');
+      caption.textContent = thumb ? thumb.alt : '';
+      dialog.showModal();
+    });
+  });
+
+  // A click whose target is the dialog itself is the backdrop.
+  dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+  // Safari doesn't focus links on mouse click, so return focus explicitly.
+  dialog.addEventListener('close', function () { img.removeAttribute('src'); if (opener) opener.focus(); });
 })();

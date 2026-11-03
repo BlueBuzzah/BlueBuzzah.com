@@ -11,6 +11,12 @@ export default defineConfig({
 	appearance: false,
 	titleTemplate: false,
 	scrollOffset: 0,
+	// links omit .html; the files keep it, so GitHub Pages serves both /privacy and /privacy.html
+	cleanUrls: true,
+	markdown: {
+		// no "#" permalink inside each heading: without VitePress's default theme it's a stray, empty focusable link
+		anchor: { permalink: false }
+	},
 	head: [
 		// sets data-theme before first paint, so it blocks and comes before the stylesheets (web.md Technical)
 		['script', { src: '/js/theme.js' }],
@@ -19,6 +25,7 @@ export default defineConfig({
 		['link', { rel: 'stylesheet', href: '/css/tokens.css' }],
 		['link', { rel: 'stylesheet', href: '/css/bundle.css' }],
 		['link', { rel: 'stylesheet', href: '/css/site.css' }],
+		['link', { rel: 'stylesheet', href: '/css/docs.css' }],
 		['link', { rel: 'icon', href: '/favicon.ico', sizes: '48x48' }],
 		['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/assets/favicon-32.png' }],
 		['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/assets/favicon-16.png' }],
@@ -28,6 +35,10 @@ export default defineConfig({
 		['meta', { name: 'theme-color', content: '#080c1b' }],
 		['script', { src: '/js/site.js', defer: '' }]
 	],
+	// docs pages: the <title> names the docs; the <h1> (Docs.vue) keeps the plain frontmatter title
+	transformPageData(pageData) {
+		if (pageData.frontmatter.page === 'docs') pageData.title = `${pageData.frontmatter.title} - BlueBuzzah docs`
+	},
 	// MPA mode writes a blank 404.html; without it GitHub Pages serves its own 404, as before
 	buildEnd: (site) => rm(join(site.outDir, '404.html'), { force: true })
 })
