@@ -13,8 +13,6 @@ export default defineConfig({
 	scrollOffset: 0,
 	// links omit .html; the files keep it, so GitHub Pages serves both /privacy and /privacy.html
 	cleanUrls: true,
-	// the five Keep handy pages arrive in the next commit (Task 11); remove this line when they land
-	ignoreDeadLinks: [/^\/docs\/(lights|troubleshooting|firmware|safety|acknowledgements)$/],
 	markdown: {
 		// page.headers lists a docs page's ## sections for the docs nav
 		headers: { level: [2] },
