@@ -42,7 +42,7 @@ Charge each glove over USB-C. BuzzahBuddy shows each glove's battery level.
 - **Orange:** the battery is too low for a 2-hour session. A running session continues, but a new one won't start until both gloves are charged.
 - **Red, fast blink:** the battery is critical. The motors stop and a running session ends. Charge the glove.
 
-## Keep handy
+## Where to go next
 
 - Every light pattern is in [What the lights mean](/docs/lights).
 - Therapy profiles and firmware updates are in [Firmware and glove roles](/docs/firmware).

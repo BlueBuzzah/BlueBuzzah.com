@@ -8,7 +8,7 @@ import { stages } from './docs'
 <template>
 	<div class="docs-stages">
 		<ol class="list-reset docs-stages__list">
-			<li v-for="(s, i) in stages" :key="s.path"><a class="docs-stages__link" :href="s.href"><span class="title-l docs-stages__num" aria-hidden="true">{{ i + 1 }}</span><span>{{ s.title }}</span></a></li>
+			<li v-for="(s, i) in stages" :key="s.path"><a class="docs-stages__link" :href="s.href"><span class="title-l docs-stages__num">{{ i + 1 }}</span><span>{{ s.title }}</span></a></li>
 		</ol>
 		<!-- mirrors bundle.js Button (DS import 1793723291-7e67) -->
 		<a class="bb-btn bb-btn--primary bb-btn--lg docs-stages__start" :href="stages[0].href"><span class="bb-btn__label">Start: {{ stages[0].title }}</span></a>
