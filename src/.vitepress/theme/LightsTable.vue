@@ -17,7 +17,6 @@ const rows: Row[] = [
 	{ lights: [['green', 'solid']], words: 'Green, solid', meaning: ['The gloves have found each other and are ready.'] },
 	{ lights: [['green', 'pulse']], words: 'Green, pulsing', meaning: ['A session is running.'] },
 	{ lights: [['yellow', 'solid']], words: 'Yellow, solid', meaning: ['The session is paused.'] },
-	{ lights: [['yellow', 'blink-fast']], words: 'Yellow, fast blink', meaning: ['The session is stopping.'] },
 	{ lights: [['purple', 'blink']], words: 'Purple, flashing', meaning: ['The gloves lost their link. The light flashes for 30 seconds, then returns to breathing blue while they keep looking.'] },
 	{ lights: [['orange', 'breathe'], ['orange', 'solid'], ['orange', 'pulse']], words: 'Orange, breathing, solid or pulsing', meaning: ['The battery is too low for a 2-hour session.'] },
 	{ lights: [['red', 'blink-urgent']], words: 'Red, rapid blink', meaning: ['The battery is critical. The motors are off and a running session stops.'] },

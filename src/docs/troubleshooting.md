@@ -29,7 +29,7 @@ The glove has no role. Set it to primary or secondary with the Updater (see [Ins
 
 The battery is too low to start a 2-hour session. Charge both gloves. A running session continues.
 
-### Red, fast blink, motors stopped
+### Red, rapid blink, motors stopped
 
 The battery is critical. Charge the glove.
 

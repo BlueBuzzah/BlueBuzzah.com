@@ -116,13 +116,11 @@
 /* What the lights mean (LightsTable.vue): the "Pause the lights" checkbox, then the table. Each light cell is a slot as
    wide as three lights, so the words line up down the column, then the words. The meaning's first line centres on the
    light. Narrow columns stack each row: the lights and their words (no slot), the meaning under them. */
-.docs-body > div > .lights-pause { width: fit-content; }
+.docs-body > div > .lights-pause { width: fit-content; margin-left: calc(var(--space-4) * -1); } /* the box lines up with the table edge (bb-check pads space-4 inline) */
 .lights-table__light { display: flex; align-items: center; gap: var(--space-3); }
 .lights-table__lamps { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); flex: none; min-width: calc(var(--icon-l) * 3 + var(--space-2) * 2); }
 .lights-table tbody th { border-bottom-color: var(--line); }
 .lights-table td { padding-top: calc(var(--space-3) + (var(--icon-l) - 1lh) / 2); }
-/* wide: the checkbox box lines up with the table's left edge (bb-check pads space-4 inline) */
-@container (min-width: 40rem) { .docs-body > div > .lights-pause { margin-left: calc(var(--space-4) * -1); } }
 @container (width < 40rem) {
   .lights-table, .lights-table tbody, .lights-table tr, .lights-table th, .lights-table td { display: block; }
   /* bundle.css .bb-sr, restated for this layout only: the column headers stay for screen readers */
