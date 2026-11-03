@@ -10,16 +10,23 @@ const { page } = useData()
 
 <template>
 	<nav class="docs-nav" aria-label="Docs">
+		<!-- Start here sits outside the numbered list so the stages announce as 1 to 7 -->
+		<ul class="list-reset docs-nav__list">
+			<li>
+				<a class="docs-nav__link" :href="startHere.href" :aria-current="startHere.path === page.relativePath ? 'page' : undefined"><span>{{ startHere.title }}</span></a>
+				<ul v-if="startHere.path === page.relativePath && page.headers?.length" class="list-reset docs-nav__list docs-nav__sub">
+					<li v-for="h in page.headers" :key="h.slug"><a class="docs-nav__link docs-nav__sublink" :href="h.link"><span>{{ h.title }}</span></a></li>
+				</ul>
+			</li>
+		</ul>
 		<p class="overline text-muted docs-nav__group" :id="`${idPrefix}-build`">Build a pair</p>
 		<ol class="list-reset docs-nav__list" :aria-labelledby="`${idPrefix}-build`">
-			<template v-for="(doc, i) in [startHere, ...stages]" :key="doc.path">
-				<li>
-					<a class="docs-nav__link" :href="doc.href" :aria-current="doc.path === page.relativePath ? 'page' : undefined"><span><template v-if="i > 0">{{ i }} <span aria-hidden="true">·</span>{{ ' ' }}</template>{{ doc.title }}</span></a>
-					<ul v-if="doc.path === page.relativePath && page.headers?.length" class="list-reset docs-nav__list docs-nav__sub">
-						<li v-for="h in page.headers" :key="h.slug"><a class="docs-nav__link docs-nav__sublink" :href="h.link"><span>{{ h.title }}</span></a></li>
-					</ul>
-				</li>
-			</template>
+			<li v-for="(doc, i) in stages" :key="doc.path">
+				<a class="docs-nav__link" :href="doc.href" :aria-current="doc.path === page.relativePath ? 'page' : undefined"><span>{{ i + 1 }} <span aria-hidden="true">·</span>{{ ' ' }}{{ doc.title }}</span></a>
+				<ul v-if="doc.path === page.relativePath && page.headers?.length" class="list-reset docs-nav__list docs-nav__sub">
+					<li v-for="h in page.headers" :key="h.slug"><a class="docs-nav__link docs-nav__sublink" :href="h.link"><span>{{ h.title }}</span></a></li>
+				</ul>
+			</li>
 		</ol>
 		<p class="overline text-muted docs-nav__group" :id="`${idPrefix}-handy`">Keep handy</p>
 		<ul class="list-reset docs-nav__list" :aria-labelledby="`${idPrefix}-handy`">

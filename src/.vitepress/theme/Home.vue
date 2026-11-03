@@ -162,7 +162,7 @@
 					<li class="bb-card bb-card--lg" aria-labelledby="dl-buzzahbuddy">
 						<header class="bb-card__head">
 							<div><h3 class="bb-card__title title-with-icon" id="dl-buzzahbuddy"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/smartphone.svg#icon"/></svg>BuzzahBuddy</h3></div>
-							<!-- mirrors bundle.js StatusBadge tone="brand" icon="flask-conical" (DS import 1793303684-5e2e) -->
+							<!-- mirrors bundle.js StatusBadge tone="brand" icon="flask-conical" (DS import 1793723291-7e67) -->
 							<div class="bb-card__actions"><span class="bb-badge bb-badge--brand"><svg class="bb-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/flask-conical.svg#icon"/></svg><span>Early Access</span></span></div>
 						</header>
 						<p class="body">BuzzahBuddy lets you control therapy sessions, adjust and customize settings, and track usage, all from your phone.</p>

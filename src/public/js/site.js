@@ -97,5 +97,5 @@ document.querySelectorAll('.nav-mobile a').forEach(function (a) {
   // A click whose target is the dialog itself is the backdrop.
   dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
   // Safari doesn't focus links on mouse click, so return focus explicitly.
-  dialog.addEventListener('close', function () { if (opener) opener.focus(); });
+  dialog.addEventListener('close', function () { img.removeAttribute('src'); if (opener) opener.focus(); });
 })();

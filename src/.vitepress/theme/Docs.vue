@@ -42,12 +42,12 @@ const next = stage && index < stages.length - 1 ? { hint: `Next: stage ${index +
 					<header class="bb-card__head"><div><h2 class="bb-card__title" id="docs-need-title">You'll need</h2></div></header>
 					<ul v-if="fm.need" class="list-reset docs-need__list">
 						<!-- mirrors bundle.js Checkbox (DS import 1793723291-7e67) -->
-						<li v-for="item in fm.need" :key="item.label"><label class="bb-check"><input type="checkbox" class="bb-check__input"><span class="bb-check__text"><span class="bb-check__label">{{ item.qty }} {{ item.label }}</span></span></label></li>
+						<li v-for="(item, i) in fm.need" :key="i"><label class="bb-check"><input type="checkbox" class="bb-check__input"><span class="bb-check__text"><span class="bb-check__label">{{ item.qty }} {{ item.label }}</span></span></label></li>
 					</ul>
 					<template v-if="fm.tools">
 						<h3 class="overline text-muted docs-need__group">Tools</h3>
 						<ul class="list-reset docs-need__list">
-							<li v-for="tool in fm.tools" :key="tool"><label class="bb-check"><input type="checkbox" class="bb-check__input"><span class="bb-check__text"><span class="bb-check__label">{{ tool }}</span></span></label></li>
+							<li v-for="(tool, i) in fm.tools" :key="i"><label class="bb-check"><input type="checkbox" class="bb-check__input"><span class="bb-check__text"><span class="bb-check__label">{{ tool }}</span></span></label></li>
 						</ul>
 					</template>
 				</section>
