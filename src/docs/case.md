@@ -56,7 +56,7 @@ The board's slide switch is tiny. The printed switch fits over its lever and rea
 
 Do this once per glove, with the board, battery and antenna already working from [stage 5](/docs/wiring).
 
-1. **Switch off and unplug.** Switch the board off, then unplug the battery and the tactor leads.
+1. **Switch off and unplug.** Switch the board off, then unplug the battery and the tactor leads. Pull on each plug body, never the cable.
 2. **Battery.** Lay the battery (2) flat in the lower shell (1), between the 2 standoffs. Point its taped end and lead at the side wall below the cutout.
 3. **Battery lead.** The battery port is at the front corner of the board (3), on the side away from the XIAO. It faces inward. Halfway along that edge is a small cutout. Bring the lead up through the cutout and plug it back into the port. The lead tucks past the edge, not under the board.
 4. **Board.** Lower the board onto the 2 standoffs, with the USB-C port and slide switch at the front-wall notches and the motor ports at the back-wall notches. Screw it down with the 2 M2×5 pan-head screws (4).

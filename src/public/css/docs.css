@@ -1,7 +1,8 @@
-/* Docs pages (Docs.vue, DocsNav.vue, StageList.vue, BuyList.vue). Linked on every page, so every rule sits under a .docs
-   or docs component class. Every value is a design-system token, except layout widths with no token (the 40rem container
-   query, the 14rem buy-list shop column, the 24px checkbox box width). Breakpoint: web.md's 900px, where the side nav
-   becomes the Contents disclosure. */
+/* Docs pages (Docs.vue, DocsNav.vue, StageList.vue, BuyList.vue, LightsTable.vue). Linked on every page, so every rule sits
+   under a .docs or docs component class. Every value is a design-system token, except layout widths with no token (the
+   40rem container query, the 14rem buy-list shop column, the 24px checkbox box width) and the type values restated from
+   tokens.css classes where a class can't go (Markdown headings, the step numbers). Breakpoint: web.md's 900px, where the
+   side nav becomes the Contents disclosure. */
 
 .docs { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); padding-block: var(--space-6) var(--space-16); }
 
@@ -112,6 +113,26 @@
 .docs-body th, .docs-body td { padding: var(--space-3) var(--space-4) var(--space-3) 0; border-bottom: var(--border-hairline) solid var(--line); text-align: left; vertical-align: top; }
 .docs-body th { border-bottom-color: var(--line-strong); font-weight: 600; }
 .docs-body table:focus-visible { outline: var(--focus-width) solid transparent; outline-offset: var(--focus-offset); box-shadow: var(--focus-ring); }
+/* What the lights mean (LightsTable.vue): the "Pause the lights" checkbox, then the table. Each light cell is a slot as
+   wide as three lights, so the words line up down the column, then the words. The meaning's first line centres on the
+   light. Narrow columns stack each row: the lights and their words (no slot), the meaning under them. */
+.docs-body > div > .lights-pause { width: fit-content; }
+.lights-table__light { display: flex; align-items: center; gap: var(--space-3); }
+.lights-table__lamps { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); flex: none; min-width: calc(var(--icon-l) * 3 + var(--space-2) * 2); }
+.lights-table tbody th { border-bottom-color: var(--line); }
+.lights-table td { padding-top: calc(var(--space-3) + (var(--icon-l) - 1lh) / 2); }
+/* wide: the checkbox box lines up with the table's left edge (bb-check pads space-4 inline) */
+@container (min-width: 40rem) { .docs-body > div > .lights-pause { margin-left: calc(var(--space-4) * -1); } }
+@container (width < 40rem) {
+  .lights-table, .lights-table tbody, .lights-table tr, .lights-table th, .lights-table td { display: block; }
+  /* bundle.css .bb-sr, restated for this layout only: the column headers stay for screen readers */
+  .lights-table thead { position: absolute; width: var(--border-hairline); height: var(--border-hairline); margin: calc(var(--border-hairline) * -1); overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .lights-table tbody tr { padding-block: var(--space-4); border-bottom: var(--border-hairline) solid var(--line); }
+  .lights-table tbody tr:first-child { border-top: var(--border-hairline) solid var(--line-strong); }
+  .lights-table tbody th, .lights-table td { padding: 0; border: 0; }
+  .lights-table__lamps { min-width: 0; }
+  .lights-table td { margin-top: var(--space-2); }
+}
 /* Start here (StageList.vue): 48px link rows with a line between and target-gap between neighbours */
 .docs-stages__list > li { padding-block: calc(var(--target-gap) / 2); border-top: var(--border-hairline) solid var(--line); }
 .docs-stages__list > li:last-child { border-bottom: var(--border-hairline) solid var(--line); }

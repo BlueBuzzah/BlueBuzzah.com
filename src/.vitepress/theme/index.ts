@@ -7,6 +7,7 @@ import BuyList from './BuyList.vue'
 import FileButton from './FileButton.vue'
 import FileButtons from './FileButtons.vue'
 import StageList from './StageList.vue'
+import LightsTable from './LightsTable.vue'
 
 export default {
   Layout,
@@ -19,5 +20,6 @@ export default {
     app.component('FileButton', FileButton)
     app.component('FileButtons', FileButtons)
     app.component('StageList', StageList)
+    app.component('LightsTable', LightsTable)
   },
 }
