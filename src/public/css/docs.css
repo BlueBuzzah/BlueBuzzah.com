@@ -23,7 +23,7 @@
   padding-left: var(--space-3); border-left: var(--space-1) solid var(--brand);
   background: var(--brand-soft); font-weight: 700;
 }
-/* the current page's own sections: indented, muted, body-s (tokens.css .body-s size) */
+/* the current page's own sections: indented, muted, in tokens.css .body-s restated (must equal it; re-check after a design-system re-import) */
 .docs-nav__sublink { padding-left: var(--space-8); color: var(--ink-muted); font-size: 0.9375rem; line-height: 1.375rem; }
 .docs-nav__sublink:hover { color: var(--ink); }
 
