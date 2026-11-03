@@ -51,11 +51,7 @@ const next = stage && index < stages.length - 1 ? { hint: `Next: stage ${index +
 						</ul>
 					</template>
 				</section>
-				<!-- mirrors bundle.js Lightbox thumbnail (DS import 1793723291-7e67); without JavaScript the links open the image -->
-				<figure v-if="fm.figure" class="shot">
-					<a class="bb-thumb" :href="`${fm.figure.src}.webp`" data-lightbox><img class="bb-thumb__img" :src="`${fm.figure.src}-thumb.webp`" :alt="fm.figure.alt" width="640" height="480"></a>
-					<figcaption class="body-s"><template v-if="fm.figure.caption">{{ `${fm.figure.caption} ` }}</template><a :href="`${fm.figure.src}.webp`" data-lightbox>View larger</a></figcaption>
-				</figure>
+				<Shot v-if="fm.figure" :src="fm.figure.src" :alt="fm.figure.alt" :caption="fm.figure.caption" />
 			</div>
 
 			<Content class="docs-body" />
