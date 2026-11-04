@@ -1,6 +1,7 @@
 ---
 page: docs
 title: Start here
+shareTitle: How to build BlueBuzzah gloves
 description: "How to build a pair of BlueBuzzah gloves: what to buy and print, then how to put them together, in 7 stages."
 lead: "BlueBuzzah is a pair of vibrotactile gloves you build yourself, for Parkinson's disease research. This guide takes you from buying the parts to your first session, in 7 stages."
 figure:
