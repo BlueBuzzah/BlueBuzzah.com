@@ -101,7 +101,7 @@ Flash and setup problems, and how to share the Updater's log, are in [Fix Update
 
 ### The tactor shifts on the glove or drifts off the fingertip
 
-The glove is too loose. Use a snugger glove or a smaller size (see [Pick and label the gloves](/docs/gloves#pick-and-label-the-gloves) in stage 4).
+The glove is too loose. Use a snugger glove or a smaller size, or fasten the tactor through the slots on its shell (see [Secure the tactor](/docs/gloves#secure-the-tactor) in stage 4).
 
 ### The tactor moves under the fabric
 

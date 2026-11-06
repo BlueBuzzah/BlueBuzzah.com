@@ -9,10 +9,10 @@ buy:
   - { qty: "24, buy extra", name: Compression springs, spec: "304 stainless steel, 3 mm OD, 0.3 mm wire, 5 mm free length; 3 per tactor", store: Amazon, href: "https://a.co/d/02bOUyps" }
   - { qty: 2, name: Batteries, spec: "PKCELL LP552035, 3.7 V LiPo, 350 mAh, 36 × 20 × 5.6 mm (1.42 × 0.79 × 0.22 in), 2-pin JST PH plug (2.00 mm pitch)", store: Digi-Key, href: "https://www.digikey.com/en/products/detail/adafruit-industries-llc/2750/6612470" }
   - { qty: 8, name: Wire leads, spec: "Ready-made JST PH 2-pin female leads, 6 in (150 mm) or longer; 1 per tactor", store: Amazon, href: "https://www.amazon.com/daier-Micro-2-Pin-Connector-Female/dp/B01DUC1O68" }
-  - { qty: 2, name: Gloves, spec: "Stretchy nitrile-dipped work gloves, 1 left-hand and 1 right-hand, snug; size down if between sizes", store: Your choice }
+  - { qty: 2, name: Gloves, spec: "1 left-hand and 1 right-hand, snug; stretchy nitrile-dipped work gloves may work best; size down if between sizes", store: Your choice }
   - { qty: 1, name: USB-C cable, spec: "Carries data, not charge-only", store: Any store }
   - { qty: 4, name: M2×5 pan-head screws, spec: "2 per case", store: Any hardware store }
-  - { qty: a few, name: Straps or small zip ties, spec: "To fasten each case to its glove", store: Any store }
+  - { qty: a few, name: Straps or small zip ties, spec: "To fasten each case to its glove, and each tactor if needed", store: Any store }
 ---
 
 ## Order the boards
@@ -39,6 +39,8 @@ Quantities are for 1 pair of gloves. Each link is a suggestion. Any listing that
 <BuyList />
 
 The antenna is required, because the app and the glove-to-glove link both need it.
+
+Wait to buy the gloves until you've built a tactor in [stage 3](/docs/tactors), so you can test the fit. If you buy them sooner, choose a store with easy returns. See [Find the right gloves](/docs/gloves#find-the-right-gloves).
 
 ## Print the parts
 
@@ -82,6 +84,7 @@ To change a design, start from the STEP files.
 - A phone or tablet with BuzzahBuddy.
 - A computer for the [BlueBuzzah Updater](/docs/updater/) (Windows or macOS).
 - Optional: a soldering iron to tin wire ends, and a multimeter for fault-finding.
+- Optional: long needle-nose pliers, to place a tactor in a glove finger.
 
 ## Cost
 
