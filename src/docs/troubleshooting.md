@@ -49,7 +49,7 @@ Tap each finger button to find it. Reseat its wire plug so the bare wire touches
 
 ### The buzz lands on the wrong finger
 
-Move the connector to the right port using the [port table in stage 5](/docs/wiring#which-finger-goes-in-which-port). The port numbers on the board run backwards from the finger order.
+Move the connector to the right port using the [port table in stage 5](/docs/wiring#which-finger-goes-in-which-port).
 
 ### Weak or intermittent buzz
 

@@ -16,15 +16,13 @@ Switch the board off first. Plug each lead into the port in this table:
 
 | Finger | Port on the board |
 | --- | --- |
-| Index | 5 |
-| Middle | 4 |
+| Index | 1 |
+| Middle | 2 |
 | Ring | 3 |
-| Little | 2 |
-| Thumb (optional) | 1 |
+| Little | 4 |
+| Thumb (optional) | 5 |
 
-The port numbers run opposite to the fingers, so follow the table, not the order on the board.
-
-<Shot src="/docs/img/board-ports-labeled" alt="Top view of the BlueBuzzah v3 board with its 5 motor ports in a column down the right side, numbered 1 to 5 from the XIAO end and labeled Thumb, Little, Ring, Middle and Index." />
+<Shot src="/docs/img/board-ports-labeled" alt="Top view of the BlueBuzzah v3 board with its 5 motor ports in a column down the right side, numbered 1 to 5 from the top and labeled Index, Middle, Ring, Little and Thumb." />
 
 Leave the wires loose until you've tested them.
 
