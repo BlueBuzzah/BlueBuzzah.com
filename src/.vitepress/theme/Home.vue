@@ -3,9 +3,9 @@
 		<section class="hero">
 			<div class="container hero__inner">
 				<div class="stack hero__text">
-					<h1 class="display-xl">Open vCR Therapy System</h1>
-					<p class="body-l prose">BlueBuzzah is an open-source vibrotactile coordinated reset (vCR) therapy device system which delivers gentle, precisely calculated patterns
-					of vibrations to user's fingertips. Based upon peer-reviewed research demonstrating potential symptom relief for Parkinson's patients.</p>
+					<h1 class="display-xl">Open vCR Stimulation System</h1>
+					<p class="body-l prose">BlueBuzzah is an open-source vibrotactile coordinated reset (vCR) stimulation system: a pair of gloves that deliver gentle, precisely timed patterns
+					of vibration to your fingertips. It is inspired by peer-reviewed research into vCR stimulation for people with Parkinson's disease.</p>
 					<div class="button-row">
 						<a class="bb-btn bb-btn--primary" href="#about"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/circle-question-mark.svg#icon"/></svg><span class="bb-btn__label">What is BlueBuzzah?</span></a>
 						<a class="bb-btn bb-btn--secondary" href="/docs/"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/hammer.svg#icon"/></svg><span class="bb-btn__label">Build a pair</span></a>
@@ -20,14 +20,14 @@
 				<h2 class="display-l section__title">What is BlueBuzzah?</h2>
 				<div class="about-grid">
 					<div class="prose stack">
-						<p class="body-l">BlueBuzzah is a community-driven, open-source project creating accessible vibrotactile therapy devices for people living with Parkinson's disease. BlueBuzzah is inspired by groundbreaking research on vibrotactile coordinated reset (vCR) stimulation.</p>
-						<p class="body-l">The system applies gentle vibrations to fingertips, stimulating sensory neurons connected to motor control regions of the brain. Research suggests this may help address tremor, rigidity, and movement challenges.</p>
-						<p class="body-l">Built on readily available hardware and open-source software, BlueBuzzah empowers patients, caregivers, and makers to build their own therapy devices.</p>
+						<p class="body-l">BlueBuzzah is a community-driven, open-source project creating accessible vibrotactile stimulation gloves for people living with Parkinson's disease. BlueBuzzah is inspired by groundbreaking research on vibrotactile coordinated reset (vCR) stimulation.</p>
+						<p class="body-l">In published studies, patterned fingertip vibration stimulated sensory pathways linked to movement, and researchers reported it may help with tremor, rigidity and movement. BlueBuzzah is an open design inspired by that work.</p>
+						<p class="body-l">Built on readily available hardware and open-source software, BlueBuzzah lets people with Parkinson's, caregivers, and makers build their own gloves.</p>
 					</div>
 					<ul class="list-reset grid-2 about-features">
 						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/zap.svg#icon"/></svg><div><p class="body-strong">Bluetooth Low Energy</p><p class="body-s text-muted">Wireless device sync</p></div></li>
-						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/clock.svg#icon"/></svg><div><p class="body-strong">8+ Hours Battery</p><p class="body-s text-muted">Extended therapy sessions</p></div></li>
-						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/settings.svg#icon"/></svg><div><p class="body-strong">Configurable Patterns</p><p class="body-s text-muted">Customizable therapy</p></div></li>
+						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/clock.svg#icon"/></svg><div><p class="body-strong">8+ Hours Battery</p><p class="body-s text-muted">Long sessions on one charge</p></div></li>
+						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/settings.svg#icon"/></svg><div><p class="body-strong">Configurable Patterns</p><p class="body-s text-muted">Customizable sessions</p></div></li>
 						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/square-terminal.svg#icon"/></svg><div><p class="body-strong">Open Source</p><p class="body-s text-muted">MIT licensed</p></div></li>
 					</ul>
 				</div>
@@ -126,8 +126,8 @@
 							<div><h3 class="bb-card__title title-with-icon" id="part-buzzahbuddy"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/smartphone.svg#icon"/></svg>BuzzahBuddy</h3></div>
 							<div class="bb-card__actions"><span class="bb-badge bb-badge--brand"><svg class="bb-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/flask-conical.svg#icon"/></svg><span>Early Access</span></span></div>
 						</header>
-						<p class="body">The smartphone companion app for therapy session control and progress monitoring.
-						Start, stop, and customize your therapy from your phone.</p>
+						<p class="body">The smartphone companion app for session control and progress monitoring.
+						Start, stop, and customize your sessions from your phone.</p>
 						<a class="bb-btn bb-btn--quiet card-action" href="https://buzzahbuddy.com"><span class="bb-btn__label">Visit BuzzahBuddy.com</span><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/external-link.svg#icon"/></svg></a>
 					</li>
 				</ul>
@@ -161,7 +161,7 @@
 							<!-- mirrors bundle.js StatusBadge tone="brand" icon="flask-conical" (DS import 1793729877-6a2e) -->
 							<div class="bb-card__actions"><span class="bb-badge bb-badge--brand"><svg class="bb-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/flask-conical.svg#icon"/></svg><span>Early Access</span></span></div>
 						</header>
-						<p class="body">BuzzahBuddy lets you control therapy sessions, adjust and customize settings, and track usage, all from your phone.</p>
+						<p class="body">BuzzahBuddy lets you control sessions, adjust and customize settings, and track usage, all from your phone.</p>
 						<!-- web.md Download pages: official store badges, equal weight, no platform detection -->
 						<div class="button-row">
 							<a class="download-badge store-badge" href="https://testflight.apple.com/join/DMuPNBGA" aria-describedby="early-access-note"><img src="/assets/apple-appstore.png" alt="Download on the App Store" width="512" height="171"></a>
@@ -184,7 +184,7 @@
 							<div><h3 class="bb-card__title" id="thanks-tass">Dr. Peter Tass and Tass Lab, Stanford</h3></div>
 							
 						</header>
-						<p class="body">For all their dedicated work in inventing and improving a vibrotactile glove treatment for Parkinson's.</p>
+						<p class="body">For all their dedicated work in inventing and studying vibrotactile coordinated reset stimulation for Parkinson's.</p>
 					</li>
 					<li class="bb-card bb-card--lg bb-card--flat" aria-labelledby="thanks-community">
 						<header class="bb-card__head">

@@ -1,7 +1,7 @@
 ---
 page: docs
 title: Configure the gloves
-description: "Choose a therapy pattern, set your own Custom timing and strength, and turn the light off during sessions, with the BlueBuzzah Updater."
+description: "Choose a pattern, set your own Custom timing and strength, and turn the light off during sessions, with the BlueBuzzah Updater."
 lead: Choose how your gloves buzz, then give both gloves the same settings.
 ---
 

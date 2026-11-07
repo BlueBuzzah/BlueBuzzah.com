@@ -45,5 +45,5 @@ Charge each glove over USB-C. BuzzahBuddy shows each glove's battery level.
 ## Where to go next
 
 - Every light pattern is in [What the lights mean](/docs/lights).
-- Therapy patterns are in [Configure the gloves](/docs/updater/configure), and firmware updates in [Update the firmware](/docs/updater/firmware).
+- Patterns are in [Configure the gloves](/docs/updater/configure), and firmware updates in [Update the firmware](/docs/updater/firmware).
 - If something's wrong, see [Troubleshooting](/docs/troubleshooting).

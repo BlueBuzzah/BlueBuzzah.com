@@ -19,7 +19,7 @@ Stretchy nitrile-dipped work gloves may work best, but the right glove varies fr
 
 Look for a glove that passes all of these checks:
 
-- **Snug fingertips.** The fingertip holds the tactor against the pad of your finger. A loose glove lets the tactor drift off the skin, and you won't feel the therapy.
+- **Snug fingertips.** The fingertip holds the tactor against the pad of your finger. A loose glove lets the tactor drift off the skin, and you won't feel the buzz.
 - **Comfortable for a full session.** The glove must not restrict circulation or be uncomfortable.
 - **Easy on and off.** The glove goes on and off almost as easily as a glove with no tactors, so you can slip it off whenever you need your bare hands.
 
