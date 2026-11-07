@@ -5,17 +5,32 @@
 				<a class="link-icon" href="/"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/arrow-left.svg#icon"/></svg>Back to home</a>
 				<div class="stack">
 					<h1 class="headline">Privacy policy</h1>
-					<p class="body-s text-muted">Effective date: October 30, 2026</p>
+					<p class="body-s text-muted">Effective date: November 7, 2026</p>
 				</div>
 				<section class="stack">
 					<h2 class="title-l">Who this policy covers</h2>
-					<p class="body">This policy covers the BlueBuzzah apps: <strong>BuzzahBuddy</strong>, the companion app for iPhone and Android, and the <strong>BlueBuzzah Updater</strong>, the desktop app that installs firmware on the gloves. Both apps are developed and published by <strong>BlueBuzzah Partners</strong> for the BlueBuzzah open-source project. "We" in this policy means BlueBuzzah Partners.</p>
+					<p class="body">This policy covers the websites bluebuzzah.com and buzzahbuddy.com, and the BlueBuzzah apps: <strong>BuzzahBuddy</strong>, the companion app for iPhone, iPad and Android, and the <strong>BlueBuzzah Updater</strong>, the desktop app that installs firmware on the gloves. All of them are published by <strong>BlueBuzzah Partners</strong>, the volunteers behind the BlueBuzzah open-source project. "We" in this policy means BlueBuzzah Partners. Our <a href="/terms">terms and safety</a> page covers everything else.</p>
 				</section>
 				<section class="stack">
-					<h2 class="title-l">Data collection and storage</h2>
-					<p class="body">BuzzahBuddy keeps the following information on your phone only:</p>
-					<ul class="body"><li>Therapy session records</li><li>Your Custom profile settings</li><li>The name and Bluetooth identifier of the gloves you last connected, so the app can reconnect to them</li><li>App preferences, such as theme and Demo Mode</li><li>The latest firmware version it found on GitHub, and when it checked</li></ul>
-					<p class="body-strong">No data leaves your device. No cloud storage. No accounts. We never receive your information.</p>
+					<h2 class="title-l">The websites</h2>
+					<p class="body">The websites collect nothing. They have no accounts, forms, analytics or advertising, and they set no cookies. If you change the display settings in the footer, that choice is stored in your browser and nowhere else.</p>
+					<p class="body">Both sites are hosted on GitHub Pages. Like any web host, GitHub sees your IP address when it serves a page, under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</p>
+				</section>
+				<section class="stack">
+					<h2 class="title-l">What the apps store</h2>
+					<p class="body">BuzzahBuddy keeps the following information on your phone or tablet only:</p>
+					<ul class="body"><li>Session records and any notes you write in History</li><li>Your Custom profile settings</li><li>The name and Bluetooth identifier of the gloves you last connected, so the app can reconnect to them</li><li>App preferences, such as theme and Demo Mode</li><li>The latest firmware version it found on GitHub, and when it checked</li><li>Whether you have agreed to the terms, once the app asks</li></ul>
+					<p class="body">The BlueBuzzah Updater keeps its settings and the firmware files it downloads on your computer.</p>
+					<p class="body-strong">Nothing leaves your device unless you choose to share it. No cloud storage. No accounts. We never receive your information.</p>
+				</section>
+				<section class="stack">
+					<h2 class="title-l">When data does leave your device</h2>
+					<p class="body">Three things can carry app data off your phone, and each one is your choice:</p>
+					<ul class="body">
+						<li><strong>Sharing.</strong> BuzzahBuddy can share a History report through your phone's share sheet: a PDF and a CSV file with your sessions and notes for the period you chose. It can also share a link to the BlueBuzzah Updater, which carries nothing about you. Whatever you share goes to the app or person you pick, and is then outside BuzzahBuddy's control.</li>
+						<li><strong>Backups.</strong> If your phone backs up to iCloud or Google, the backup may include BuzzahBuddy's data. Apple and Google handle backups under their own privacy policies.</li>
+						<li><strong>Siri (iOS).</strong> If you use Siri to control sessions, Apple processes what you say under Apple's privacy policy. BuzzahBuddy receives the command and gives Siri a short reply to speak, such as "Session paused" or "Your gloves need charging before a session".</li>
+					</ul>
 				</section>
 				<section class="stack">
 					<h2 class="title-l">Data transmission</h2>
@@ -35,13 +50,13 @@
 				</section>
 				<section class="stack">
 					<h2 class="title-l">Third-party access</h2>
-					<p class="body">No third parties receive information from the BlueBuzzah apps. Apart from the GitHub requests described above, the apps don't use:</p>
+					<p class="body">No third parties receive information from the BlueBuzzah apps. Apart from the GitHub requests, and the sharing, backups and Siri described above, the apps don't use:</p>
 					<ul class="body"><li>Analytics services</li><li>Advertising networks</li><li>Social media platforms</li><li>Cloud storage providers</li><li>External APIs</li></ul>
 				</section>
 				<section class="stack">
 					<h2 class="title-l">Data control</h2>
 					<p class="body">You have complete control over your data:</p>
-					<ul class="body"><li>In BuzzahBuddy, Settings › Clear All Data deletes everything the app has stored</li><li>Uninstalling an app removes all of its data</li></ul>
+					<ul class="body"><li>In BuzzahBuddy, Settings › Clear All Data deletes everything the app has stored on your phone</li><li>Uninstalling an app removes its data from that device</li><li>Copies in a backup, or in a report you shared, are not affected. Delete those where they are.</li></ul>
 				</section>
 				<section class="stack">
 					<h2 class="title-l">Children's privacy</h2>
@@ -49,15 +64,11 @@
 				</section>
 				<section class="stack">
 					<h2 class="title-l">Security</h2>
-					<p class="body">Data protection relies on your device's native security mechanisms. We recommend enabling device-level protections such as passcodes or biometric authentication to safeguard your therapy data.</p>
+					<p class="body">Data protection relies on your device's native security mechanisms. We recommend enabling device-level protections such as passcodes or biometric authentication to safeguard your session data.</p>
 				</section>
 				<section class="stack">
 					<h2 class="title-l">Changes to this policy</h2>
 					<p class="body">Policy updates will be posted on this page with revised effective dates. Continued use of the BlueBuzzah apps signals acceptance of any changes.</p>
-				</section>
-				<section class="stack">
-					<h2 class="title-l">Compliance</h2>
-					<p class="body">This policy addresses GDPR, CCPA, and applicable data protection regulations through our privacy-by-design architecture.</p>
 				</section>
 				<section class="stack">
 					<h2 class="title-l">Contact</h2>
