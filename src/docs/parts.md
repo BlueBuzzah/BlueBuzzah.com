@@ -23,7 +23,7 @@ Order 2 boards, fully assembled, from [JLCPCB](https://jlcpcb.com). Every part c
 
    <FileButtons :files="[{ href: 'https://github.com/BlueBuzzah/BlueBuzzah-Hardware/raw/main/PCB/v3/jlc_pcb_gerbers.zip', label: 'Board files (.zip)' }, { href: 'https://github.com/BlueBuzzah/BlueBuzzah-Hardware/raw/main/PCB/v3/BOM_JCLPCB_BlueBuzzah_v3.csv', label: 'Parts list (.csv)' }, { href: 'https://github.com/BlueBuzzah/BlueBuzzah-Hardware/raw/main/PCB/v3/CPL_JLCPCB_BlueBuzzah_v3-all-pos.csv', label: 'Placement file (.csv)' }]" />
 
-   <Shot src="/docs/img/bluebuzzah-v3-pcb" alt="The assembled BlueBuzzah v3 PCB with the XIAO ESP32-S3 at the front left, the slide switch at the front edge, and 5 motor ports along the back" caption="The assembled board." />
+   <Shot src="/docs/img/bluebuzzah-v3-pcb" alt="The assembled BlueBuzzah v3 PCB with the ESP32-S3 module on the left, the slide switch at the front edge, and 5 motor ports along the back" caption="The assembled board." />
 
 2. Start a PCB assembly order at JLCPCB and upload the board files.
 3. Upload the parts list and placement file when it asks for assembly.

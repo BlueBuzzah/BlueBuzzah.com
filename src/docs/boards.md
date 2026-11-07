@@ -14,7 +14,7 @@ tools:
   - Tape and a marker
 figure:
   src: /docs/img/bluebuzzah-v3-pcb
-  alt: "The assembled BlueBuzzah v3 PCB with the XIAO ESP32-S3 at the front left, the slide switch at the front edge, and 5 motor ports along the back"
+  alt: "The assembled BlueBuzzah v3 PCB with the ESP32-S3 module on the left, the slide switch at the front edge, and 5 motor ports along the back"
   caption: The assembled board.
 ---
 
@@ -24,9 +24,9 @@ figure:
 
 <Shot src="/docs/img/antenna" alt="The flat black antenna with its thin white cable ending in a small gold IPEX/U.FL plug" />
 
-1. Press the antenna's IPEX/U.FL plug straight down onto the socket on the XIAO module.
+1. Press the antenna's IPEX/U.FL plug straight down onto the socket on the ESP32-S3 module.
 
-   <Shot src="/docs/img/board-antenna-fitted" alt="Close-up of the board's XIAO module. The antenna's small gold plug is pressed flat-side up onto the socket at the back corner of the module's metal shield, and its white cable runs off the board." />
+   <Shot src="/docs/img/board-antenna-fitted" alt="Close-up of the board's ESP32-S3 module. The antenna's small gold plug is pressed flat-side up onto the socket at the back corner of the module's metal shield, and its white cable runs off the board." />
 
 2. Fit the other antenna to the other board the same way.
 

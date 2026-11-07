@@ -50,7 +50,7 @@ The board's slide switch is tiny. The printed switch fits over its lever and rea
 | 2 | **Battery** | PKCELL LP552035, 3.7 V LiPo, 350 mAh, 36 × 20 × 5.6 mm (1.42 × 0.79 × 0.22 in), 2-pin JST PH (2.00 mm pitch). It lies under the board. Its lead comes up through the cutout in the board's edge to the battery port. |
 | 3 | **Board** | The board you set up in [stage 2](/docs/boards). |
 | 4 | **M2 screws** | 2 M2×5 pan-head screws that hold the board on the standoffs. |
-| 6 | **Antenna** | The board's required antenna, plugged into the XIAO's IPEX/U.FL socket. See [Get the parts](/docs/parts#buy-the-parts). |
+| 6 | **Antenna** | The board's required antenna, plugged into the ESP32-S3 module's IPEX/U.FL socket. See [Get the parts](/docs/parts#buy-the-parts). |
 
 ## Put it together
 
@@ -58,10 +58,10 @@ Do this once per glove, with the board, battery and antenna already working from
 
 1. **Switch off and unplug.** Switch the board off, then unplug the battery and the tactor leads. Pull on each plug body, never the cable.
 2. **Battery.** Lay the battery (2) flat in the lower shell (1), between the 2 standoffs. Point its taped end and lead at the side wall below the cutout.
-3. **Battery lead.** The battery port is at the front corner of the board (3), on the side away from the XIAO. It faces inward. Halfway along that edge is a small cutout. Bring the lead up through the cutout and plug it back into the port. The lead tucks past the edge, not under the board.
+3. **Battery lead.** The battery port is at the front corner of the board (3), on the side away from the ESP32-S3 module. It faces inward. Halfway along that edge is a small cutout. Bring the lead up through the cutout and plug it back into the port. The lead tucks past the edge, not under the board.
 4. **Board.** Lower the board onto the 2 standoffs, with the USB-C port and slide switch at the front-wall notches and the motor ports at the back-wall notches. Screw it down with the 2 M2×5 pan-head screws (4).
 5. **Tactor wire leads.** Plug each lead back into its port, as in the [finger-to-port table](/docs/wiring#which-finger-goes-in-which-port). Run each out through its own back-wall notch, without crossing or pinching another.
-6. **Antenna.** Check that the antenna (6) is still plugged into the XIAO. Lay it and its cable inside so nothing is pinched when the case closes.
+6. **Antenna.** Check that the antenna (6) is still plugged into the ESP32-S3 module. Lay it and its cable inside so nothing is pinched when the case closes.
 7. **Switch.** Fit the printed switch (5) over the slide switch's lever.
 8. **Upper shell.** Press the upper shell (7) onto the lower shell. Guide the switch's knob up through the roof slot. Check that the USB-C port and status light line up with their openings. Slide the switch to check that it turns the glove on and off through the case.
 9. **Mount.** Thread a strap or small zip ties through the strap loops and fasten the case to the back of the glove. Leave each lead enough slack for a full curl of the fingers.
