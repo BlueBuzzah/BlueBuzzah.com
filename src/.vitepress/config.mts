@@ -41,7 +41,7 @@ const urlOf = (relativePath: string) => `${site}/${relativePath.replace(/(^|\/)i
 // Home > Docs > [Get the Updater >] page, each crumb [name, url]
 function breadcrumb(relativePath: string, name: string, url: string) {
 	const crumbs = [['BlueBuzzah', `${site}/`]]
-	if (relativePath !== 'privacy.md') crumbs.push(['Docs', `${site}/docs/`])
+	if (relativePath !== 'privacy.md' && relativePath !== 'terms.md') crumbs.push(['Docs', `${site}/docs/`])
 	if (relativePath.startsWith('docs/updater/') && relativePath !== updater[0].path) crumbs.push([updater[0].title, `${site}${updater[0].href}`])
 	if (relativePath !== 'docs/index.md') crumbs.push([name, url])
 	return {
@@ -83,7 +83,7 @@ export default defineConfig({
 	cleanUrls: true,
 	// git dates for dateModified and the sitemap; deploy.yml checks out full history so these stay real
 	lastUpdated: true,
-	// home and privacy keep their bodies in .vue files, so their .md dates say nothing: no lastmod for them
+	// home, privacy and terms keep their bodies in .vue files, so their .md dates say nothing: no lastmod for them
 	sitemap: { hostname: site, transformItems: (items) => items.map((item) => (item.url.startsWith('docs') ? item : { ...item, lastmod: undefined })) },
 	markdown: {
 		// no "#" permalink inside each heading: without VitePress's default theme it's a stray, empty focusable link

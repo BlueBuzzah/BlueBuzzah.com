@@ -2,6 +2,7 @@
 import { useData } from 'vitepress'
 import Home from './Home.vue'
 import Privacy from './Privacy.vue'
+import Terms from './Terms.vue'
 import Docs from './Docs.vue'
 
 const { frontmatter } = useData()
@@ -40,6 +41,7 @@ const { frontmatter } = useData()
 
 	<Home v-if="frontmatter.page === 'home'" />
 	<Privacy v-else-if="frontmatter.page === 'privacy'" />
+	<Terms v-else-if="frontmatter.page === 'terms'" />
 	<Docs v-else-if="frontmatter.page === 'docs'" />
 
 	<footer class="site-footer">
@@ -52,6 +54,7 @@ const { frontmatter } = useData()
 				<nav aria-label="Footer">
 					<ul class="list-reset footer-links">
 						<li><a class="nav-link body-s" href="https://github.com/BlueBuzzah">GitHub</a></li>
+						<li><a class="nav-link body-s" href="/terms">Terms and safety</a></li>
 						<li><a class="nav-link body-s" href="/privacy">Privacy policy</a></li>
 						<li class="body-s js-only" hidden><button type="button" class="bb-btn bb-btn--quiet btn-compact" data-open-settings><svg class="bb-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/settings.svg#icon"/></svg><span class="bb-btn__label">Display settings</span></button></li>
 					</ul>
