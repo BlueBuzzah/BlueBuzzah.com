@@ -132,7 +132,7 @@ export default defineConfig({
 			['meta', { property: 'og:image', content: image }],
 			['meta', { property: 'og:image:width', content: '1200' }],
 			['meta', { property: 'og:image:height', content: '630' }],
-			['meta', { property: 'og:image:alt', content: `The BlueBuzzah logo beside the words ${relativePath === 'index.md' ? 'Open vCR Therapy System' : title}, on a navy background.` }],
+			['meta', { property: 'og:image:alt', content: `The BlueBuzzah logo beside the words ${relativePath === 'index.md' ? 'Open vCR Stimulation System' : title}, on a navy background.` }],
 			['meta', { name: 'twitter:card', content: 'summary_large_image' }],
 			['script', { type: 'application/ld+json' }, jsonLd]
 		]
