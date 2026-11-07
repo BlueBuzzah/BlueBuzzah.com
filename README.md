@@ -1,10 +1,10 @@
 # BlueBuzzah.com
 
-Landing page for the BlueBuzzah open-source vibrotactile therapy ecosystem.
+Landing page for the BlueBuzzah open-source vibrotactile stimulation ecosystem.
 
 ## About
 
-BlueBuzzah develops open-source vibrotactile coordinated reset (vCR) therapy devices for people living with Parkinson's disease. This repository contains the static landing page that introduces the project, references peer-reviewed research, and provides download links for the BlueBuzzah Updater application.
+BlueBuzzah publishes open-source vibrotactile coordinated reset (vCR) stimulation gloves for people living with Parkinson's disease. This repository contains the static landing page that introduces the project, references peer-reviewed research, and provides download links for the BlueBuzzah Updater application.
 
 ## Tech Stack
 

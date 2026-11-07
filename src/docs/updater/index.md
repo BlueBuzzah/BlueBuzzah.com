@@ -23,7 +23,7 @@ On macOS, open the download and drag the Updater into Applications. On Windows, 
 The sidebar has 3 sections. Each one has a keyboard shortcut, shown beside it.
 
 - **Firmware:** install or update the firmware, and set each glove's role. See [Update the firmware](/docs/updater/firmware).
-- **Configure:** choose the therapy pattern and how the light behaves. See [Configure the gloves](/docs/updater/configure).
+- **Configure:** choose the pattern and how the light behaves. See [Configure the gloves](/docs/updater/configure).
 - **Settings:** the theme, high contrast, and the Updater's version.
 
 The Updater calls each glove a device. While a flash or setup runs, the other sections stay locked until it finishes.

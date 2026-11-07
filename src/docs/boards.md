@@ -57,7 +57,7 @@ Flash both boards in one run, or one at a time.
 
 The firmware is the same on both boards. It doesn't matter yet which board gets which role. You pair each role with a glove in [stage 4, Fit the tactors in the gloves](/docs/gloves).
 
-[Update the firmware](/docs/updater/firmware) has more on each step, later updates and swapping roles. Therapy patterns are in [Configure the gloves](/docs/updater/configure).
+[Update the firmware](/docs/updater/firmware) has more on each step, later updates and swapping roles. Patterns are in [Configure the gloves](/docs/updater/configure).
 
 ## Check the boards
 

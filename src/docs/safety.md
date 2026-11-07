@@ -22,6 +22,6 @@ lead: Please read carefully before proceeding.
 
 ## Research context
 
-This project is based on Dr. Peter Tass's research on vibrotactile Coordinated Reset (vCR) therapy. For more information about the underlying research, see:
+This project is based on Dr. Peter Tass's research on vibrotactile Coordinated Reset (vCR) stimulation. For more information about the underlying research, see:
 
 - [Coordinated Reset Vibrotactile Stimulation Study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8055937/)
