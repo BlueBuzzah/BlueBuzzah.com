@@ -20,7 +20,7 @@
 				<section class="stack">
 					<h2 class="title-l">What BlueBuzzah is for</h2>
 					<p class="body">BlueBuzzah exists for research and education. It lets people study, build and improve an open design for vibrotactile stimulation gloves, and share what they learn.</p>
-					<p class="body">The design is inspired by published research on vibrotactile coordinated reset stimulation. That research used its own devices, settings and protocols, with participants under medical supervision. Nothing on this site or in the apps claims that a BlueBuzzah device will produce the same results. Everyone responds differently, and we promise no outcome.</p>
+					<p class="body">The design is inspired by published research on vibrotactile coordinated reset stimulation. That research used its own devices, settings and protocols, with participants under medical supervision. Nothing on this site or in the apps claims that a BlueBuzzah device will produce the same results. Everyone responds differently, and there is no guarantee of any outcome.</p>
 					<p class="body">BlueBuzzah is not affiliated with, sponsored by or endorsed by Stanford University, the Tass Lab or any other institution, researcher or company.</p>
 					<p class="body">Nothing here is medical advice. Do not stop or change prescribed medication, DBS settings or any other treatment because of something you read here or did with a device. Talk to your clinician.</p>
 				</section>
@@ -40,7 +40,7 @@
 				</section>
 				<section class="stack">
 					<h2 class="title-l">Software, firmware and apps</h2>
-					<p class="body">The firmware, the BlueBuzzah Updater and BuzzahBuddy are provided as they are. They may contain errors, and we do not promise updates, compatibility with your phone or computer, or that they will keep working.</p>
+					<p class="body">The firmware, the BlueBuzzah Updater and BuzzahBuddy are provided as they are. They may contain errors, and there is no guarantee of updates, of compatibility with your phone or computer, or that they will keep working.</p>
 					<p class="body">Do not rely on the app, a Bluetooth link or a pause button as the only way to stop a glove. The power switch on each glove is the sure way.</p>
 					<p class="body">BuzzahBuddy is distributed through the Apple App Store and Google Play. Their terms also apply to the app.</p>
 				</section>
