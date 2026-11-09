@@ -28,7 +28,7 @@ figure:
 
 ### Upper shell (7)
 
-<Shot src="/docs/img/upper-shell" alt="The upper shell: a rounded cover with a large USB-C opening at the front left, a small slot and a round window on top, and strap loops in each side" />
+<Shot src="/docs/img/upper-shell" alt="The upper shell: a rounded cover with a large USB-C opening at the front left, BlueBuzzah.com set into the top, a round window, a small slot toward the front right, and strap loops in each side" />
 
 The upper shell presses on with a light compression fit. It needs no fasteners.
 
@@ -39,7 +39,7 @@ The upper shell presses on with a light compression fit. It needs no fasteners.
 
 ### Switch (5)
 
-<Shot src="/docs/img/switch" alt="The printed switch: a small block with a raised knob on top and a hooked foot" />
+<Shot src="/docs/img/switch" alt="The printed switch: a wide block with a solid front and a raised knob centered on top, and a shorter tab at one end with a small window that fits over the board switch's lever" />
 
 The board's slide switch is tiny. The printed switch fits over its lever and reaches up through the roof slot, so you can work it from outside.
 
@@ -62,7 +62,10 @@ Do this once per glove, with the board, battery and antenna already working from
 4. **Board.** Lower the board onto the 2 standoffs, with the USB-C port and slide switch at the front-wall notches and the motor ports at the back-wall notches. Screw it down with the 2 M2×5 pan-head screws (4).
 5. **Tactor wire leads.** Plug each lead back into its port, as in the [finger-to-port table](/docs/wiring#which-finger-goes-in-which-port). Run each out through its own back-wall notch, without crossing or pinching another.
 6. **Antenna.** Check that the antenna (6) is still plugged into the ESP32-S3 module. Lay it and its cable inside so nothing is pinched when the case closes.
-7. **Switch.** Fit the printed switch (5) over the slide switch's lever.
+7. **Switch.** Hook the printed switch (5) over the lower shell's front wall, beside the USB-C port, with its knob pointing up. Its solid front goes outside the wall, and the small window in its tab fits over the slide switch's lever. The board is switched off, so the printed switch sits slid toward the USB-C port.
+
+   <Shot src="/docs/img/case-switch-fitted" alt="The lower shell with the board screwed in and the printed switch fitted, shown in a lighter shade. The switch's solid front hangs outside the lower shell's front wall beside the USB-C port, its knob points up, and the window in its tab sits over the board's slide switch." />
+
 8. **Upper shell.** Press the upper shell (7) onto the lower shell. Guide the switch's knob up through the roof slot. Check that the USB-C port and status light line up with their openings. Slide the switch to check that it turns the glove on and off through the case.
 9. **Mount.** Thread a strap or small zip ties through the strap loops and fasten the case to the back of the glove. Leave each lead enough slack for a full curl of the fingers.
 
