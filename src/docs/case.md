@@ -20,22 +20,25 @@ figure:
 
 ### Lower shell (1)
 
-<Shot src="/docs/img/lower-shell" alt="The lower shell: an open tray with 2 round standoffs on its floor, 2 notches in the front wall, and 5 notches along the back wall" />
+<Shot src="/docs/img/lower-shell" alt="The lower shell: an open tray with 2 round standoffs on its floor, 2 notches in the front wall, 5 notches along the back wall, and a low ridge along the outside of each side wall" />
 
 - **2 standoffs** on the floor line up with the board's 2 mounting holes. The board sits 5.7 mm up, with room for the 5.6 mm-thick battery beneath.
 - **2 notches in the front wall** clear the USB-C port and the slide switch.
 - **5 notches in the back wall** line up with the 5 motor ports. Each tactor wire lead leaves through one.
+- **2 snap ridges**, 1 along the outside of each side wall, click into the upper shell to hold the case closed.
 
 ### Upper shell (7)
 
-<Shot src="/docs/img/upper-shell" alt="The upper shell: a rounded cover with a large USB-C opening at the front left, BlueBuzzah.com set into the top, a round window, a small slot toward the front right, and strap loops in each side" />
+<Shot src="/docs/img/upper-shell" alt="The upper shell: a rounded cover with a large USB-C opening at the front left, BlueBuzzah.com set into the top, a round window, a small slot toward the front right with a power-off symbol on its left and a power symbol on its right, and strap loops in each side" />
 
-The upper shell presses on with a light compression fit. It needs no fasteners.
+The upper shell snaps onto the lower shell. It needs no fasteners or tools. To open it, hold the upper shell and push the lower shell out from underneath with both thumbs.
 
 - **USB-C opening** at the front. It lets you charge and update firmware without opening the case.
-- **Switch slot** in the roof, where the switch's knob comes through.
+- **Switch slot** in the roof, where the switch's knob comes through. The power-off symbol on its left and the power symbol on its right show which way is off and which is on.
 - **Status window**, a round hole above the status light.
 - **Strap loops**, 2 in each side wall.
+- **Wire opening**, a wide gap at the bottom of the back wall, where the tactor wire leads leave the case.
+- **2 grooves**, 1 inside each side wall, that catch the lower shell's snap ridges.
 
 ### Switch (5)
 
@@ -66,7 +69,7 @@ Do this once per glove, with the board, battery and antenna already working from
 
    <Shot src="/docs/img/case-switch-fitted" alt="The lower shell with the board screwed in and the printed switch fitted, shown in a lighter shade. The switch's solid front hangs outside the lower shell's front wall beside the USB-C port, its knob points up, and the window in its tab sits over the board's slide switch." />
 
-8. **Upper shell.** Press the upper shell (7) onto the lower shell. Guide the switch's knob up through the roof slot. Check that the USB-C port and status light line up with their openings. Slide the switch to check that it turns the glove on and off through the case.
+8. **Upper shell.** Lower the upper shell (7) straight onto the lower shell. Guide the switch's knob up through the roof slot and the tactor wire leads out through the wide opening at the bottom of its back wall. Press down until both sides click. Check that the USB-C port and status light line up with their openings. Slide the switch to check that it turns the glove on and off through the case.
 9. **Mount.** Thread a strap or small zip ties through the strap loops and fasten the case to the back of the glove. Leave each lead enough slack for a full curl of the fingers.
 
    <Shot src="/docs/img/case-strapped" alt="The closed case with 2 straps. Each strap runs under the case, comes out through a strap loop on each side, and turns down to wrap around the hand." />
