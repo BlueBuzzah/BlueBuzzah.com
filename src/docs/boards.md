@@ -65,7 +65,7 @@ With no tactors connected yet, the light shows a red double blink for about 5 se
 
 1. Power both boards on with the slide switch.
 2. Wait a few seconds for the boards to find each other.
-3. Install BuzzahBuddy from [BuzzahBuddy.com](https://buzzahbuddy.com). It's in early testing: on iPhone it installs through TestFlight, and on Android through a Google Play test listing.
+3. Install BuzzahBuddy from [BuzzahBuddy.com](https://buzzahbuddy.com). On Android it installs from Google Play. On iPhone it's in early testing and installs through TestFlight.
 4. Open the **Gloves** tab and tap **Scan for Gloves**. Connect to the glove in the list.
 
 Only the primary appears in the scan. The app reaches the secondary through the primary.
