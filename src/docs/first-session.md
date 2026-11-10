@@ -6,6 +6,10 @@ lead: Run a session with your finished pair, check which glove is primary, and k
 need:
   - { qty: 2, label: "charged gloves, 1 primary and 1 secondary" }
   - { qty: 1, label: phone or tablet with BuzzahBuddy }
+figure:
+  src: /docs/img/bluebuzzah-pair
+  alt: "A finished pair seen from the front and above: 2 closed cases side by side, each with 4 tactors fanned out above it, 1 per finger, on red and black leads that leave the back of the case"
+  caption: Your finished pair, ready for its first session.
 ---
 
 ## Before you use the gloves
