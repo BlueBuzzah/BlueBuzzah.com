@@ -165,9 +165,9 @@
 						<!-- web.md Download pages: official store badges, equal weight, no platform detection -->
 						<div class="button-row">
 							<a class="download-badge store-badge" href="https://testflight.apple.com/join/DMuPNBGA" aria-describedby="early-access-note"><img src="/assets/apple-appstore.png" alt="Download on the App Store" width="512" height="171"></a>
-							<a class="download-badge store-badge" href="https://play.google.com/apps/testing/com.rbonestell.buzzahbuddy" aria-describedby="early-access-note"><img src="/assets/google-playstore.png" alt="Get it on Google Play" width="478" height="142"></a>
+							<a class="download-badge store-badge" href="https://play.google.com/store/apps/details?id=com.rbonestell.buzzahbuddy"><img src="/assets/google-playstore.png" alt="Get it on Google Play" width="478" height="142"></a>
 						</div>
-						<p class="body-s text-muted" id="early-access-note">These are early test versions, so expect some rough edges. Features may change before the full release. On iPhone, the app installs through Apple's TestFlight app.</p>
+						<p class="body-s text-muted" id="early-access-note">On iPhone, BuzzahBuddy is an early test version that installs through Apple's TestFlight app, so expect some rough edges. Features may change before the full release.</p>
 						<a class="bb-btn bb-btn--quiet card-action" href="https://buzzahbuddy.com"><span class="bb-btn__label">Visit BuzzahBuddy.com</span><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/external-link.svg#icon"/></svg></a>
 					</li>
 				</ul>
