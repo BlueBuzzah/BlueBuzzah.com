@@ -3,15 +3,19 @@
 		<section class="hero">
 			<div class="container hero__inner">
 				<div class="stack hero__text">
-					<h1 class="display-xl">Open vCR Stimulation System</h1>
-					<p class="body-l prose">BlueBuzzah is an open-source vibrotactile coordinated reset (vCR) stimulation system: a pair of gloves that deliver gentle, precisely timed patterns
-					of vibration to your fingertips. It is inspired by peer-reviewed research into vCR stimulation for people with Parkinson's disease.</p>
-					<div class="button-row">
-						<a class="bb-btn bb-btn--primary" href="#about"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/circle-question-mark.svg#icon"/></svg><span class="bb-btn__label">What is BlueBuzzah?</span></a>
-						<a class="bb-btn bb-btn--secondary" href="/docs/"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/hammer.svg#icon"/></svg><span class="bb-btn__label">Build a pair</span></a>
+					<div class="stack hero__lead">
+						<h1 class="display-l">Open vCR Stimulation System</h1>
+					</div>
+					<img class="hero__art" src="/assets/bluebuzzah-hero.webp" srcset="/assets/bluebuzzah-hero-800.webp 800w, /assets/bluebuzzah-hero.webp 1600w" sizes="(min-width: 900px) 57vw, 100vw" alt="The electronics for a pair of BlueBuzzah gloves: 2 closed cases, each with 4 tactors fanned out on short leads, 1 per finger" width="1600" height="1000" fetchpriority="high">
+					<div class="stack hero__body">
+						<p class="body-l prose">BlueBuzzah is an open-source vibrotactile coordinated reset (vCR) stimulation system: a pair of gloves that deliver gentle, precisely timed patterns
+						of vibration to your fingertips. It is inspired by peer-reviewed research into vCR stimulation for people with Parkinson's disease.</p>
+						<div class="button-row">
+							<a class="bb-btn bb-btn--primary" href="#about"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/circle-question-mark.svg#icon"/></svg><span class="bb-btn__label">What is BlueBuzzah?</span></a>
+							<a class="bb-btn bb-btn--secondary" href="/docs/"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/hammer.svg#icon"/></svg><span class="bb-btn__label">Build a pair</span></a>
+						</div>
 					</div>
 				</div>
-				<img class="hero__art" src="/assets/bluebuzzah-hero.webp" srcset="/assets/bluebuzzah-hero-800.webp 800w, /assets/bluebuzzah-hero.webp 1600w" sizes="(min-width: 900px) 55vw, 100vw" alt="The electronics for a pair of BlueBuzzah gloves: 2 closed cases, each with 4 tactors fanned out on short leads, 1 per finger" width="1600" height="1000" fetchpriority="high">
 			</div>
 		</section>
 
