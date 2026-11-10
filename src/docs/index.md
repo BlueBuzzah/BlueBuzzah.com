@@ -18,7 +18,7 @@ A pair means 2 of everything: 2 boards, 8 tactors, 2 cases and 2 batteries. No s
 
 Each glove has 4 tactors, 1 per finger: index, middle, ring and little. A tactor is the part that buzzes against your fingertip. The board, battery and antenna sit in a small case on the back of the hand.
 
-BlueBuzzah is based on Dr. Peter Tass's research on vibrotactile Coordinated Reset (vCR). Read [the vCR research paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8055937/) for the background.
+BlueBuzzah is inspired by Dr. Peter Tass's research on vibrotactile Coordinated Reset (vCR). Read [the vCR research paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8055937/) for the background.
 
 Read [Safety and disclaimers](/docs/safety) before you order parts or start a build.
 

@@ -5,7 +5,7 @@
 				<a class="link-icon" href="/"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/arrow-left.svg#icon"/></svg>Back to home</a>
 				<div class="stack">
 					<h1 class="headline">Terms and safety</h1>
-					<p class="body-s text-muted">Effective date: November 7, 2026</p>
+					<p class="body-s text-muted">Effective date: November 10, 2026</p>
 				</div>
 				<section class="stack">
 					<h2 class="title-l">Who we are and what this is</h2>
@@ -44,11 +44,12 @@
 					<p class="body">Do not rely on the app, a Bluetooth link or a pause button as the only way to stop a glove. The power switch on each glove is the sure way.</p>
 					<p class="body">BuzzahBuddy is distributed through the Apple App Store and Google Play. Their terms also apply to the app.</p>
 				</section>
-				<section class="stack">
+				<section class="stack" id="licenses">
 					<h2 class="title-l">Licenses and the BlueBuzzah name</h2>
-					<p class="body">BlueBuzzah's code, hardware designs and documentation are released under the MIT License, and each repository carries the license file. You may use, copy, change and share them under that license, including commercially, as long as you keep the copyright and license notices. These terms do not take away any right the MIT License gives you.</p>
-					<p class="body">The MIT License does not cover the BlueBuzzah name, the BuzzahBuddy name or the logos. You may say a device or app is based on BlueBuzzah. You may not use the names or logos in a way that suggests we made, endorsed or certified what you built.</p>
-					<p class="body">Some icons and fonts come from other open-source projects under their own licenses, noted alongside them.</p>
+					<p class="body">BlueBuzzah's code (the firmware, the BlueBuzzah Updater, BuzzahBuddy, the scripts and the websites' code) is released under the MIT License. The board designs are released under the CERN Open Hardware Licence Version 2 – Strongly Reciprocal (CERN-OHL-S v2). The 3D models, the build guide, the wikis, the websites' text and images and the Hardware repository's documentation are released under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). Each code repository's own README and docs are released under the MIT License with its code. Each repository carries its license files and says which parts each one covers.</p>
+					<p class="body">You may use, copy, change and share these materials under those licenses, including commercially, as long as you keep the copyright and license notices. If you share or sell anything made from the board designs, models or documentation, CERN-OHL-S and CC BY-SA require you to share it under the same license. These terms do not take away any right those licenses give you.</p>
+					<p class="body">These licenses do not cover the BlueBuzzah name, the BuzzahBuddy name or the logos. You may say a device or app is based on BlueBuzzah. You may not use the names or logos in a way that suggests we made, endorsed or certified what you built.</p>
+					<p class="body">Some icons, fonts and part models come from other projects under their own licenses, noted alongside them.</p>
 				</section>
 				<section class="stack">
 					<h2 class="title-l">Other companies and services</h2>

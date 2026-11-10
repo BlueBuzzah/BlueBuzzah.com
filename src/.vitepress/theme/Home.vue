@@ -28,7 +28,7 @@
 						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/zap.svg#icon"/></svg><div><p class="body-strong">Bluetooth Low Energy</p><p class="body-s text-muted">Wireless device sync</p></div></li>
 						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/clock.svg#icon"/></svg><div><p class="body-strong">8+ Hours Battery</p><p class="body-s text-muted">Long sessions on one charge</p></div></li>
 						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/settings.svg#icon"/></svg><div><p class="body-strong">Configurable Patterns</p><p class="body-s text-muted">Customizable sessions</p></div></li>
-						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/square-terminal.svg#icon"/></svg><div><p class="body-strong">Open Source</p><p class="body-s text-muted">MIT licensed</p></div></li>
+						<li class="feature"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/square-terminal.svg#icon"/></svg><div><p class="body-strong">Open Source</p><p class="body-s text-muted">Free, open licenses</p></div></li>
 					</ul>
 				</div>
 			</div>
@@ -86,7 +86,7 @@
 					<svg class="bb-icon bb-banner__icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/info.svg#icon"/></svg>
 					<div class="bb-banner__body">
 						<p class="bb-banner__title">Disclaimer</p>
-						<div class="bb-banner__text"><p>BlueBuzzah devices are not FDA approved medical devices and not intended to diagnose, treat, cure, or prevent any disease. The information provided through BlueBuzzah is for general wellness purposes only and not a substitute for professional medical advice, diagnosis, or treatment.</p></div>
+						<div class="bb-banner__text"><p>BlueBuzzah devices are not FDA cleared or approved medical devices and not intended to diagnose, treat, cure, mitigate, or prevent any disease. The information provided through BlueBuzzah is for general wellness purposes only and not a substitute for professional medical advice, diagnosis, or treatment.</p></div>
 					</div>
 				</div>
 			</div>
