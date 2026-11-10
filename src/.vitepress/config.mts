@@ -1,8 +1,14 @@
-import { existsSync } from 'node:fs'
+import { createHash } from 'node:crypto'
+import { existsSync, readFileSync } from 'node:fs'
 import { rm } from 'node:fs/promises'
 import { join } from 'node:path'
 import { defineConfig } from 'vitepress'
 import { updater } from './theme/docs'
+
+// GitHub Pages lets browsers cache /css and /js for 10 minutes, so a deploy could pair new HTML with old CSS.
+// A content hash in each URL changes only when that file does.
+const v = (path: string) =>
+	`${path}?v=${createHash('sha256').update(readFileSync(new URL(`../public${path}`, import.meta.url))).digest('hex').slice(0, 8)}`
 
 const site = 'https://bluebuzzah.com'
 const organization = {
@@ -91,13 +97,13 @@ export default defineConfig({
 	},
 	head: [
 		// sets data-theme before first paint, so it blocks and comes before the stylesheets (web.md Technical)
-		['script', { src: '/js/theme.js' }],
+		['script', { src: v('/js/theme.js') }],
 		['link', { rel: 'preload', href: '/css/fonts/lexend-latin-wght-normal.woff2', as: 'font', type: 'font/woff2', crossorigin: '' }],
 		['link', { rel: 'preload', href: '/css/fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2', as: 'font', type: 'font/woff2', crossorigin: '' }],
-		['link', { rel: 'stylesheet', href: '/css/tokens.css' }],
-		['link', { rel: 'stylesheet', href: '/css/bundle.css' }],
-		['link', { rel: 'stylesheet', href: '/css/site.css' }],
-		['link', { rel: 'stylesheet', href: '/css/docs.css' }],
+		['link', { rel: 'stylesheet', href: v('/css/tokens.css') }],
+		['link', { rel: 'stylesheet', href: v('/css/bundle.css') }],
+		['link', { rel: 'stylesheet', href: v('/css/site.css') }],
+		['link', { rel: 'stylesheet', href: v('/css/docs.css') }],
 		['link', { rel: 'icon', href: '/favicon.ico', sizes: '48x48' }],
 		['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/assets/favicon-32.png' }],
 		['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/assets/favicon-16.png' }],
@@ -105,7 +111,7 @@ export default defineConfig({
 		['link', { rel: 'manifest', href: '/site.webmanifest' }],
 		['meta', { name: 'apple-mobile-web-app-title', content: 'BlueBuzzah' }],
 		['meta', { name: 'theme-color', content: '#080c1b' }],
-		['script', { src: '/js/site.js', defer: '' }]
+		['script', { src: v('/js/site.js'), defer: '' }]
 	],
 	// docs pages: the <title> names the docs; the <h1> (Docs.vue) keeps the plain frontmatter title
 	transformPageData(pageData) {
