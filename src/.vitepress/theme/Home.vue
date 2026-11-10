@@ -11,7 +11,7 @@
 						<a class="bb-btn bb-btn--secondary" href="/docs/"><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/hammer.svg#icon"/></svg><span class="bb-btn__label">Build a pair</span></a>
 					</div>
 				</div>
-				<img class="hero__mark" src="/assets/bluebuzzah-mark-512.png" alt="" width="200" height="193">
+				<img class="hero__art" src="/assets/bluebuzzah-hero.webp" srcset="/assets/bluebuzzah-hero-800.webp 800w, /assets/bluebuzzah-hero.webp 1600w" sizes="(min-width: 900px) 55vw, 100vw" alt="The electronics for a pair of BlueBuzzah gloves: 2 closed cases, each with 4 tactors fanned out on short leads, 1 per finger" width="1600" height="1000" fetchpriority="high">
 			</div>
 		</section>
 
