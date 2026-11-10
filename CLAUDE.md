@@ -9,7 +9,7 @@ Static landing page for the BlueBuzzah open-source vibrotactile therapy project:
 - `src/.vitepress/theme/docs.ts`: the one stage list (Start here, stages 1-7, Use the Updater, Keep handy) that drives the nav, the StageRail and the Pager. Add or reorder a page there.
 - `src/index.md`, `src/privacy.md`: frontmatter only (`page`, `title`, `description`, optional `shareTitle`).
 - `src/docs/*.md`: the docs pages, Markdown only (see Docs pages).
-- `src/.vitepress/config.mts`: the global `<head>`. `theme.js` must stay a blocking script before the stylesheets. Its `transformHead` writes every page's canonical URL, Open Graph and Twitter tags and JSON-LD from the frontmatter, so pages never hand-write them. JSON-LD stays non-medical (no `Medical*` types), and the organization's name is BlueBuzzah Partners.
+- `src/.vitepress/config.mts`: the global `<head>`. `theme.js` must stay a blocking script before the stylesheets. Its `transformHead` writes every page's canonical URL, Open Graph and Twitter tags and JSON-LD from the frontmatter, so pages never hand-write them. JSON-LD stays non-medical (no `Medical*` types), and the organization's name is BlueBuzzah Partners. Every `/css` and `/js` link goes through `v()`, which adds `?v=` and a hash of the file: GitHub Pages lets browsers cache those for 10 minutes, and an unversioned link can pair new HTML with old CSS right after a deploy. Link a new stylesheet or script the same way.
 - `src/public/`: everything the pages link, served as-is at the site root (`css/`, `js/`, `assets/`, `docs/img/`, `favicon.ico`, `site.webmanifest`, `CNAME`).
 
 ## Working on it
@@ -26,7 +26,7 @@ npm run preview  # serve the build at http://localhost:4173 (touches dist/404.ht
 - **A new page** needs a `src/<name>.md` with `page`, `title` and `description` (without a description VitePress writes "A VitePress site"), a `<Name>.vue`, and a branch for it in `Layout.vue`. A new docs page needs only a `src/docs/<slug>.md` and an entry in `docs.ts`; the `.vue` and `Layout.vue` steps apply to the non-docs pages.
 - **Clean URLs** (`cleanUrls: true`): links never end in `.html` (`/docs/parts`, `/privacy`). The files keep `.html`, so both forms are served.
 - Keep `mpa: true` (no Vue runtime or client router; links and `#` anchors behave natively) and `appearance: false` (otherwise VitePress adds its own dark-mode script that fights `theme.js`).
-- Reference public files by absolute path (`/assets/…`, `/css/…`). A missing `<img src>` or `<use href>` target in a `.vue` template fails the build. `<a href>` targets, `#anchor` links and the `head` paths in `config.mts` aren't checked, so a typo there builds and deploys. After a build, grep `src/.vitepress/dist` for the ids and pages you link.
+- Reference public files by absolute path (`/assets/…`, `/css/…`). A missing `<img src>` or `<use href>` target in a `.vue` template fails the build. `<a href>` targets, `#anchor` links and the font preloads in `config.mts` aren't checked, so a typo there builds and deploys (a `v()` link to a missing file fails the build). After a build, grep `src/.vitepress/dist` for the ids and pages you link.
 - The build deletes VitePress's `404.html` (blank in MPA mode), so GitHub Pages serves its own 404.
 - **Copied from the design system, never edited by hand:** `src/public/css/tokens.css`, `src/public/css/bundle.css`, `src/public/css/fonts/`, `src/public/assets/bluebuzzah-mark-512.png`, the favicon/app icons in `src/public/assets/` and `src/public/favicon.ico`. After a design-system re-import, re-copy them from the workspace root:
   ```bash
@@ -50,7 +50,7 @@ npm run preview  # serve the build at http://localhost:4173 (touches dist/404.ht
 - Pages still waiting for an image carry `<!-- planned-image: /docs/img/NAME | kind | what it shows -->` where the `<Shot>` goes.
 - Images live in `src/public/docs/img/` as `NAME.webp` (up to 1600px wide, never upscaled) and `NAME-thumb.webp` (640px wide), converted once with `cwebp` from the source PNG. No script is committed. Reference them as `/docs/img/NAME` in `figure.src` and `<Shot src>`. A missing one fails the build only through frontmatter or `<Shot>` in Vue; check the built HTML:
   ```bash
-  cd src/.vitepress/dist && grep -rhoE '/docs/img/[A-Za-z0-9._-]+' --include='*.html' . | sort -u | while read f; do [ -f ".$f" ] || echo "MISSING $f"; done
+  cd src/.vitepress/dist && grep -rhoE '/docs/img/[A-Za-z0-9._/-]+' --include='*.html' . | sort -u | while read f; do [ -f ".$f" ] || echo "MISSING $f"; done
   ```
   It must print nothing.
 - Share cards live in `src/public/assets/og/` as 1200×630 PNGs named from the page path (`docs/updater/firmware.md` → `docs-updater-firmware.png`). A page with no card falls back to `assets/og-image.png`. Make one in the same layout as the others, on `abyss` with the mark, from an HTML page that links `tokens.css`, using headless Chrome's `--screenshot` at `--window-size=1200,630`. No script is committed. If a page's title or lead changes, remake its card.
