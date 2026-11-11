@@ -12,7 +12,7 @@ lead: Choose how your gloves buzz, then give both gloves the same settings.
 Open **Configure**. Under **Choose a Pattern**, pick one:
 
 - **Regular:** the standard pattern. Fingers buzz one at a time at a steady pace. Each glove follows its own order.
-- **Noisy:** like Regular, but the timing varies a little each time. Both gloves follow the same order. This is the research protocol.
+- **Noisy:** like Regular, but the timing varies a little each time. Both gloves follow the same order.
 - **Hybrid:** like Regular, but the timing varies a little each time. Each glove follows its own order.
 - **Gentle:** softer buzzing. Fingers buzz one after another in a fixed order.
 - **Custom:** set your own timing, strength and session length.
