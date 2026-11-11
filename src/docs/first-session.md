@@ -27,7 +27,14 @@ Install BuzzahBuddy from [BuzzahBuddy.com](https://buzzahbuddy.com). On Android,
 3. Open BuzzahBuddy. It connects by itself. If it doesn't, open the **Gloves** tab and tap **Scan for Gloves**.
 4. Start a session on the **Session** tab with **Start Session**.
 
-Don't start unless both lights are solid green. If no phone connects within 30 seconds of the gloves pairing, the primary starts a session by itself.
+Don't start unless both lights are solid green.
+
+## How to stop
+
+- **The sure way:** switch off both gloves. Each glove's power switch turns it off without the app.
+- **In BuzzahBuddy:** tap **Stop** on the **Session** tab.
+- **Closing the app doesn't stop the gloves.** If your phone disconnects or the connection drops, a running session keeps going.
+- **The gloves can start by themselves.** If no phone connects within 30 seconds of the gloves pairing, the primary starts a session.
 
 ## Check which hand is primary
 
