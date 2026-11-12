@@ -107,7 +107,7 @@
 /* Page content: images outside a step, tables, download rows, Start here's stage list ------------------------- */
 /* an image outside a step (a part on its own) is no larger than a step thumbnail under its text */
 .docs-body > div > .shot { max-width: calc(var(--space-20) * 4); }
-.docs-files { display: flex; flex-wrap: wrap; gap: var(--target-gap); }
+.docs-files { display: flex; flex-wrap: wrap; align-items: center; gap: var(--target-gap); }
 /* the Updater download badges (UpdaterDownloads.vue) wrap from the left like .docs-files, instead of site.css's centred phone stack */
 .docs-body .button-row { flex-direction: row; align-items: center; }
 /* Markdown tables (finger-to-port, cost, case contents). VitePress gives each one tabindex="0", so it shows focus. */

@@ -19,18 +19,21 @@ buy:
 
 Order 2 boards, fully assembled, from [JLCPCB](https://jlcpcb.com). Every part comes fitted, so you solder nothing onto the board.
 
-1. Download the 3 order files.
+1. Download the PCB files.
 
-   <FileButtons :files="[{ href: 'https://github.com/BlueBuzzah/BlueBuzzah-Hardware/raw/main/PCB/v3/jlc_pcb_gerbers.zip', label: 'Board files (.zip)' }, { href: 'https://github.com/BlueBuzzah/BlueBuzzah-Hardware/raw/main/PCB/v3/BOM_JCLPCB_BlueBuzzah_v3.csv', label: 'Parts list (.csv)' }, { href: 'https://github.com/BlueBuzzah/BlueBuzzah-Hardware/raw/main/PCB/v3/CPL_JLCPCB_BlueBuzzah_v3-all-pos.csv', label: 'Placement file (.csv)' }]" />
+   <FileButton href="https://github.com/BlueBuzzah/BlueBuzzah-Hardware/releases/download/v3.0.0-beta.0/BlueBuzzah-v3-PCB.zip" label="PCB files (.zip)" early-access />
+
+   These are early test files. They may change before the full release.
 
    <Shot src="/docs/img/bluebuzzah-v3-pcb" alt="The assembled BlueBuzzah v3 PCB with the ESP32-S3 module on the left, the slide switch at the front edge, and 5 motor ports along the back" caption="The assembled board." />
 
-2. Start a PCB assembly order at JLCPCB and upload the board files.
-3. Upload the parts list and placement file when it asks for assembly.
-4. Set the quantity to 2.
-5. Check that the parts JLCPCB sources match the parts list before you pay.
+2. Unzip it and open the `JLCPCB` folder. It holds the 3 order files, and `ORDERING-JLCPCB.md` has the full ordering notes.
+3. Start a PCB assembly order at JLCPCB and upload the board files, `BlueBuzzah_v3_JLCPCB_gerbers.zip`. Don't unzip it.
+4. Upload the parts list (`BlueBuzzah_v3_JLCPCB_BOM.csv`) and placement file (`BlueBuzzah_v3_JLCPCB_CPL.csv`) when it asks for assembly.
+5. Set the quantity to 2.
+6. Check that the parts JLCPCB sources match the parts list before you pay.
 
-Any other board maker that assembles boards from these 3 files (gerbers, BOM and CPL) works too.
+To order from PCBWay instead, use the `PCBWay` folder and follow its `ORDERING-PCBWAY.md`. Don't mix the two folders' files.
 
 ## Buy the parts
 
@@ -44,13 +47,17 @@ Wait to buy the gloves until you've built a tactor in [stage 3](/docs/tactors), 
 
 ## Print the parts
 
-Print everything from 1 file. It has 3 plates:
+Every print model is in 1 download: the print file (`BlueBuzzah-v3-parts.3mf`) and an STL file for each part.
+
+<FileButton href="https://github.com/BlueBuzzah/BlueBuzzah-Hardware/releases/download/v3.0.0-beta.0/BlueBuzzah-v3-parts.zip" label="3D-printed parts (.zip)" early-access />
+
+These are early test files. They may change before the full release.
+
+Print everything from the `.3mf` file. It has 3 plates:
 
 - **Plate 1:** every tactor part except the finger cups, in PLA or PETG.
 - **Plate 2:** the finger cups, in TPU. We tested TPU 95A and flexible PLA, and we advise TPU.
 - **Plate 3:** 2 cases with their switches.
-
-<FileButton href="https://github.com/BlueBuzzah/BlueBuzzah-Hardware/raw/main/models/BlueBuzzah-v3.3mf" label="Print file (.3mf)" />
 
 <!-- planned-image: images/v3/print/plate-1.png | render -->
 <!-- planned-image: images/v3/print/plate-2.png | render -->
@@ -64,9 +71,7 @@ Use these settings. Other settings may give parts that don't fit.
 
 The parts use 0.2 mm fit tolerances. A smooth plate is best, and a textured plate also works.
 
-To change a design, start from the STEP files.
-
-<FileButtons :files="[{ href: 'https://github.com/BlueBuzzah/BlueBuzzah-Hardware/raw/main/models/BlueBuzzah-v3-tactor.step', label: 'Tactor (.step)' }, { href: 'https://github.com/BlueBuzzah/BlueBuzzah-Hardware/raw/main/models/BlueBuzzah-v3-shell.step', label: 'Case (.step)' }]" />
+To change a design, start from the STEP files in the [BlueBuzzah-Hardware repository](https://github.com/BlueBuzzah/BlueBuzzah-Hardware/tree/main/models/STEP).
 
 ## Tools
 
