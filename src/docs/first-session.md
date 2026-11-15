@@ -18,7 +18,7 @@ figure:
 
 ## Get BuzzahBuddy
 
-Install BuzzahBuddy from [BuzzahBuddy.com](https://buzzahbuddy.com). On Android, it installs from Google Play. On iPhone, it's in early testing and installs through TestFlight.
+Install BuzzahBuddy from [BuzzahBuddy.com](https://buzzahbuddy.com). On iPhone, it installs from the App Store. On Android, it installs from Google Play.
 
 ## Every session
 
