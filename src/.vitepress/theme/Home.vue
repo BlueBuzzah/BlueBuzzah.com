@@ -162,16 +162,13 @@
 					<li class="bb-card bb-card--lg" aria-labelledby="dl-buzzahbuddy">
 						<header class="bb-card__head">
 							<div><h3 class="bb-card__title title-with-icon" id="dl-buzzahbuddy"><svg class="bb-icon icon-brand" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/smartphone.svg#icon"/></svg>BuzzahBuddy</h3></div>
-							<!-- mirrors bundle.js StatusBadge tone="brand" icon="flask-conical" (DS import 1793729877-6a2e) -->
-							<div class="bb-card__actions"><span class="bb-badge bb-badge--brand"><svg class="bb-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/flask-conical.svg#icon"/></svg><span>Early Access</span></span></div>
 						</header>
 						<p class="body">BuzzahBuddy lets you control sessions, adjust and customize settings, and track usage, all from your phone.</p>
 						<!-- web.md Download pages: official store badges, equal weight, no platform detection -->
 						<div class="button-row">
-							<a class="download-badge store-badge" href="https://testflight.apple.com/join/DMuPNBGA" aria-describedby="early-access-note"><img src="/assets/apple-appstore.png" alt="Download on the App Store" width="512" height="171"></a>
+							<a class="download-badge store-badge" href="https://apps.apple.com/app/id6754542715"><img src="/assets/apple-appstore.png" alt="Download on the App Store" width="512" height="171"></a>
 							<a class="download-badge store-badge" href="https://play.google.com/store/apps/details?id=com.rbonestell.buzzahbuddy"><img src="/assets/google-playstore.png" alt="Get it on Google Play" width="478" height="142"></a>
 						</div>
-						<p class="body-s text-muted" id="early-access-note">On iPhone, BuzzahBuddy is an early test version that installs through Apple's TestFlight app, so expect some rough edges. Features may change before the full release.</p>
 						<a class="bb-btn bb-btn--quiet card-action" href="https://buzzahbuddy.com"><span class="bb-btn__label">Visit BuzzahBuddy.com</span><svg class="bb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/icons/external-link.svg#icon"/></svg></a>
 					</li>
 				</ul>
