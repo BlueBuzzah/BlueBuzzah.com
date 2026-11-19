@@ -29,7 +29,7 @@ figure:
 
 ### Upper shell (7)
 
-<Shot src="/docs/img/upper-shell" alt="The upper shell: a rounded cover with a large USB-C opening at the front left, BlueBuzzah.com set into the top, a round window, a small slot toward the front right with a power-off symbol on its left and a power symbol on its right, and strap loops in each side" />
+<Shot src="/docs/img/upper-shell" alt="The upper shell: a rounded cover with a large USB-C opening at the front left, BlueBuzzah set into the top, a round window, a small slot toward the front right with a power-off symbol on its left and a power symbol on its right, and strap loops in each side" />
 
 The upper shell snaps onto the lower shell. It needs no fasteners or tools. To open it, hold the upper shell and push the lower shell out from underneath with both thumbs.
 
